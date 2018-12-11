@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Fossilminator/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "9f1056b40d5ff5de1aaad87b9ac459d9",
+    "revision": "9c69fdd0188e2ee82572f4bb06f947fe",
     "url": "/Fossilminator/index.html"
   }
 ];
