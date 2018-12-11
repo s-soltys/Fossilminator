@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './style/style.scss';
-import './style/custom.scss';
 
 import { Logo } from './shared/components/Logo';
 import { NavigationHeader } from './navigation/components/NavigationHeader';
