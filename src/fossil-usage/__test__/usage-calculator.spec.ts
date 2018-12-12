@@ -1,8 +1,8 @@
-import { calculateUsage } from "../usage-calculator";
+import { calculateFossilEmissions } from "../usage-calculator";
 
 describe('Usage calculator should', () => {
     it('calculate usage', () => {
-        expect(calculateUsage({
+        expect(calculateFossilEmissions({
             transport: {
                 carKmPerWeek: 300
             }
