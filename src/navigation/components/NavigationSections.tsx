@@ -3,13 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Input, InputGroup, InputGroupAddon, Nav, NavItem, NavLink } from 'reactstrap';
 import { bindActionCreators } from 'redux';
-import { AppState, NavigationActions, Section } from '../../state';
+import { AppState, NavigationActions, Section, FossilUsageActions } from '../../state';
 
 const SECTIONS = [Section.Welcome, Section.Transport];
 
 class _NavigationSections extends React.Component<any> {
     render() {
-        const { activeSection, setSection } = this.props;
+        const { activeSection, setSection, transport, patchTransportUsage } = this.props;
         return (
             <React.Fragment>
                 <Nav tabs className="mt-5">
@@ -29,7 +29,8 @@ class _NavigationSections extends React.Component<any> {
                     <div className="col-6">
                         <InputGroup>
                             <InputGroupAddon addonType="prepend">km</InputGroupAddon>
-                            <Input placeholder="Car travel per week" type="number" step="1" />
+                            <Input placeholder="Car travel per week" type="number" step="1"
+                                value={transport.carKmPerWeek} onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })}/>
                         </InputGroup>
                     </div>
                     <div className="col-6">
@@ -40,16 +41,18 @@ class _NavigationSections extends React.Component<any> {
     }
 }
 
-function mapStateToProps({ navigation }: AppState) {
+function mapStateToProps({ navigation, fossilUsage }: AppState) {
     return {
-        activeSection: navigation.section
+        activeSection: navigation.section,
+        transport: fossilUsage.transport
     };
 };
 
 function mapDispatchToProps(dispatch: any) {
     return bindActionCreators(
         {
-            setSection: NavigationActions.SetNavigationSection
+            setSection: NavigationActions.SetNavigationSection,
+            patchTransportUsage: FossilUsageActions.PatchTransportUsage
         },
         dispatch
     );
