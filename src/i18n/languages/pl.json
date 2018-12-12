@@ -1,5 +1,8 @@
 {
     "application": {
         "title": "Kalkulator zużycia CO2"
+    },
+    "actions": {
+        "calculateUsage": "Oblicz"
     }
 }

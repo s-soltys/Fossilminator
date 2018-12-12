@@ -1,5 +1,8 @@
 {
     "application": {
         "title": "CO2 Calculator"
+    },
+    "actions": {
+        "calculateUsage": "Calculate"
     }
 }
