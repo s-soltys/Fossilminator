@@ -1,3 +1,5 @@
+import { FossilUsageParams, FossilUsageResult } from "../../fossil-usage";
+
 export enum Section {
     None = 'NONE',
     Welcome = 'WELCOME',
@@ -8,6 +10,11 @@ export interface NavigationState {
     section: Section;
 }
 
+export type FossilUsageState = FossilUsageParams;
+export type FossilEmissionState = FossilUsageResult;
+
 export interface AppState {
     navigation: NavigationState;
+    fossilUsage: FossilUsageState;
+    fossilEmission: FossilEmissionState;
 }
