@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { AppState, NavigationActions } from '@proj/state';
+import { AppState, NavigationActions } from '../../state';
 
 class _NavigationSections extends React.Component<any> {
     render() {

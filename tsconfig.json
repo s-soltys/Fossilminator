@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "es5",
     "allowJs": true,
     "skipLibCheck": false,
@@ -13,11 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "paths": {
-      "@proj/state": ["./src/state/index.ts"],
-      "@proj/fossil-calc": ["./src/fossil-calc/index.ts"],
-    }
+    "jsx": "preserve"
   },
   "include": [
     "src"
