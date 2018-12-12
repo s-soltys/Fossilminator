@@ -5,23 +5,11 @@ import { Input, InputGroup, InputGroupAddon, Nav, NavItem, NavLink } from 'react
 import { bindActionCreators } from 'redux';
 import { AppState, NavigationActions, Section, FossilUsageActions } from '../../state';
 import { FossilUsageResult } from '../../fossil-usage';
+import { EmissionsChart } from './EmissionsChart';
 
 const SECTIONS = [Section.Welcome, Section.Transport];
 
 class _NavigationSections extends React.Component<any> {
-    renderEmissions(emission: FossilUsageResult, max: number) {
-        const transportPerc = emission.transport / max * 100;
-        const consumptionPerc = emission.consumption / max * 100;
-
-        return (
-            <div className="d-flex flex-column justify-content-end align-items-center" style={{ height: 300, width: 80 }}>
-                <small>{Math.round(emission.result)} ton CO2</small>
-                <div style={{ height: `${transportPerc}%`, width: '100%', backgroundColor: 'red' }}></div>
-                <div style={{ height: `${consumptionPerc}%`, width: '100%', backgroundColor: 'green' }}></div>
-            </div>
-        );
-    }
-
     render() {
         const { activeSection, setSection, transport, patchTransportUsage, fossilEmission } = this.props;
 
@@ -53,12 +41,10 @@ class _NavigationSections extends React.Component<any> {
                         </InputGroup>
                     </div>
                     <div className="col-3 d-flex flex-column align-items-center">
-                        <h6>YOU:</h6>
-                        {this.renderEmissions(fossilEmission, maxEmission)}
+                        <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
                     </div>
                     <div className="col-3 d-flex flex-column align-items-center">
-                        <h6>AVERAGE:</h6>
-                        {this.renderEmissions(refEmissions, maxEmission)}
+                        <EmissionsChart emission={refEmissions} limit={maxEmission} label='Avg' />
                     </div>
                 </div>
             </React.Fragment>
