@@ -3,11 +3,7 @@ import { Logo } from '../../shared/components/Logo';
 import { Translate } from 'react-i18nify';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
-interface Props {
-    title: string;
-}
-
-export const WelcomePage = ({ title }: Props) => (
+export const WelcomePage = ({ title }) => (
     <div className="row">
         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
             <Logo />
