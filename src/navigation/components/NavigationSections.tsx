@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Input, InputGroup, InputGroupAddon, Nav, NavItem, NavLink } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, NavigationActions, Section, FossilUsageActions } from '../../state';
-import { FossilUsageResult } from '../../fossil-usage';
 import { EmissionsChart } from './EmissionsChart';
 
 const SECTIONS = [Section.Welcome, Section.Transport];
@@ -31,20 +30,24 @@ class _NavigationSections extends React.Component<any> {
                         ))
                     }
                 </Nav>
-                <div className="row p-3">
+                <div className="row d-flex justify-content-center p-3">
                     <div className="col-6">
-                        <InputGroup>
-                            <InputGroupAddon addonType="prepend">km</InputGroupAddon>
-                            <Input placeholder="Car travel per week" type="number" step="1"
-                                value={transport.carKmPerWeek}
-                                onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
-                        </InputGroup>
-                    </div>
-                    <div className="col-3 d-flex flex-column align-items-center">
-                        <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
-                    </div>
-                    <div className="col-3 d-flex flex-column align-items-center">
-                        <EmissionsChart emission={refEmissions} limit={maxEmission} label='Avg' />
+                        <div className="row">
+                            <div className="col-12">
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">km</InputGroupAddon>
+                                    <Input placeholder="Car travel per week" type="number" step="1"
+                                        value={transport.carKmPerWeek}
+                                        onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
+                                </InputGroup>
+                            </div>
+                            <div className="col-6 d-flex flex-column align-items-center">
+                                <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
+                            </div>
+                            <div className="col-6 d-flex flex-column align-items-center">
+                                <EmissionsChart emission={refEmissions} limit={maxEmission} label='Avg' />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </React.Fragment>
