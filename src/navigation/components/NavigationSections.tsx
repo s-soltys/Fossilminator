@@ -1,15 +1,15 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { AppState, NavigationActions } from '../../state';
+import { AppState, NavigationActions, Section } from '../../state';
 
 class _NavigationSections extends React.Component<any> {
     render() {
         return (
-            <div>
+            <div className="py-5">
                 <h1>SECTION {this.props.section}</h1>
-                <h2>SET SECTION: 'xxx'</h2>
-                <h2>SET SECTION: 'yyy'</h2>
+                <h2 onClick={_ => this.props.setSection(Section.Transport)}>SET SECTION: '{Section.Transport}'</h2>
+                <h2 onClick={_ => this.props.setSection(Section.Welcome)}>SET SECTION: '{Section.Welcome}'</h2>
             </div>
         );
     }

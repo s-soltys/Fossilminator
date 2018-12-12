@@ -20,25 +20,25 @@ import { RootSaga } from './sagas';
 
 // const sagaMiddleware = createSagaMiddleware();
 
-// const configureStore = (initialState: AppState = InitialAppState): Store<AppState> => {
-//     const store: any = createStore(RootReducer, initialState, composeEnhancers(applyMiddleware(sagaMiddleware)));
+export const configureStore = (initialState: AppState = InitialAppState): Store<AppState> => {
+    const store: any = createStore(RootReducer);
 
-//     store.runSagaTask = () => (store.sagaTask = sagaMiddleware.run(RootSaga));
+    // store.runSagaTask = () => (store.sagaTask = sagaMiddleware.run(RootSaga));
 
-//     store.runSagaTask();
+    // store.runSagaTask();
 
-//     return store;
-// };
+    return store;
+};
 
 // export const connectWithRedux = (component: Component) => withRedux(configureStore)(withReduxSaga(component as any) as any);
 
 // create the saga middleware
-const sagaMiddleware = createSagaMiddleware()
-// mount it on the Store
-const store = createStore(
-  RootReducer,
-  applyMiddleware(sagaMiddleware)
-)
+// const sagaMiddleware = createSagaMiddleware()
+// // mount it on the Store
+// const store = createStore(
+//   RootReducer,
+//   applyMiddleware(sagaMiddleware)
+// )
 
-// then run the saga
-sagaMiddleware.run(RootSaga as any);
+// // then run the saga
+// sagaMiddleware.run(RootSaga as any);
