@@ -1,14 +1,14 @@
 {
-  "main.css": "/Fossilminator/static/css/main.df89d9ca.chunk.css",
-  "main.js": "/Fossilminator/static/js/main.955e7f0a.chunk.js",
-  "main.js.map": "/Fossilminator/static/js/main.955e7f0a.chunk.js.map",
-  "static/js/1.b740b2ed.chunk.js": "/Fossilminator/static/js/1.b740b2ed.chunk.js",
-  "static/js/1.b740b2ed.chunk.js.map": "/Fossilminator/static/js/1.b740b2ed.chunk.js.map",
+  "main.css": "/Fossilminator/static/css/main.4bdbf3c0.chunk.css",
+  "main.js": "/Fossilminator/static/js/main.9dd7e56f.chunk.js",
+  "main.js.map": "/Fossilminator/static/js/main.9dd7e56f.chunk.js.map",
+  "static/js/1.c6f7ec8e.chunk.js": "/Fossilminator/static/js/1.c6f7ec8e.chunk.js",
+  "static/js/1.c6f7ec8e.chunk.js.map": "/Fossilminator/static/js/1.c6f7ec8e.chunk.js.map",
   "runtime~main.js": "/Fossilminator/static/js/runtime~main.0ffb6c03.js",
   "runtime~main.js.map": "/Fossilminator/static/js/runtime~main.0ffb6c03.js.map",
   "static/media/logo.svg": "/Fossilminator/static/media/logo.5d5d9eef.svg",
-  "static/css/main.df89d9ca.chunk.css.map": "/Fossilminator/static/css/main.df89d9ca.chunk.css.map",
+  "static/css/main.4bdbf3c0.chunk.css.map": "/Fossilminator/static/css/main.4bdbf3c0.chunk.css.map",
   "index.html": "/Fossilminator/index.html",
-  "precache-manifest.6638c16e4728252de3414291868df91b.js": "/Fossilminator/precache-manifest.6638c16e4728252de3414291868df91b.js",
+  "precache-manifest.3bb6c2ea0b62766fff44d648fd7c280d.js": "/Fossilminator/precache-manifest.3bb6c2ea0b62766fff44d648fd7c280d.js",
   "service-worker.js": "/Fossilminator/service-worker.js"
 }
