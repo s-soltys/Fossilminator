@@ -18,8 +18,8 @@ class App extends Component {
         return (
             <React.Fragment>
                 <NavigationHeader />
-                <NavigationSections />
                 <Page>
+                    <NavigationSections />
                     <WelcomePage title={I18n.t('application.title')} />
                 </Page>
             </React.Fragment>
