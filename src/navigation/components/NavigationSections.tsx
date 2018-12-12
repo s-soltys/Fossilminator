@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Input, InputGroup, InputGroupAddon, Nav, NavItem, NavLink } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, NavigationActions, Section, FossilUsageActions } from '../../state';
-import { FossilUsageResult } from '../../fossil-usage';
 import { EmissionsChart } from './EmissionsChart';
 
 const SECTIONS = [Section.Welcome, Section.Transport];
