@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { AppState, NavigationActions, Section } from '../../state';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import classnames from 'classnames'
 
 const SECTIONS = [Section.Welcome, Section.Transport];
 
@@ -14,7 +15,9 @@ class _NavigationSections extends React.Component<any> {
                 {
                     SECTIONS.map(section => (
                         <NavItem key={section}>
-                            <NavLink className={`${section === activeSection ? 'active' : ''}`} onClick={() => setSection(section)}>
+                            <NavLink
+                                className={classnames({ active: activeSection === section })}
+                                onClick={() => setSection(section)}>
                                 {section}
                             </NavLink>
                         </NavItem>
