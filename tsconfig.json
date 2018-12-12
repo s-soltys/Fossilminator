@@ -12,7 +12,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@proj/state": ["./src/state/index.ts"],
+      "@proj/fossil-calc": ["./src/fossil-calc/index.ts"],
+    }
   },
   "include": [
     "src"
