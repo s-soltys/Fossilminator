@@ -1,7 +1,7 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardHeader, CardTitle, Input, InputGroup, InputGroupAddon, Alert } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardTitle, Input, InputGroup, InputGroupAddon, Alert, CardFooter } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, FossilUsageActions } from '../../state';
 import { EmissionsChart } from './EmissionsChart';
@@ -17,9 +17,9 @@ class _EmissionCalculator extends React.Component<any> {
             <React.Fragment>
                 <Card>
                     <CardHeader>
-                        <CardTitle>
+                        <h4 className="font-weight-light">
                             <Translate value="application.title" />
-                        </CardTitle>
+                        </h4>
                     </CardHeader>
                     <CardBody>
                         <div className="row">
@@ -48,8 +48,9 @@ class _EmissionCalculator extends React.Component<any> {
                             </div>
                         </div>
                     </CardBody>
-                    <CardBody>
-                    </CardBody>
+                    <CardFooter>
+                        <span className="font-weight-light">Wersja demo zmodernizowanego kalkulatora CO2.</span>
+                    </CardFooter>
                 </Card>
             </React.Fragment>
         );
