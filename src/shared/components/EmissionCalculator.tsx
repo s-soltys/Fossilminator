@@ -1,13 +1,11 @@
-import classnames from 'classnames';
 import React from 'react';
-import { connect } from 'react-redux';
-import { Input, InputGroup, InputGroupAddon, Nav, NavItem, NavLink } from 'reactstrap';
-import { bindActionCreators } from 'redux';
-import { AppState, NavigationActions, Section, FossilUsageActions } from '../../state';
-import { EmissionsChart } from './EmissionsChart';
 import { Translate } from 'react-i18nify';
-
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, CardHeader, Button } from 'reactstrap';
+import { connect } from 'react-redux';
+import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { bindActionCreators } from 'redux';
+import { AppState, FossilUsageActions } from '../../state';
+import { EmissionAlertBadge } from './EmissionAlertBadge';
+import { EmissionsChart } from './EmissionsChart';
 
 class _EmissionCalculator extends React.Component<any> {
     render() {
@@ -20,19 +18,26 @@ class _EmissionCalculator extends React.Component<any> {
             <React.Fragment>
                 <Card>
                     <CardHeader>
-                        <CardTitle>
+                        <h4 className="font-weight-light">
                             <Translate value="application.title" />
-                        </CardTitle>
+                        </h4>
                     </CardHeader>
                     <CardBody>
                         <div className="row">
                             <div className="col-12 col-md-6">
+                                <h6>
+                                    <Translate value="transport.enterWeeklyCarUsage" />
+                                </h6>
                                 <InputGroup>
                                     <InputGroupAddon addonType="prepend">km</InputGroupAddon>
                                     <Input placeholder="Car travel per week" type="number" step="1"
                                         value={transport.carKmPerWeek}
                                         onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
                                 </InputGroup>
+                                <h6 className="pt-5">
+                                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
+                                </h6>
+                                <EmissionAlertBadge />
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
@@ -42,8 +47,12 @@ class _EmissionCalculator extends React.Component<any> {
                             </div>
                         </div>
                     </CardBody>
-                    <CardBody>
-                    </CardBody>
+                    <CardFooter>
+                        <div className="font-weight-light d-flex justify-content-between">
+                            <span>Wersja demo zmodernizowanego kalkulatora CO2</span>
+                            <span>Więcej na <a href="https://ziemianarozdrozu.pl/">ziemianarozdrozu.pl</a></span>
+                        </div>
+                    </CardFooter>
                 </Card>
             </React.Fragment>
         );

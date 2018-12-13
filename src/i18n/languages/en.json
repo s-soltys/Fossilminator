@@ -4,5 +4,12 @@
     },
     "actions": {
         "calculateUsage": "Calculate"
+    },
+    "transport": {
+        "enterWeeklyCarUsage": "Enter your weekly car mileage"
+    },
+    "emissions": {
+        "yourAnnualEmissionsAre": "Your annual fossil fuel emissions are %{emissions} tonnes of CO2",
+        "yourEmissionsAreTooHigh": "Your fossil fuel usage is too high!"
     }
 }

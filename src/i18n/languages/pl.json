@@ -4,5 +4,12 @@
     },
     "actions": {
         "calculateUsage": "Oblicz"
+    },
+    "transport": {
+        "enterWeeklyCarUsage": "Wprowadź swój tygodniowy przebieg samochodem"
+    },
+    "emissions": {
+        "yourAnnualEmissionsAre": "Twoje roczne zużycie paliw kopalnych to %{emissions} ton CO2",
+        "yourEmissionsAreTooHigh": "Twoje zużycie CO2 jest zbyt wysokie!"
     }
 }
