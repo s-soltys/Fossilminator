@@ -4,5 +4,8 @@
     },
     "actions": {
         "calculateUsage": "Oblicz"
+    },
+    "transport": {
+        "enterWeeklyCarUsage": "Wprowadź swój tygodniowy przebieg samochodem"
     }
 }

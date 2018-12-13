@@ -1,7 +1,7 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Badge, Card, CardBody, CardHeader, CardTitle, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardTitle, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, FossilUsageActions } from '../../state';
 import { EmissionsChart } from './EmissionsChart';
@@ -24,7 +24,9 @@ class _EmissionCalculator extends React.Component<any> {
                     <CardBody>
                         <div className="row">
                             <div className="col-12 col-md-6">
-                                <h5>Heading <Badge color="secondary">New</Badge></h5>
+                                <h5>
+                                    <Translate value="transport.enterWeeklyCarUsage" />
+                                </h5>
                                 <InputGroup>
                                     <InputGroupAddon addonType="prepend">km</InputGroupAddon>
                                     <Input placeholder="Car travel per week" type="number" step="1"
