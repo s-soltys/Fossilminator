@@ -49,7 +49,14 @@ class _EmissionCalculator extends React.Component<any> {
                         </div>
                     </CardBody>
                     <CardFooter>
-                        <span className="font-weight-light">Wersja demo zmodernizowanego kalkulatora CO2.</span>
+                        <div className="font-weight-light d-flex justify-content-between">
+                            <span>
+                                Wersja demo zmodernizowanego kalkulatora CO2
+                            </span>
+                            <span>
+                                Więcej na <a href="https://ziemianarozdrozu.pl/">ziemianarozdrozu.pl</a>
+                            </span>
+                        </div>
                     </CardFooter>
                 </Card>
             </React.Fragment>
