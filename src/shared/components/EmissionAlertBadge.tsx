@@ -6,4 +6,4 @@ export const EmissionAlertBadge = () => (
     <Alert color="danger">
         <Translate value="emissions.yourEmissionsAreTooHigh" />
     </Alert>
-)
+);
