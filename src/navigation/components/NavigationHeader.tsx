@@ -6,7 +6,7 @@ export const NavigationHeader = () => (
     <header>
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
             <span className="navbar-brand">
-            <Logo />
+                <Logo />
                 <Translate value="application.title" />
             </span>
         </nav>
