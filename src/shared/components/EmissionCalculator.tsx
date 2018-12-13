@@ -1,7 +1,7 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardHeader, CardTitle, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardTitle, Input, InputGroup, InputGroupAddon, Alert } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, FossilUsageActions } from '../../state';
 import { EmissionsChart } from './EmissionsChart';
@@ -24,18 +24,21 @@ class _EmissionCalculator extends React.Component<any> {
                     <CardBody>
                         <div className="row">
                             <div className="col-12 col-md-6">
-                                <h5>
+                                <h6>
                                     <Translate value="transport.enterWeeklyCarUsage" />
-                                </h5>
+                                </h6>
                                 <InputGroup>
                                     <InputGroupAddon addonType="prepend">km</InputGroupAddon>
                                     <Input placeholder="Car travel per week" type="number" step="1"
                                         value={transport.carKmPerWeek}
                                         onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
                                 </InputGroup>
-                                <h6 className="pt-3">
-                                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)}/>
+                                <h6 className="pt-5">
+                                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
                                 </h6>
+                                <Alert color="danger">
+                                    <Translate value="emissions.yourEmissionsAreTooHigh" />
+                                </Alert>
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
