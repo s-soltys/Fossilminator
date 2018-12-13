@@ -1,9 +1,10 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardHeader, CardTitle, Input, InputGroup, InputGroupAddon, Alert, CardFooter } from 'reactstrap';
+import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, FossilUsageActions } from '../../state';
+import { EmissionAlertBadge } from './EmissionAlertBadge';
 import { EmissionsChart } from './EmissionsChart';
 
 class _EmissionCalculator extends React.Component<any> {
@@ -36,9 +37,7 @@ class _EmissionCalculator extends React.Component<any> {
                                 <h6 className="pt-5">
                                     <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
                                 </h6>
-                                <Alert color="danger">
-                                    <Translate value="emissions.yourEmissionsAreTooHigh" />
-                                </Alert>
+                                <EmissionAlertBadge />
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
