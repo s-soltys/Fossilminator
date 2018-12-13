@@ -1,12 +1,10 @@
 import React from 'react';
-import { Logo } from '../../shared/components/Logo';
 import { Translate } from 'react-i18nify';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 export const WelcomePage = ({ title }) => (
     <div className="row">
         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
-            <Logo />
         </div>
         <div className="col-12 col-md-6 d-flex align-items-center">
             <Card>
