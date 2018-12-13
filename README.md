@@ -2,6 +2,8 @@
 
 CO2 usage calculator
 
+Live version available [HERE](https://s-soltys.github.io/Fossilminator/) 
+
 ## How it works?
 
 ...to be continued

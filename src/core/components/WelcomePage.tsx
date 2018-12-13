@@ -3,18 +3,14 @@ import { Logo } from '../../shared/components/Logo';
 import { Translate } from 'react-i18nify';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
-interface Props {
-    title: string;
-}
-
-export const WelcomePage = ({ title }: Props) => (
+export const WelcomePage = ({ title }) => (
     <div className="row">
         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
             <Logo />
         </div>
         <div className="col-12 col-md-6 d-flex align-items-center">
             <Card>
-                <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                <CardImg top width="100%" src="https://picsum.photos/318/180" alt="Card image cap" />
                 <CardBody>
                     <CardTitle>{ title || 'Default title' }</CardTitle>
                     <CardSubtitle>This is a subtitle...</CardSubtitle>

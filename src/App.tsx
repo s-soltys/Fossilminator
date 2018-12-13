@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import './style/style.scss';
-
+import { connect } from 'react-redux';
 import { I18n } from 'react-i18nify';
+
+import './style/style.scss';
 
 import { NavigationHeader } from './navigation/components/NavigationHeader';
 import { Page } from './core/components/Page';
 import { WelcomePage } from './core/components/WelcomePage';
+import { NavigationSections } from './navigation/components/NavigationSections';
 
 class App extends Component {
     componentDidMount() {
@@ -17,6 +19,7 @@ class App extends Component {
             <React.Fragment>
                 <NavigationHeader />
                 <Page>
+                    <NavigationSections />
                     <WelcomePage title={I18n.t('application.title')} />
                 </Page>
             </React.Fragment>
@@ -24,4 +27,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default connect()(App);
