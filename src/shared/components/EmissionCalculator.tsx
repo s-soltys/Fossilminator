@@ -33,6 +33,9 @@ class _EmissionCalculator extends React.Component<any> {
                                         value={transport.carKmPerWeek}
                                         onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
                                 </InputGroup>
+                                <h6 className="pt-3">
+                                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)}/>
+                                </h6>
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
