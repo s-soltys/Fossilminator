@@ -5,35 +5,28 @@ import { Input, InputGroup, InputGroupAddon, Nav, NavItem, NavLink } from 'react
 import { bindActionCreators } from 'redux';
 import { AppState, NavigationActions, Section, FossilUsageActions } from '../../state';
 import { EmissionsChart } from './EmissionsChart';
+import { Translate } from 'react-i18nify';
 
-const SECTIONS = [Section.Welcome, Section.Transport];
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, CardHeader, Button } from 'reactstrap';
 
-class _NavigationSections extends React.Component<any> {
+class _EmissionCalculator extends React.Component<any> {
     render() {
-        const { activeSection, setSection, transport, patchTransportUsage, fossilEmission } = this.props;
+        const { transport, patchTransportUsage, fossilEmission } = this.props;
 
-        const refEmissions = { consumption: 6, transport: 19, result: 25};
+        const refEmissions = { consumption: 6, transport: 19, result: 25 };
         const maxEmission = 1.5 * Math.max(refEmissions.result, fossilEmission.result);
 
         return (
             <React.Fragment>
-                <Nav tabs className="mt-5">
-                    {
-                        SECTIONS.map(section => (
-                            <NavItem key={section}>
-                                <NavLink
-                                    className={classnames({ active: activeSection === section })}
-                                    onClick={() => setSection(section)}>
-                                    {section}
-                                </NavLink>
-                            </NavItem>
-                        ))
-                    }
-                </Nav>
-                <div className="row d-flex justify-content-center p-3">
-                    <div className="col-6">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>
+                            <Translate value="application.title" />
+                        </CardTitle>
+                    </CardHeader>
+                    <CardBody>
                         <div className="row">
-                            <div className="col-12">
+                            <div className="col-12 col-md-6">
                                 <InputGroup>
                                     <InputGroupAddon addonType="prepend">km</InputGroupAddon>
                                     <Input placeholder="Car travel per week" type="number" step="1"
@@ -41,23 +34,24 @@ class _NavigationSections extends React.Component<any> {
                                         onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
                                 </InputGroup>
                             </div>
-                            <div className="col-6 d-flex flex-column align-items-center">
+                            <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
                             </div>
-                            <div className="col-6 d-flex flex-column align-items-center">
+                            <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={refEmissions} limit={maxEmission} label='Avg' />
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </CardBody>
+                    <CardBody>
+                    </CardBody>
+                </Card>
             </React.Fragment>
         );
     }
 }
 
-function mapStateToProps({ navigation, fossilUsage, fossilEmission }: AppState) {
+function mapStateToProps({ fossilUsage, fossilEmission }: AppState) {
     return {
-        activeSection: navigation.section,
         transport: fossilUsage.transport,
         fossilEmission: fossilEmission
     };
@@ -66,14 +60,13 @@ function mapStateToProps({ navigation, fossilUsage, fossilEmission }: AppState) 
 function mapDispatchToProps(dispatch: any) {
     return bindActionCreators(
         {
-            setSection: NavigationActions.SetNavigationSection,
             patchTransportUsage: FossilUsageActions.PatchTransportUsage
         },
         dispatch
     );
 }
 
-export const NavigationSections = connect(
+export const EmissionCalculator = connect(
     mapStateToProps,
     mapDispatchToProps
-)(_NavigationSections);
+)(_EmissionCalculator);
