@@ -7,7 +7,7 @@ export const NavigationHeader = () => (
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
             <span className="navbar-brand">
                 <Logo />
-                <Translate className="pl-2" value="application.title" />
+                <Translate value="application.title" />
             </span>
         </nav>
     </header>
