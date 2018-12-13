@@ -1,6 +1,6 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
-import { Logo } from '../../shared/components/Logo';
+import { Logo } from '../../shared/components//Logo/Logo';
 
 export const NavigationHeader = () => (
     <header>
