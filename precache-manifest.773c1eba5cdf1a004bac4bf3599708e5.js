@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "9489a0fc1a93dd082197",
+    "revision": "f2fc1fd6a429d8a55e74",
     "url": "/Fossilminator/static/css/main.1f2ed8f8.chunk.css"
   },
   {
-    "revision": "9489a0fc1a93dd082197",
-    "url": "/Fossilminator/static/js/main.9489a0fc.chunk.js"
+    "revision": "f2fc1fd6a429d8a55e74",
+    "url": "/Fossilminator/static/js/main.f2fc1fd6.chunk.js"
   },
   {
-    "revision": "7fdef8b2c77495df3871",
-    "url": "/Fossilminator/static/js/1.7fdef8b2.chunk.js"
+    "revision": "895ee3f107ac87c5135f",
+    "url": "/Fossilminator/static/js/1.895ee3f1.chunk.js"
   },
   {
     "revision": "0ffb6c034d5066701561",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Fossilminator/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "cdcad5beef66de435fbfb1c20770f637",
+    "revision": "e56b4dbdf97be21849a0d2b5f09fe693",
     "url": "/Fossilminator/index.html"
   }
 ];
