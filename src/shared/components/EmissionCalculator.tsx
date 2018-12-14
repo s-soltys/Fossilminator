@@ -83,7 +83,7 @@ class _EmissionCalculator extends React.Component<any, any> {
     render() {
         const { fossilEmission } = this.props;
         const refEmissions = { food: 6, transport: 19, result: 25 };
-        const maxEmission = 1.5 * Math.max(refEmissions.result, fossilEmission.result);
+        const maxEmission = 1.2 * Math.max(refEmissions.result, fossilEmission.result);
 
         return (
             <React.Fragment>

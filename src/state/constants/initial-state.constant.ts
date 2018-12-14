@@ -10,7 +10,7 @@ export const InitialAppState: AppState = {
             annualHoursInAir: 0
         },
         food: {
-            meatPerWeek: 0
+            meatPerWeek: 1
         }
     },
     fossilEmission: {
