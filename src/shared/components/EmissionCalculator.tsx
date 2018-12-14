@@ -32,9 +32,9 @@ class _EmissionCalculator extends React.Component<any, any> {
                     { food.meatPerWeek } razy w tygodniu
                 </DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem onChange={_ => patchFoodUsage({ meatPerWeek: 0 })}>Jestem wegetarianinem/ką</DropdownItem>
-                    <DropdownItem onChange={_ => patchFoodUsage({ meatPerWeek: 1 })}>Raz w tygodniu</DropdownItem>
-                    <DropdownItem onChange={_ => patchFoodUsage({ meatPerWeek: 7 })}>Codziennie</DropdownItem>
+                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 0 })}>Jestem wegetarianinem/-ką</DropdownItem>
+                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 1 })}>Raz w tygodniu</DropdownItem>
+                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 7 })}>Codziennie</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
         );

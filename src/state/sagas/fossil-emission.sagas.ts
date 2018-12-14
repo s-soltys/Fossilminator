@@ -3,14 +3,17 @@ import { FossilEmissionActions, FossilUsageActions } from '../actions';
 import { AppState } from '../constants';
 import { calculateFossilEmissions } from '../../fossil-usage';
 
-export const computeFossilEmissionSaga = function*() {
+export const computeFossilEmissionSaga = function* () {
     const usage = yield select<AppState>(state => state.fossilUsage);
 
     const emission = calculateFossilEmissions(usage);
-    
+
     yield put(FossilEmissionActions.SetFossilEmissionsResult(emission));
 };
 
 export const FossilEmissionSagas = [
-    takeEvery(FossilUsageActions.PatchTransportUsageType, computeFossilEmissionSaga)
+    takeEvery([
+        FossilUsageActions.PatchTransportUsageType,
+        FossilUsageActions.PatchFoodUsageType
+    ], computeFossilEmissionSaga)
 ];

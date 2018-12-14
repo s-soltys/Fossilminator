@@ -9,4 +9,4 @@ export const PatchTransportUsage = (transport: FossilUsageTransport) => createAc
 
 export const PatchFoodUsageType = '[FOSSIL_USAGE] PatchFoodUsage';
 export type PatchFoodUsageAction = ReturnType<typeof PatchFoodUsage>;
-export const PatchFoodUsage = (transport: FossilUsageFood) => createAction(PatchFoodUsageType, transport);
+export const PatchFoodUsage = (food: FossilUsageFood) => createAction(PatchFoodUsageType, food);
