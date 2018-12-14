@@ -13,25 +13,49 @@ class _EmissionCalculator extends React.Component<any> {
 
         return (
             <React.Fragment>
-                <h6>
-                    <Translate value="transport.enterWeeklyCarUsage" />
-                </h6>
-                <InputGroup>
-                    <InputGroupAddon addonType="prepend">km</InputGroupAddon>
-                    <Input placeholder="Car travel per week" type="number" step="1"
-                        value={transport.carKmPerWeek}
-                        onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
-                </InputGroup>
-                <h6 className="pt-5">
-                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
-                </h6>
-                <EmissionAlertBadge />
+                <h4 className="font-weight-light">Transport:</h4>
+                <div>
+                    <Translate className="font-weight-light" value="transport.enterWeeklyCarUsage" />
+                    <InputGroup>
+                        <InputGroupAddon addonType="prepend">km</InputGroupAddon>
+                        <Input placeholder="Ile km podróżujesz samochodem tygodniowo" type="number" step="1"
+                            value={transport.carKmPerWeek}
+                            onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
+                    </InputGroup>
+                </div>
+                <div className="pt-3">
+                    <Translate className="font-weight-light" value="transport.enterAnnualPlaneHours" />
+                    <InputGroup>
+                        <InputGroupAddon addonType="prepend">godziny</InputGroupAddon>
+                        <Input placeholder="Ile godzin spędzasz rocznie w podróży samolotem?" type="number" step="1"
+                            value={transport.annualHoursInAir}
+                            onChange={event => patchTransportUsage({ annualHoursInAir: event.currentTarget.value })} />
+                    </InputGroup>
+                </div>
+                <hr className="m-4"/>
+                <h4 className="font-weight-light">Żywność:</h4>
+                <div>
+                    <Translate className="font-weight-light" value="food.howOftenDoYouConsumeFood" />
+                    <InputGroup>
+                        <InputGroupAddon addonType="prepend">km</InputGroupAddon>
+                        <Input placeholder="Car travel per week" type="number" step="1"
+                            value={transport.carKmPerWeek}
+                            onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
+                    </InputGroup>
+                </div>
+                <hr className="m-4"/>
+                <div>
+                    <h6>
+                        <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
+                    </h6>
+                    <EmissionAlertBadge />
+                </div>
             </React.Fragment>
         )
     }
     render() {
         const { fossilEmission } = this.props;
-        const refEmissions = { consumption: 6, transport: 19, result: 25 };
+        const refEmissions = { food: 6, transport: 19, result: 25 };
         const maxEmission = 1.5 * Math.max(refEmissions.result, fossilEmission.result);
 
         return (

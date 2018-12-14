@@ -6,11 +6,15 @@ export const InitialAppState: AppState = {
     },
     fossilUsage: {
         transport: {
-            carKmPerWeek: 0
+            carKmPerWeek: 0,
+            annualHoursInAir: 0
+        },
+        food: {
+            meatPerWeek: 0
         }
     },
     fossilEmission: {
-        consumption: 0,
+        food: 0,
         transport: 0,
         result: 0
     }
