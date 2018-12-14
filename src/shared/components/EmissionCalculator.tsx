@@ -1,13 +1,45 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, FossilUsageActions } from '../../state';
 import { EmissionAlertBadge } from './EmissionAlertBadge';
 import { EmissionsChart } from './EmissionsChart';
 
-class _EmissionCalculator extends React.Component<any> {
+class _EmissionCalculator extends React.Component<any, any> {
+    constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            dropdownOpen: false
+        };
+    }
+
+    toggle() {
+        this.setState(prevState => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    }
+
+    renderWeeklyMeatConsumptionDropdown() {
+        const { food, patchFoodUsage } = this.props;
+
+        return (
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret>
+                    { food.meatPerWeek } razy w tygodniu
+                </DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem onChange={_ => patchFoodUsage({ meatPerWeek: 0 })}>Jestem wegetarianinem/ką</DropdownItem>
+                    <DropdownItem onChange={_ => patchFoodUsage({ meatPerWeek: 1 })}>Raz w tygodniu</DropdownItem>
+                    <DropdownItem onChange={_ => patchFoodUsage({ meatPerWeek: 7 })}>Codziennie</DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
+        );
+    }
+
     renderInputs() {
         const { transport, patchTransportUsage, fossilEmission } = this.props;
 
@@ -32,18 +64,13 @@ class _EmissionCalculator extends React.Component<any> {
                             onChange={event => patchTransportUsage({ annualHoursInAir: event.currentTarget.value })} />
                     </InputGroup>
                 </div>
-                <hr className="m-4"/>
+                <hr className="m-4" />
                 <h4 className="font-weight-light">Żywność:</h4>
                 <div>
                     <Translate className="font-weight-light" value="food.howOftenDoYouConsumeFood" />
-                    <InputGroup>
-                        <InputGroupAddon addonType="prepend">km</InputGroupAddon>
-                        <Input placeholder="Car travel per week" type="number" step="1"
-                            value={transport.carKmPerWeek}
-                            onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
-                    </InputGroup>
+                    {this.renderWeeklyMeatConsumptionDropdown()}
                 </div>
-                <hr className="m-4"/>
+                <hr className="m-4" />
                 <div>
                     <h6>
                         <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
@@ -94,6 +121,7 @@ class _EmissionCalculator extends React.Component<any> {
 function mapStateToProps({ fossilUsage, fossilEmission }: AppState) {
     return {
         transport: fossilUsage.transport,
+        food: fossilUsage.food,
         fossilEmission: fossilEmission
     };
 };
@@ -101,7 +129,8 @@ function mapStateToProps({ fossilUsage, fossilEmission }: AppState) {
 function mapDispatchToProps(dispatch: any) {
     return bindActionCreators(
         {
-            patchTransportUsage: FossilUsageActions.PatchTransportUsage
+            patchTransportUsage: FossilUsageActions.PatchTransportUsage,
+            patchFoodUsage: FossilUsageActions.PatchFoodUsage
         },
         dispatch
     );
