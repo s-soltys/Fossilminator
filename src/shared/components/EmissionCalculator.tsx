@@ -48,7 +48,7 @@ class _EmissionCalculator extends React.Component<any, any> {
                 <h4 className="font-weight-light">Transport:</h4>
                 <div>
                     <Translate className="font-weight-light" value="transport.enterWeeklyCarUsage" />
-                    <InputGroup>
+                    <InputGroup className="w-50">
                         <InputGroupAddon addonType="prepend">km</InputGroupAddon>
                         <Input placeholder="Ile km podróżujesz samochodem tygodniowo" type="number" step="1"
                             value={transport.carKmPerWeek}
@@ -57,7 +57,7 @@ class _EmissionCalculator extends React.Component<any, any> {
                 </div>
                 <div className="pt-3">
                     <Translate className="font-weight-light" value="transport.enterAnnualPlaneHours" />
-                    <InputGroup>
+                    <InputGroup className="w-50">
                         <InputGroupAddon addonType="prepend">godziny</InputGroupAddon>
                         <Input placeholder="Ile godzin spędzasz rocznie w podróży samolotem?" type="number" step="1"
                             value={transport.annualHoursInAir}
