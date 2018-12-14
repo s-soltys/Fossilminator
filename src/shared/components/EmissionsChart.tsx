@@ -6,8 +6,8 @@ export const EmissionsChart = ({ emission, limit, label }) => {
 
     return (
         <div className="d-flex flex-column justify-content-end align-items-center" style={{ height: 300, width: 80 }}>
-            <strong className="text-center">{ label }</strong>
-            <small>{Math.round(emission.result)} ton CO2</small>
+            <small className="text-center font-weight-light">{ label }</small>
+            <small className="font-weight-bold">{Math.round(emission.result)} ton CO<sub>2</sub></small>
             <div className="chart-segment" style={{ height: `${transportPerc}%`, width: '100%', backgroundColor: 'MediumPurple' }}></div>
             <div className="chart-segment" style={{ height: `${foodPerc}%`, width: '100%', backgroundColor: 'MediumBlue' }}></div>
         </div>

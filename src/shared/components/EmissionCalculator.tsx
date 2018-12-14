@@ -99,10 +99,10 @@ class _EmissionCalculator extends React.Component<any, any> {
                                 {this.renderInputs()}
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
-                                <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
+                                <EmissionsChart emission={fossilEmission} limit={maxEmission} label='Twoja emisja' />
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
-                                <EmissionsChart emission={refEmissions} limit={maxEmission} label='Avg' />
+                                <EmissionsChart emission={refEmissions} limit={maxEmission} label='Średnia' />
                             </div>
                         </div>
                     </CardBody>
