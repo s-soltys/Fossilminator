@@ -4,9 +4,9 @@ import { FossilUsageResult } from "./types/fossil-usage-result.interface";
 const WEEKS_PER_YEAR = 52;
 
 const EmissionConversion = {
-    perMeatDailyMeatConsumption: 1,
+    perMeatDailyMeatConsumption: 2,
     perKmOfCarTravel: 0.001,
-    perAnnualHourInAir: 0.05,
+    perAnnualHourInAir: 0.3,
 }
 
 export function calculateFossilEmissions(input: FossilUsageParams): FossilUsageResult {

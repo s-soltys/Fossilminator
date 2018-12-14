@@ -11,9 +11,9 @@ describe('Usage calculator should', () => {
                 meatPerWeek: 1
             }
         })).toEqual({
-            food: 1,
-            transport: 16.35,
-            result: 17.35
+            food: 2,
+            transport: 20.1,
+            result: 22.1
         });
     });
 });
