@@ -5,8 +5,12 @@
     "actions": {
         "calculateUsage": "Calculate"
     },
+    "food": {
+        "howOftenDoYouConsumeFood": "How often do you eat meat?"
+    },
     "transport": {
-        "enterWeeklyCarUsage": "Enter your weekly car mileage"
+        "enterWeeklyCarUsage": "Enter your weekly car mileage",
+        "enterAnnualPlaneHours": "How many hours do you spend in a plane annually?"
     },
     "emissions": {
         "yourAnnualEmissionsAre": "Your annual fossil fuel emissions are %{emissions} tonnes of CO2",

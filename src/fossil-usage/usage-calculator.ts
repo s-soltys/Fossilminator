@@ -2,15 +2,22 @@ import { FossilUsageParams } from "./types/fossil-usage-input.interface";
 import { FossilUsageResult } from "./types/fossil-usage-result.interface";
 
 const WEEKS_PER_YEAR = 52;
-const CO2_EMISSION_PER_KM = 0.001;
+
+const EmissionConversion = {
+    perMeatDailyMeatConsumption: 2,
+    perKmOfCarTravel: 0.001,
+    perAnnualHourInAir: 0.3,
+}
 
 export function calculateFossilEmissions(input: FossilUsageParams): FossilUsageResult {
-    const consumption = 5;
-    const transport = input.transport.carKmPerWeek * WEEKS_PER_YEAR * CO2_EMISSION_PER_KM;
+    const food = input.food.meatPerWeek * EmissionConversion.perMeatDailyMeatConsumption;
+
+    const transport = input.transport.carKmPerWeek * WEEKS_PER_YEAR * EmissionConversion.perKmOfCarTravel
+        + input.transport.annualHoursInAir * EmissionConversion.perAnnualHourInAir;
 
     return {
-        consumption,
+        food,
         transport,
-        result: consumption + transport
+        result: food + transport
     };
 };

@@ -5,8 +5,12 @@
     "actions": {
         "calculateUsage": "Oblicz"
     },
+    "food": {
+        "howOftenDoYouConsumeFood": "Jak często spożywasz mięso?"
+    },
     "transport": {
-        "enterWeeklyCarUsage": "Wprowadź swój tygodniowy przebieg samochodem"
+        "enterWeeklyCarUsage": "Wprowadź swój tygodniowy przebieg samochodem",
+        "enterAnnualPlaneHours": "Wprowadź liczbę godzin które spędzasz rocznie na podróży samolotem"
     },
     "emissions": {
         "yourAnnualEmissionsAre": "Twoje roczne zużycie paliw kopalnych to %{emissions} ton CO2",

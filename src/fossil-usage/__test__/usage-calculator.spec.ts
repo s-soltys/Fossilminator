@@ -4,12 +4,16 @@ describe('Usage calculator should', () => {
     it('calculate usage', () => {
         expect(calculateFossilEmissions({
             transport: {
-                carKmPerWeek: 300
+                carKmPerWeek: 300,
+                annualHoursInAir: 15
+            },
+            food: {
+                meatPerWeek: 1
             }
         })).toEqual({
-            consumption: 5,
-            transport: 15.6,
-            result: 20.6
+            food: 2,
+            transport: 20.1,
+            result: 22.1
         });
     });
 });

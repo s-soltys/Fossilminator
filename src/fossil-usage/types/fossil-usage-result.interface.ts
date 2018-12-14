@@ -1,5 +1,5 @@
 export interface FossilUsageResult {
-    consumption: number;
+    food: number;
     transport: number;
     result: number;
 }

@@ -1,18 +1,89 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, FossilUsageActions } from '../../state';
 import { EmissionAlertBadge } from './EmissionAlertBadge';
 import { EmissionsChart } from './EmissionsChart';
 
-class _EmissionCalculator extends React.Component<any> {
-    render() {
+class _EmissionCalculator extends React.Component<any, any> {
+    constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            dropdownOpen: false
+        };
+    }
+
+    toggle() {
+        this.setState(prevState => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    }
+
+    renderWeeklyMeatConsumptionDropdown() {
+        const { food, patchFoodUsage } = this.props;
+
+        return (
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret>
+                    { food.meatPerWeek } razy w tygodniu
+                </DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 0 })}>Jestem wegetarianinem/-ką</DropdownItem>
+                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 1 })}>Raz w tygodniu</DropdownItem>
+                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 7 })}>Codziennie</DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
+        );
+    }
+
+    renderInputs() {
         const { transport, patchTransportUsage, fossilEmission } = this.props;
 
-        const refEmissions = { consumption: 6, transport: 19, result: 25 };
-        const maxEmission = 1.5 * Math.max(refEmissions.result, fossilEmission.result);
+        return (
+            <React.Fragment>
+                <h4 className="font-weight-light">Transport:</h4>
+                <div>
+                    <Translate className="font-weight-light" value="transport.enterWeeklyCarUsage" />
+                    <InputGroup>
+                        <InputGroupAddon addonType="prepend">km</InputGroupAddon>
+                        <Input placeholder="Ile km podróżujesz samochodem tygodniowo" type="number" step="1"
+                            value={transport.carKmPerWeek}
+                            onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
+                    </InputGroup>
+                </div>
+                <div className="pt-3">
+                    <Translate className="font-weight-light" value="transport.enterAnnualPlaneHours" />
+                    <InputGroup>
+                        <InputGroupAddon addonType="prepend">godziny</InputGroupAddon>
+                        <Input placeholder="Ile godzin spędzasz rocznie w podróży samolotem?" type="number" step="1"
+                            value={transport.annualHoursInAir}
+                            onChange={event => patchTransportUsage({ annualHoursInAir: event.currentTarget.value })} />
+                    </InputGroup>
+                </div>
+                <hr className="m-4" />
+                <h4 className="font-weight-light">Żywność:</h4>
+                <div>
+                    <Translate className="font-weight-light" value="food.howOftenDoYouConsumeFood" />
+                    {this.renderWeeklyMeatConsumptionDropdown()}
+                </div>
+                <hr className="m-4" />
+                <div>
+                    <h6>
+                        <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
+                    </h6>
+                    <EmissionAlertBadge />
+                </div>
+            </React.Fragment>
+        )
+    }
+    render() {
+        const { fossilEmission } = this.props;
+        const refEmissions = { food: 6, transport: 19, result: 25 };
+        const maxEmission = 1.2 * Math.max(refEmissions.result, fossilEmission.result);
 
         return (
             <React.Fragment>
@@ -25,25 +96,13 @@ class _EmissionCalculator extends React.Component<any> {
                     <CardBody>
                         <div className="row">
                             <div className="col-12 col-md-6">
-                                <h6>
-                                    <Translate value="transport.enterWeeklyCarUsage" />
-                                </h6>
-                                <InputGroup>
-                                    <InputGroupAddon addonType="prepend">km</InputGroupAddon>
-                                    <Input placeholder="Car travel per week" type="number" step="1"
-                                        value={transport.carKmPerWeek}
-                                        onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
-                                </InputGroup>
-                                <h6 className="pt-5">
-                                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
-                                </h6>
-                                <EmissionAlertBadge />
+                                {this.renderInputs()}
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
-                                <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
+                                <EmissionsChart emission={fossilEmission} limit={maxEmission} label='Twoja emisja' />
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
-                                <EmissionsChart emission={refEmissions} limit={maxEmission} label='Avg' />
+                                <EmissionsChart emission={refEmissions} limit={maxEmission} label='Średnia' />
                             </div>
                         </div>
                     </CardBody>
@@ -62,6 +121,7 @@ class _EmissionCalculator extends React.Component<any> {
 function mapStateToProps({ fossilUsage, fossilEmission }: AppState) {
     return {
         transport: fossilUsage.transport,
+        food: fossilUsage.food,
         fossilEmission: fossilEmission
     };
 };
@@ -69,7 +129,8 @@ function mapStateToProps({ fossilUsage, fossilEmission }: AppState) {
 function mapDispatchToProps(dispatch: any) {
     return bindActionCreators(
         {
-            patchTransportUsage: FossilUsageActions.PatchTransportUsage
+            patchTransportUsage: FossilUsageActions.PatchTransportUsage,
+            patchFoodUsage: FossilUsageActions.PatchFoodUsage
         },
         dispatch
     );
