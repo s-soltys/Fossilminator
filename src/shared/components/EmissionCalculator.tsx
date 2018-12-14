@@ -8,9 +8,29 @@ import { EmissionAlertBadge } from './EmissionAlertBadge';
 import { EmissionsChart } from './EmissionsChart';
 
 class _EmissionCalculator extends React.Component<any> {
-    render() {
+    renderInputs() {
         const { transport, patchTransportUsage, fossilEmission } = this.props;
 
+        return (
+            <React.Fragment>
+                <h6>
+                    <Translate value="transport.enterWeeklyCarUsage" />
+                </h6>
+                <InputGroup>
+                    <InputGroupAddon addonType="prepend">km</InputGroupAddon>
+                    <Input placeholder="Car travel per week" type="number" step="1"
+                        value={transport.carKmPerWeek}
+                        onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
+                </InputGroup>
+                <h6 className="pt-5">
+                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
+                </h6>
+                <EmissionAlertBadge />
+            </React.Fragment>
+        )
+    }
+    render() {
+        const { fossilEmission } = this.props;
         const refEmissions = { consumption: 6, transport: 19, result: 25 };
         const maxEmission = 1.5 * Math.max(refEmissions.result, fossilEmission.result);
 
@@ -25,19 +45,7 @@ class _EmissionCalculator extends React.Component<any> {
                     <CardBody>
                         <div className="row">
                             <div className="col-12 col-md-6">
-                                <h6>
-                                    <Translate value="transport.enterWeeklyCarUsage" />
-                                </h6>
-                                <InputGroup>
-                                    <InputGroupAddon addonType="prepend">km</InputGroupAddon>
-                                    <Input placeholder="Car travel per week" type="number" step="1"
-                                        value={transport.carKmPerWeek}
-                                        onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
-                                </InputGroup>
-                                <h6 className="pt-5">
-                                    <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
-                                </h6>
-                                <EmissionAlertBadge />
+                                {this.renderInputs()}
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={fossilEmission} limit={maxEmission} label='You' />
