@@ -24,7 +24,7 @@ export class LabelledDropdown extends React.Component<Props, any> {
     render() {
         const { value, valueChange, options } = this.props;
 
-        const currentLabel = (options as any).find(option => option.value === value);
+        const currentLabel = options.find(option => option.value === value);
 
         return (
             <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
