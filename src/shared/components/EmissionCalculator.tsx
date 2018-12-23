@@ -9,27 +9,13 @@ import { EmissionsChart } from './EmissionsChart';
 import { LabelledDropdown } from './LabelledDropdown';
 
 class _EmissionCalculator extends React.Component<any, any> {
-    constructor(props) {
-        super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            dropdownOpen: false
-        };
-    }
-
-    toggle() {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen
-        }));
-    }
-
     renderWeeklyMeatConsumptionDropdown() {
         const { food, patchFoodUsage } = this.props;
 
         const options = [
             { value: 0, label: 'Jestem wegetarianinem/-ką' },
             { value: 1, label: 'Raz w tygodniu' },
+            { value: 2, label: 'Dość rzadko' },
             { value: 7, label: 'Codziennie' }
         ];
 
