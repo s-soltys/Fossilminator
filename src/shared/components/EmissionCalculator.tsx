@@ -1,11 +1,12 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, FossilUsageActions } from '../../state';
 import { EmissionAlertBadge } from './EmissionAlertBadge';
 import { EmissionsChart } from './EmissionsChart';
+import { LabelledDropdown } from './LabelledDropdown';
 
 class _EmissionCalculator extends React.Component<any, any> {
     constructor(props) {
@@ -26,17 +27,18 @@ class _EmissionCalculator extends React.Component<any, any> {
     renderWeeklyMeatConsumptionDropdown() {
         const { food, patchFoodUsage } = this.props;
 
+        const options = [
+            { value: 0, label: 'Jestem wegetarianinem/-ką' },
+            { value: 1, label: 'Raz w tygodniu' },
+            { value: 7, label: 'Codziennie' }
+        ];
+
         return (
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                <DropdownToggle caret>
-                    { food.meatPerWeek } razy w tygodniu
-                </DropdownToggle>
-                <DropdownMenu>
-                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 0 })}>Jestem wegetarianinem/-ką</DropdownItem>
-                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 1 })}>Raz w tygodniu</DropdownItem>
-                    <DropdownItem onClick={_ => patchFoodUsage({ meatPerWeek: 7 })}>Codziennie</DropdownItem>
-                </DropdownMenu>
-            </Dropdown>
+            <LabelledDropdown 
+                value={food.meatPerWeek}
+                valueChange={value => patchFoodUsage({ meatPerWeek: value })}
+                options={options}>
+            </LabelledDropdown>
         );
     }
 
