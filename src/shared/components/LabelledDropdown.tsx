@@ -28,7 +28,7 @@ export class LabelledDropdown extends React.Component<Props, any> {
 
         return (
             <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
-                <DropdownToggle caret>
+                <DropdownToggle color="info" caret>
                     { currentLabel ? currentLabel.label : value }
                 </DropdownToggle>
                 <DropdownMenu>
