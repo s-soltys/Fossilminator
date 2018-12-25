@@ -2,6 +2,15 @@
     "application": {
         "title": "Kalkulator zużycia CO2"
     },
+    "section": {
+        "housing": "Mieszkanie",
+        "waterAndAirConditioning": "Woda, klimatyzacja",
+        "privateTransport": "Transport osobowy",
+        "publicTransport": "Transport publiczny",
+        "food": "Żywność",
+        "consumption": "Konsumpcja",
+        "emissionResults": "Twoje wyniki"
+    },
     "actions": {
         "calculateUsage": "Oblicz"
     },
