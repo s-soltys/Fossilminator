@@ -1,11 +1,11 @@
-import { FossilUsageActions } from '../actions';
-import { InitialAppState, FossilUsageState } from '../constants';
+import { EmissionInputActions } from '../actions';
+import { InitialAppState, EmissionInputState } from '../constants';
 
-export const FossilUsageReducer = (state: FossilUsageState = InitialAppState.fossilUsage, action: FossilUsageActions.ActionsTypes): FossilUsageState => {
+export const emissionInputReducer = (state: EmissionInputState = InitialAppState.emissionInput, action: EmissionInputActions.ActionsTypes): EmissionInputState => {
     switch (action.type) {
-        case FossilUsageActions.PatchTransportUsageType:
+        case EmissionInputActions.UpdatePublicTransportType:
             return { ...state, transport: { ...state.transport, ...action.payload } };
-        case FossilUsageActions.PatchFoodUsageType:
+        case EmissionInputActions.UpdateFoodType:
             return { ...state, food: { ...state.food, ...action.payload } };
         default:
             return state;

@@ -1,10 +1,10 @@
 import { all } from 'redux-saga/effects';
 import { NavigationSagas } from './navigation.sagas';
-import { FossilEmissionSagas } from './fossil-emission.sagas';
+import { EmissionResultSagas } from './emission-result.sagas';
 
 export function* RootSaga() {
     yield all([
         ...NavigationSagas,
-        ...FossilEmissionSagas
+        ...EmissionResultSagas
     ]);
 }

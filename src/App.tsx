@@ -4,7 +4,7 @@ import { I18n } from 'react-i18nify';
 
 import './style/style.scss';
 
-import { NavigationHeader } from './navigation/components/NavigationHeader';
+import { NavigationHeader } from './core/components/NavigationHeader';
 import { Page } from './core/components/Page';
 import { WelcomePage } from './core/components/WelcomePage';
 

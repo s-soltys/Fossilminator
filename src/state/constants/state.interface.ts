@@ -1,20 +1,25 @@
-import { FossilUsageParams, FossilUsageResult } from "../../fossil-usage";
+import { EmissionInput, EmissionResult } from "../../emission-calculator";
 
 export enum Section {
-    None = 'NONE',
-    Welcome = 'WELCOME',
-    Transport = 'TRANSPORT'
+    Country = 'COUNTRY',
+    Housing = 'HOUSING',
+    Water = 'WATER',
+    PublicTransport = 'PUBLIC_TRANSPORT',
+    PrivateTransport = 'PRIVATE_TRANSPORT',
+    Food = 'FOOD',
+    Consumption = 'CONSUMPTION',
+    EmissionResults = 'EMISSION_RESULTS'
 }
 
 export interface NavigationState {
     section: Section;
 }
 
-export type FossilUsageState = FossilUsageParams;
-export type FossilEmissionState = FossilUsageResult;
+export type EmissionInputState = EmissionInput;
+export type EmissionResultState = EmissionResult;
 
 export interface AppState {
     navigation: NavigationState;
-    fossilUsage: FossilUsageState;
-    fossilEmission: FossilEmissionState;
+    emissionInput: EmissionInputState;
+    emissionResult: EmissionResultState;
 }
