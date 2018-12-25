@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { TabContent, TabPane } from "reactstrap";
 import { bindActionCreators } from "redux";
 import { AppState, Section } from "../../state";
+import { EmissionCalculator } from "../../emission-forms";
 
 export class _SectionFormContainer extends React.Component<any> {
     render() {
@@ -11,13 +12,13 @@ export class _SectionFormContainer extends React.Component<any> {
         return (
             <TabContent activeTab={section}>
                 <TabPane tabId={Section.Housing}>
-                    <h1>Housing</h1>
+                    <EmissionCalculator />
                 </TabPane>
                 <TabPane tabId={Section.WaterAndAirConditioning}>
-                    <h1>WaterAndAirConditioning</h1>
+                    <EmissionCalculator />
                 </TabPane>
                 <TabPane tabId={Section.PrivateTransport}>
-                    <h1>PrivateTransport</h1>
+                    <EmissionCalculator />
                 </TabPane>
             </TabContent>
         );
