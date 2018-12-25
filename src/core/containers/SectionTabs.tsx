@@ -15,8 +15,8 @@ const SECTION_ITEMS = [
     { section: Section.PrivateTransport, label: "section.privateTransport" },
     { section: Section.PublicTransport, label: "section.publicTransport" },
     { section: Section.Food, label: "section.food" },
-    { section: Section.Consumption, label: "section.consumption" },
-    { section: Section.EmissionResults, label: "section.emissionResults" }
+    { section: Section.Consumption, label: "section.consumption" }
+    // { section: Section.EmissionResults, label: "section.emissionResults" }
 ];
 
 export class _SectionTabs extends React.Component<any> {
