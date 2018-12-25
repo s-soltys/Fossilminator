@@ -1,4 +1,4 @@
-import { FossilUsageParams, FossilUsageResult } from "../../emission-calculator";
+import { EmissionInput, EmissionResult } from "../../emission-calculator";
 
 export enum Section {
     None = 'NONE',
@@ -10,8 +10,8 @@ export interface NavigationState {
     section: Section;
 }
 
-export type FossilUsageState = FossilUsageParams;
-export type FossilEmissionState = FossilUsageResult;
+export type FossilUsageState = EmissionInput;
+export type FossilEmissionState = EmissionResult;
 
 export interface AppState {
     navigation: NavigationState;

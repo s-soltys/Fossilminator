@@ -1,5 +1,5 @@
-import { FossilUsageParams } from "../input/emission-input.interface";
-import { FossilUsageResult } from "../result/emission-result.interface";
+import { EmissionInput } from "../input/emission-input.interface";
+import { EmissionResult } from "../result/emission-result.interface";
 
 const WEEKS_PER_YEAR = 52;
 
@@ -9,7 +9,7 @@ const EmissionConversion = {
     perAnnualHourInAir: 0.3,
 }
 
-export function calculateFossilEmissions(input: FossilUsageParams): FossilUsageResult {
+export function calculateFossilEmissions(input: EmissionInput): EmissionResult {
     const food = input.food.meatPerWeek * EmissionConversion.perMeatDailyMeatConsumption;
 
     const transport = input.transport.carKmPerWeek * WEEKS_PER_YEAR * EmissionConversion.perKmOfCarTravel

@@ -1,13 +1,13 @@
-export interface FossilUsageTransport {
+export interface EmissionInputTransport {
     carKmPerWeek: number;
     annualHoursInAir: number;
 }
 
-export interface FossilUsageFood {
+export interface EmissionInputFood {
     meatPerWeek: number;
 }
 
-export interface FossilUsageParams {
-    transport: FossilUsageTransport;
-    food: FossilUsageFood;
+export interface EmissionInput {
+    transport: EmissionInputTransport;
+    food: EmissionInputFood;
 }
