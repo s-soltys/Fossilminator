@@ -67,31 +67,28 @@ class _EmissionCalculator extends React.Component<any> {
 
     render() {
         return (
-            <>
-                <Card>
-                    <CardHeader>
-                        <h4 className="font-weight-light">
-                            <Translate value="application.title" />
-                        </h4>
-                    </CardHeader>
-                    <CardBody>
-                        <div className="row">
-                            <div className="col-12 col-md-6">
-                                {this.renderSectionA()}
-                            </div>
-                            <div className="col-12 col-md-6">
-                                {this.renderSectionB()}
-                            </div>
+            <Card>
+                <CardHeader>
+                    <h4 className="font-weight-light">
+                        <Translate value="application.title" />
+                    </h4>
+                </CardHeader>
+                <CardBody>
+                    <div className="row">
+                        <div className="col-12 col-md-6">
+                            {this.renderSectionA()}
                         </div>
-                    </CardBody>
-                    <CardFooter>
-                        <div className="font-weight-light d-flex justify-content-between">
-                            <span>Wersja demo zmodernizowanego kalkulatora CO2</span>
-                            <span>Więcej na <a href="https://ziemianarozdrozu.pl/">ziemianarozdrozu.pl</a></span>
+                        <div className="col-12 col-md-6">
+                            {this.renderSectionB()}
                         </div>
-                    </CardFooter>
-                </Card>
-            </>
+                    </div>
+                </CardBody>
+                <CardFooter>
+                    <div className="font-weight-light d-flex justify-content-between">
+                        <span>Footer...</span>
+                    </div>
+                </CardFooter>
+            </Card>
         );
     }
 }
