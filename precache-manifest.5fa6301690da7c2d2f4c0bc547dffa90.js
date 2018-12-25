@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "46c3da11fe892a13d1cf",
+    "revision": "6e6fd38dde29a036b7a4",
     "url": "/Fossilminator/static/css/main.2ed0d591.chunk.css"
   },
   {
-    "revision": "46c3da11fe892a13d1cf",
-    "url": "/Fossilminator/static/js/main.46c3da11.chunk.js"
+    "revision": "6e6fd38dde29a036b7a4",
+    "url": "/Fossilminator/static/js/main.6e6fd38d.chunk.js"
   },
   {
     "revision": "03c6e122505827210226",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Fossilminator/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "fe52851a2da5777e9e4142e308d9c4ff",
+    "revision": "0adad754e9e1ece9a5ebd84fa1ce1dff",
     "url": "/Fossilminator/index.html"
   }
 ];
