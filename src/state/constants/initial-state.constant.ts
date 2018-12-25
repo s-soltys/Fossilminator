@@ -17,5 +17,5 @@ export const InitialAppState: AppState = {
         food: 0,
         transport: 0,
         result: 0
-    }
+    } as any
 }
