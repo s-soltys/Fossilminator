@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { EmissionsChart } from "../../emission-chart/components/EmissionsChart";
 import { AppState } from "../../state";
+import { EmissionDetails } from "../components";
 
 class _EmissionChartContainer extends React.Component<any, any> {
     render() {
@@ -13,6 +14,7 @@ class _EmissionChartContainer extends React.Component<any, any> {
 
         return (
             <div className="d-flex justify-content-around">
+                <EmissionDetails />
                 <EmissionsChart
                     emission={emissionResult}
                     limit={maxEmission}

@@ -12,13 +12,13 @@ export class _SectionFormContainer extends React.Component<any> {
         return (
             <TabContent activeTab={section}>
                 <TabPane tabId={Section.Housing}>
-                    <EmissionCalculator />
+                    { section === Section.Housing ? <EmissionCalculator /> : null }
                 </TabPane>
                 <TabPane tabId={Section.WaterAndAirConditioning}>
-                    <EmissionCalculator />
+                    { section === Section.WaterAndAirConditioning ? <EmissionCalculator /> : null }
                 </TabPane>
                 <TabPane tabId={Section.PrivateTransport}>
-                    <EmissionCalculator />
+                    { section === Section.PrivateTransport ? <EmissionCalculator /> : null }
                 </TabPane>
             </TabContent>
         );
