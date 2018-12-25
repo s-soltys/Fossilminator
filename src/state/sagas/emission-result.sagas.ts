@@ -1,14 +1,14 @@
-import { takeEvery, put, select } from 'redux-saga/effects';
+import { takeEvery, put, select, call } from 'redux-saga/effects';
 import { EmissionResultActions, EmissionInputActions } from '../actions';
 import { AppState } from '../constants';
 import { calculateEmissionResults } from '../../emission-calculator';
 
 export const calculateEmissionResultSaga = function* () {
-    const usage = yield select<AppState>(state => state.emissionInput);
+    const emissionInput = yield select<AppState>(state => state.emissionInput);
 
-    const emission = calculateEmissionResults(usage);
+    const emissionResult = yield call(calculateEmissionResults, emissionInput);
 
-    yield put(EmissionResultActions.SetEmissionsResult(emission));
+    yield put(EmissionResultActions.SetEmissionsResult(emissionResult));
 };
 
 export const EmissionResultSagas = [

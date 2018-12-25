@@ -1,11 +1,11 @@
 import { createAction } from '../util';
 import { EmissionResultState } from '../constants';
 
-export type ActionsTypes = calculateEmissionResultsAction | SetEmissionsResultAction;
+export type ActionsTypes = CalculateEmissionResultsAction | SetEmissionsResultAction;
 
-export const calculateEmissionResultsType = '[EMISSION_RESULT] calculateEmissionResults';
-export type calculateEmissionResultsAction = ReturnType<typeof calculateEmissionResults>;
-export const calculateEmissionResults = () => createAction(calculateEmissionResultsType);
+export const CalculateEmissionResultsType = '[EMISSION_RESULT] CalculateEmissionResults';
+export type CalculateEmissionResultsAction = ReturnType<typeof CalculateEmissionResults>;
+export const CalculateEmissionResults = () => createAction(CalculateEmissionResultsType);
 
 export const SetEmissionsResultType = '[EMISSION_RESULT] SetEmissionsResult';
 export type SetEmissionsResultAction = ReturnType<typeof SetEmissionsResult>;
