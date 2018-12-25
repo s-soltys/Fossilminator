@@ -5,9 +5,7 @@ import { Card, CardBody, CardFooter, CardHeader } from "reactstrap";
 export const EmissionFormWrapper = ({ title, footer, children }: any) => (
     <Card>
         <CardHeader>
-            <h4 className="font-weight-light">
-                <Translate value={title} />
-            </h4>
+            <Translate className="font-weight-light" value={title} />
         </CardHeader>
         <CardBody>{children}</CardBody>
         <CardFooter>

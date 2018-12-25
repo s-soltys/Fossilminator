@@ -66,7 +66,7 @@ class _EmissionCalculator extends React.Component<any> {
 
     render() {
         return (
-            <EmissionFormWrapper title="XXX">
+            <EmissionFormWrapper title="Housing">
                 <div className="row">
                     <div className="col-12 col-md-6">
                         {this.renderSectionA()}
