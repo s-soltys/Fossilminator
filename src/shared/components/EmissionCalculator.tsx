@@ -3,14 +3,14 @@ import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
 import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import { bindActionCreators } from 'redux';
-import { AppState, FossilUsageActions } from '../../state';
+import { AppState, EmissionInputActions } from '../../state';
 import { EmissionAlertBadge } from './EmissionAlertBadge';
 import { EmissionsChart } from './EmissionsChart';
 import { LabelledDropdown } from './LabelledDropdown';
 
 class _EmissionCalculator extends React.Component<any, any> {
     renderWeeklyMeatConsumptionDropdown() {
-        const { food, patchFoodUsage } = this.props;
+        const { food, UpdateFood } = this.props;
 
         const options = [
             { value: 0, label: 'Jestem wegetarianinem/-ką' },
@@ -22,14 +22,14 @@ class _EmissionCalculator extends React.Component<any, any> {
         return (
             <LabelledDropdown 
                 value={food.meatPerWeek}
-                valueChange={value => patchFoodUsage({ meatPerWeek: value })}
+                valueChange={value => UpdateFood({ meatPerWeek: value })}
                 options={options}>
             </LabelledDropdown>
         );
     }
 
     renderInputs() {
-        const { transport, patchTransportUsage, fossilEmission } = this.props;
+        const { transport, UpdatePublicTransport, fossilEmission } = this.props;
 
         return (
             <React.Fragment>
@@ -40,7 +40,7 @@ class _EmissionCalculator extends React.Component<any, any> {
                         <InputGroupAddon addonType="prepend">km</InputGroupAddon>
                         <Input placeholder="Ile km podróżujesz samochodem tygodniowo" type="number" step="1"
                             value={transport.carKmPerWeek}
-                            onChange={event => patchTransportUsage({ carKmPerWeek: event.currentTarget.value })} />
+                            onChange={event => UpdatePublicTransport({ carKmPerWeek: event.currentTarget.value })} />
                     </InputGroup>
                 </div>
                 <div className="pt-3">
@@ -49,7 +49,7 @@ class _EmissionCalculator extends React.Component<any, any> {
                         <InputGroupAddon addonType="prepend">godziny</InputGroupAddon>
                         <Input placeholder="Ile godzin spędzasz rocznie w podróży samolotem?" type="number" step="1"
                             value={transport.annualHoursInAir}
-                            onChange={event => patchTransportUsage({ annualHoursInAir: event.currentTarget.value })} />
+                            onChange={event => UpdatePublicTransport({ annualHoursInAir: event.currentTarget.value })} />
                     </InputGroup>
                 </div>
                 <hr className="m-4" />
@@ -117,8 +117,8 @@ function mapStateToProps({ fossilUsage, fossilEmission }: AppState) {
 function mapDispatchToProps(dispatch: any) {
     return bindActionCreators(
         {
-            patchTransportUsage: FossilUsageActions.PatchTransportUsage,
-            patchFoodUsage: FossilUsageActions.PatchFoodUsage
+            UpdatePublicTransport: EmissionInputActions.UpdatePublicTransport,
+            UpdateFood: EmissionInputActions.UpdateFood
         },
         dispatch
     );

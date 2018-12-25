@@ -1,9 +1,9 @@
 import * as NavigationActions from './navigation.actions';
-import * as FossilUsageActions from './fossil-usage.actions';
-import * as FossilEmissionActions from './fossil-emission.actions';
+import * as EmissionInputActions from './emission-input.actions';
+import * as EmissionResultActions from './emission-result.actions';
 
 export {
     NavigationActions,
-    FossilUsageActions,
-    FossilEmissionActions
+    EmissionInputActions,
+    EmissionResultActions
 };
