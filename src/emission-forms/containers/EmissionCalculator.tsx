@@ -1,10 +1,9 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardFooter, CardHeader } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
-import { LabelledInput, LabelledDropdown } from '../components';
+import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
 
 class _EmissionCalculator extends React.Component<any> {
     renderSectionA() {
@@ -67,33 +66,21 @@ class _EmissionCalculator extends React.Component<any> {
 
     render() {
         return (
-            <Card>
-                <CardHeader>
-                    <h4 className="font-weight-light">
-                        <Translate value="application.title" />
-                    </h4>
-                </CardHeader>
-                <CardBody>
-                    <div className="row">
-                        <div className="col-12 col-md-6">
-                            {this.renderSectionA()}
-                        </div>
-                        <div className="col-12 col-md-6">
-                            {this.renderSectionB()}
-                        </div>
+            <EmissionFormWrapper title="XXX">
+                <div className="row">
+                    <div className="col-12 col-md-6">
+                        {this.renderSectionA()}
                     </div>
-                </CardBody>
-                <CardFooter>
-                    <div className="font-weight-light d-flex justify-content-between">
-                        <span>Footer...</span>
+                    <div className="col-12 col-md-6">
+                        {this.renderSectionB()}
                     </div>
-                </CardFooter>
-            </Card>
+                </div>
+            </EmissionFormWrapper>
         );
     }
 }
 
-function mapStateToProps({ emissionInput, emissionResult }: AppState) {
+function mapStateToProps({ emissionInput }: AppState) {
     return {
         transport: emissionInput.transport,
         food: emissionInput.food
