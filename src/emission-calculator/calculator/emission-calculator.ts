@@ -1,5 +1,5 @@
-import { EmissionInput } from "../input/emission-input.interface";
-import { EmissionResult } from "../result/emission-result.interface";
+import { EmissionInput } from "../types/input";
+import { EmissionResult } from "../types/result";
 import { WeeksPerYear } from "../constants";
 import { FoodEmissionParams, TransportEmissionParams } from "../constants";
 
