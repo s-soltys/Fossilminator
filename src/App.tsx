@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { I18n } from 'react-i18nify';
+import { SectionTabs, SectionFormContainer, ResultViewContainer, NavigationHeader } from './core';
 
 import './style/style.scss';
-
-import { NavigationHeader } from './core/components/NavigationHeader';
-import { Page } from './core/components/Page';
 
 class App extends Component {
     componentDidMount() {
@@ -16,7 +14,11 @@ class App extends Component {
         return (
             <React.Fragment>
                 <NavigationHeader />
-                <Page></Page>
+                <main role="main" className="container">
+                    <ResultViewContainer />
+                    <SectionTabs />
+                    <SectionFormContainer />
+                </main>
             </React.Fragment>
         );
     }
