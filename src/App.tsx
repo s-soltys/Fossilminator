@@ -1,26 +1,32 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { I18n } from 'react-i18nify';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { I18n } from "react-i18nify";
+import {
+    SectionTabs,
+    SectionFormContainer,
+    ResultViewContainer,
+    NavigationHeader,
+    NavigationFooter
+} from "./core";
 
-import './style/style.scss';
-
-import { NavigationHeader } from './core/components/NavigationHeader';
-import { Page } from './core/components/Page';
-import { WelcomePage } from './core/components/WelcomePage';
+import "./style/style.scss";
 
 class App extends Component {
     componentDidMount() {
-        document.title = I18n.t('application.title');
+        document.title = I18n.t("application.title");
     }
 
     render() {
         return (
-            <React.Fragment>
+            <>
                 <NavigationHeader />
-                <Page>
-                    <WelcomePage />
-                </Page>
-            </React.Fragment>
+                <main role="main" className="container">
+                    <ResultViewContainer />
+                    <SectionTabs />
+                    <SectionFormContainer />
+                </main>
+                <NavigationFooter />
+            </>
         );
     }
 }

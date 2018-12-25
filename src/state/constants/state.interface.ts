@@ -3,9 +3,9 @@ import { EmissionInput, EmissionResult } from "../../emission-calculator";
 export enum Section {
     Country = 'COUNTRY',
     Housing = 'HOUSING',
-    Water = 'WATER',
-    PublicTransport = 'PUBLIC_TRANSPORT',
+    WaterAndAirConditioning = 'WATER_AND_AIR_CONDITIONING',
     PrivateTransport = 'PRIVATE_TRANSPORT',
+    PublicTransport = 'PUBLIC_TRANSPORT',
     Food = 'FOOD',
     Consumption = 'CONSUMPTION',
     EmissionResults = 'EMISSION_RESULTS'
