@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
-import { EmissionAlertBadge } from './EmissionAlertBadge';
-import { EmissionsChart } from './EmissionsChart';
-import { LabelledDropdown } from './LabelledDropdown';
+import { EmissionAlertBadge } from '../../shared/components/EmissionAlertBadge';
+import { EmissionsChart } from '../../shared/components/EmissionsChart';
+import { LabelledDropdown } from '../components/LabelledDropdown';
 
 class _EmissionCalculator extends React.Component<any, any> {
     renderWeeklyMeatConsumptionDropdown() {
