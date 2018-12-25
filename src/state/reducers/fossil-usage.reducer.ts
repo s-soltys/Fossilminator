@@ -1,7 +1,7 @@
 import { FossilUsageActions } from '../actions';
-import { InitialAppState, FossilUsageState } from '../constants';
+import { InitialAppState, EmissionInputState } from '../constants';
 
-export const FossilUsageReducer = (state: FossilUsageState = InitialAppState.fossilUsage, action: FossilUsageActions.ActionsTypes): FossilUsageState => {
+export const FossilUsageReducer = (state: EmissionInputState = InitialAppState.fossilUsage, action: FossilUsageActions.ActionsTypes): EmissionInputState => {
     switch (action.type) {
         case FossilUsageActions.PatchTransportUsageType:
             return { ...state, transport: { ...state.transport, ...action.payload } };

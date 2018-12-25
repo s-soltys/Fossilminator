@@ -1,5 +1,5 @@
 import { createAction } from '../util';
-import { FossilEmissionState } from '../constants';
+import { EmissionResultState } from '../constants';
 
 export type ActionsTypes = ComputeFossilEmissionsAction | SetFossilEmissionsResultAction;
 
@@ -9,4 +9,4 @@ export const ComputeFossilEmissions = () => createAction(ComputeFossilEmissionsT
 
 export const SetFossilEmissionsResultType = '[FOSSIL_EMISSIONS] SetFossilEmissionsResult';
 export type SetFossilEmissionsResultAction = ReturnType<typeof SetFossilEmissionsResult>;
-export const SetFossilEmissionsResult = (emissions: FossilEmissionState) => createAction(SetFossilEmissionsResultType, emissions);
+export const SetFossilEmissionsResult = (emissions: EmissionResultState) => createAction(SetFossilEmissionsResultType, emissions);

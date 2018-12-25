@@ -1,7 +1,7 @@
 import { FossilEmissionActions } from '../actions';
-import { InitialAppState, FossilEmissionState } from '../constants';
+import { InitialAppState, EmissionResultState } from '../constants';
 
-export const FossilEmissionReducer = (state: FossilEmissionState = InitialAppState.fossilEmission, action: FossilEmissionActions.ActionsTypes): FossilEmissionState => {
+export const FossilEmissionReducer = (state: EmissionResultState = InitialAppState.fossilEmission, action: FossilEmissionActions.ActionsTypes): EmissionResultState => {
     switch (action.type) {
         case FossilEmissionActions.SetFossilEmissionsResultType:
             return { ...state, ...action.payload };
