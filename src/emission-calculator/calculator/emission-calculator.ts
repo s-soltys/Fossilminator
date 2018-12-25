@@ -1,19 +1,13 @@
 import { EmissionInput } from "../input/emission-input.interface";
 import { EmissionResult } from "../result/emission-result.interface";
-
-const WEEKS_PER_YEAR = 52;
-
-const EmissionConversion = {
-    perMeatDailyMeatConsumption: 2,
-    perKmOfCarTravel: 0.001,
-    perAnnualHourInAir: 0.3,
-}
+import { WeeksPerYear } from "../constants";
+import { FoodEmissionParams, TransportEmissionParams } from "../constants";
 
 export function calculateFossilEmissions(input: EmissionInput): EmissionResult {
-    const food = input.food.meatPerWeek * EmissionConversion.perMeatDailyMeatConsumption;
+    const food = input.food.meatPerWeek * FoodEmissionParams.perMeatDailyMeatConsumption;
 
-    const transport = input.transport.carKmPerWeek * WEEKS_PER_YEAR * EmissionConversion.perKmOfCarTravel
-        + input.transport.annualHoursInAir * EmissionConversion.perAnnualHourInAir;
+    const transport = input.transport.carKmPerWeek * WeeksPerYear * TransportEmissionParams.perKmOfCarTravel
+        + input.transport.annualHoursInAir * TransportEmissionParams.perAnnualHourInAir;
 
     return {
         food,
