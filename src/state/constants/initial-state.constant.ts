@@ -4,7 +4,7 @@ export const InitialAppState: AppState = {
     navigation: {
         section: Section.Housing
     },
-    fossilUsage: {
+    emissionInput: {
         transport: {
             carKmPerWeek: 0,
             annualHoursInAir: 0
@@ -13,7 +13,7 @@ export const InitialAppState: AppState = {
             meatPerWeek: 1
         }
     },
-    fossilEmission: {
+    emissionResult: {
         food: 0,
         transport: 0,
         result: 0

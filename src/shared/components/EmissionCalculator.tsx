@@ -29,7 +29,7 @@ class _EmissionCalculator extends React.Component<any, any> {
     }
 
     renderInputs() {
-        const { transport, UpdatePublicTransport, fossilEmission } = this.props;
+        const { transport, UpdatePublicTransport, emissionResult } = this.props;
 
         return (
             <React.Fragment>
@@ -61,7 +61,7 @@ class _EmissionCalculator extends React.Component<any, any> {
                 <hr className="m-4" />
                 <div>
                     <h6>
-                        <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(fossilEmission.result)} />
+                        <Translate value="emissions.yourAnnualEmissionsAre" emissions={Math.round(emissionResult.result)} />
                     </h6>
                     <EmissionAlertBadge />
                 </div>
@@ -69,9 +69,9 @@ class _EmissionCalculator extends React.Component<any, any> {
         )
     }
     render() {
-        const { fossilEmission } = this.props;
+        const { emissionResult } = this.props;
         const refEmissions = { food: 6, transport: 19, result: 25 };
-        const maxEmission = 1.2 * Math.max(refEmissions.result, fossilEmission.result);
+        const maxEmission = 1.2 * Math.max(refEmissions.result, emissionResult.result);
 
         return (
             <React.Fragment>
@@ -87,7 +87,7 @@ class _EmissionCalculator extends React.Component<any, any> {
                                 {this.renderInputs()}
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
-                                <EmissionsChart emission={fossilEmission} limit={maxEmission} label='Twoja emisja' />
+                                <EmissionsChart emission={emissionResult} limit={maxEmission} label='Twoja emisja' />
                             </div>
                             <div className="col-6 col-md-3 d-flex flex-column align-items-center">
                                 <EmissionsChart emission={refEmissions} limit={maxEmission} label='Średnia' />
@@ -106,11 +106,11 @@ class _EmissionCalculator extends React.Component<any, any> {
     }
 }
 
-function mapStateToProps({ fossilUsage, fossilEmission }: AppState) {
+function mapStateToProps({ emissionInput, emissionResult }: AppState) {
     return {
-        transport: fossilUsage.transport,
-        food: fossilUsage.food,
-        fossilEmission: fossilEmission
+        transport: emissionInput.transport,
+        food: emissionInput.food,
+        emissionResult: emissionResult
     };
 };
 

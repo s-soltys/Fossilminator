@@ -20,6 +20,6 @@ export type EmissionResultState = EmissionResult;
 
 export interface AppState {
     navigation: NavigationState;
-    fossilUsage: EmissionInputState;
-    fossilEmission: EmissionResultState;
+    emissionInput: EmissionInputState;
+    emissionResult: EmissionResultState;
 }

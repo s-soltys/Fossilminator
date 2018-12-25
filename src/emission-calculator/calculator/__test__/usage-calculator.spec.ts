@@ -1,8 +1,8 @@
-import { calculateFossilEmissions } from "../emission-calculator";
+import { calculateEmissionResults } from "../emission-calculator";
 
 describe('Usage calculator should', () => {
     xit('calculate usage', () => {
-        expect(calculateFossilEmissions({
+        expect(calculateEmissionResults({
             transport: {
                 carKmPerWeek: 300,
                 annualHoursInAir: 15

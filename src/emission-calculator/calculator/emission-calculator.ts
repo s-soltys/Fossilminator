@@ -3,7 +3,7 @@ import { EmissionResult } from "../result/emission-result.interface";
 import { WeeksPerYear } from "../constants";
 import { FoodEmissionParams, TransportEmissionParams } from "../constants";
 
-export function calculateFossilEmissions(input: EmissionInput): EmissionResult {
+export function calculateEmissionResults(input: EmissionInput): EmissionResult {
     const food = input.food.meatPerWeek * FoodEmissionParams.perMeatDailyMeatConsumption;
 
     const transport = input.transport.carKmPerWeek * WeeksPerYear * TransportEmissionParams.perKmOfCarTravel
