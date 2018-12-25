@@ -1,8 +1,4 @@
 export interface EmissionResult {
-    food: number;
-    transport: number;
-    result: number;
-
     housingConstruction: number;
     housingHeating: number;
     warmWater: number;
