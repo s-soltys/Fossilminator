@@ -10,8 +10,21 @@ export function calculateEmissionResults(input: EmissionInput): EmissionResult {
         + input.transport.annualHoursInAir * TransportEmissionParams.perAnnualHourInAir;
 
     return {
-        food,
-        transport,
-        result: food + transport
+        housingConstruction: 0.5,
+        housingHeating: 2.0,
+        warmWater: 1.0,
+        airConditioning: 0.1,
+        fuelForTransport: 1.0,
+        carConstuction: 0.2,
+        publicTransport: transport,
+        airTravel: 6.0,
+
+        foodProduction: food,
+        consumption: 1.0,
+        electricity: 0.6,
+        deforestation: 0.2,
+        commonServices: 3.1,
+
+        totalAnnualEmission: 10 + food + transport
     };
 };

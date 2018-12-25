@@ -8,3 +8,21 @@ main {
 .chart-segment {
   transition: height 0.5s ease-in-out;
 }
+
+
+[data-housingconstruction] { background-color: #69D2E7; }
+[data-housingheating] { background-color: #A7DBD8; }
+[data-warmwater] { background-color: #E0E4CC; }
+[data-airconditioning] { background-color: #F38630; }
+[data-fuelfortransport] { background-color: #FA6900; }
+[data-carconstuction] { background-color: #FE4365; }
+[data-publictransport] { background-color: #0ABFBC; }
+[data-airtravel] { background-color: #F9CDAD; }
+
+[data-foodProduction] { background-color: #FC354C; }
+[data-consumption] { background-color: #83AF9B; }
+[data-electricity] { background-color: #D1F2A5; }
+[data-deforestation] { background-color: #EFFAB4; }
+[data-commonServices] { background-color: #FFC48C; }
+
+[data-totalAnnualEmission] { background-color: #FF9F80; }

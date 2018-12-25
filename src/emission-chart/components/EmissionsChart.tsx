@@ -1,15 +1,40 @@
-import React from 'react';
+import React from "react";
+import { TOTAL_FIELD, CHART_FIELDS, chartFieldAttributes } from "../util";
 
-export const EmissionsChart = ({ emission, limit, label }) => {
-    const transportPerc = emission.transport / limit * 100;
-    const foodPerc = emission.food / limit * 100;
+export class EmissionsChart extends React.Component<any> {
+    renderChartSection(field) {
+        const { emission, limit } = this.props;
 
-    return (
-        <div className="d-flex flex-column justify-content-end align-items-center" style={{ height: 300, width: 80 }}>
-            <small className="text-center font-weight-light">{ label }</small>
-            <small className="font-weight-bold">{Math.round(emission.result)} ton CO<sub>2</sub></small>
-            <div className="chart-segment" style={{ height: `${transportPerc}%`, width: '100%', backgroundColor: 'MediumPurple' }}></div>
-            <div className="chart-segment" style={{ height: `${foodPerc}%`, width: '100%', backgroundColor: 'MediumBlue' }}></div>
-        </div>
-    );
+        const attributes = chartFieldAttributes(field);
+
+        const heightPercentage = ((emission[field] || 0) / limit) * 100;
+
+        return (
+            <div
+                className="chart-segment"
+                style={{ height: `${heightPercentage}%`, width: "100%" }}
+                {...attributes}
+            />
+        );
+    }
+
+    render() {
+        const { emission, label } = this.props;
+
+        const totalResult = emission[TOTAL_FIELD] || 0;
+
+        return (
+            <div className="d-flex flex-column justify-content-end align-items-center">
+                <small className="text-center font-weight-light">{label}</small>
+                <small className="font-weight-bold">
+                    {totalResult.toFixed(2)} ton CO<sub>2</sub>
+                </small>
+                {CHART_FIELDS.map(field => (
+                    <React.Fragment key={field}>
+                        {this.renderChartSection(field)}
+                    </React.Fragment>
+                ))}
+            </div>
+        );
+    }
 }

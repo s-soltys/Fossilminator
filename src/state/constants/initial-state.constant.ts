@@ -14,8 +14,19 @@ export const InitialAppState: AppState = {
         }
     },
     emissionResult: {
-        food: 0,
-        transport: 0,
-        result: 0
-    } as any
+        housingConstruction: 0,
+        housingHeating: 0,
+        warmWater: 0,
+        airConditioning: 0,
+        fuelForTransport: 0,
+        carConstuction: 0,
+        publicTransport: 0,
+        airTravel: 0,
+        foodProduction: 0,
+        consumption: 0,
+        electricity: 0,
+        deforestation: 0,
+        commonServices: 0,
+        totalAnnualEmission: 0
+    }
 }
