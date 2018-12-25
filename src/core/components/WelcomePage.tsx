@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmissionCalculator } from '../../emission-input-forms/containers/EmissionCalculator';
+import { EmissionCalculator } from '../../emission-forms/containers/EmissionCalculator';
 
 export const WelcomePage = () => (
     <div className="row">
