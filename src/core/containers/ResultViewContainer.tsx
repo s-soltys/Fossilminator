@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { EmissionChartContainer } from "../../emission-chart";
 import { EmissionAlertBadge } from "../../shared/components/EmissionAlertBadge";
 import { AppState } from "../../state";
+import { SectionVisualisationContainer } from "./SectionVisualisationContainer";
 
 class _ResultViewContainer extends React.Component<any, any> {
     render() {
@@ -17,7 +18,7 @@ class _ResultViewContainer extends React.Component<any, any> {
                     <EmissionAlertBadge />
                 </div>
                 <div className="col-12 col-md-6">
-                    <h2>IMAGE</h2>
+                    <SectionVisualisationContainer />
                 </div>
             </div>
         );
