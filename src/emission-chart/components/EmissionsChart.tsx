@@ -1,29 +1,11 @@
 import React from "react";
-
-const FIELDS = [
-    "housingConstruction",
-    "housingHeating",
-    "warmWater",
-    "airConditioning",
-    "fuelForTransport",
-    "carConstuction",
-    "publicTransport",
-    "airTravel",
-    "foodProduction",
-    "consumption",
-    "electricity",
-    "deforestation",
-    "commonServices"
-];
-
-const TOTAL_FIELD = "totalAnnualEmission";
+import { TOTAL_FIELD, CHART_FIELDS, chartFieldAttributes } from "../util";
 
 export class EmissionsChart extends React.Component<any> {
     renderChartSection(field) {
         const { emission, limit } = this.props;
 
-        const fieldName = `data-${field}`.toLowerCase();
-        const attributes = { [fieldName]: true };
+        const attributes = chartFieldAttributes(field);
 
         const heightPercentage = ((emission[field] || 0) / limit) * 100;
 
@@ -47,7 +29,7 @@ export class EmissionsChart extends React.Component<any> {
                 <small className="font-weight-bold">
                     {totalResult.toFixed(2)} ton CO<sub>2</sub>
                 </small>
-                {FIELDS.map(field => (
+                {CHART_FIELDS.map(field => (
                     <React.Fragment key={field}>
                         {this.renderChartSection(field)}
                     </React.Fragment>

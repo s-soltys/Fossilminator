@@ -1,28 +1,10 @@
 import React from "react";
 import { Translate } from "react-i18nify";
-
-const FIELDS = [
-    "housingConstruction",
-    "housingHeating",
-    "warmWater",
-    "airConditioning",
-    "fuelForTransport",
-    "carConstuction",
-    "publicTransport",
-    "airTravel",
-    "foodProduction",
-    "consumption",
-    "electricity",
-    "deforestation",
-    "commonServices"
-];
-
-const TOTAL_FIELD = "totalAnnualEmission";
+import { TOTAL_FIELD, CHART_FIELDS, chartFieldAttributes } from "../util";
 
 export class EmissionDetails extends React.Component<any> {
     renderDetailBadge(field) {
-        const fieldName = `data-${field}`.toLowerCase();
-        const attributes = { [fieldName]: true };
+        const attributes = chartFieldAttributes(field);
 
         const value = this.props.emission[field] || 0;
 
@@ -49,7 +31,7 @@ export class EmissionDetails extends React.Component<any> {
     render() {
         return (
             <div className="d-flex flex-column justify-content-start align-items-end">
-                {FIELDS.map(field => (
+                {CHART_FIELDS.map(field => (
                     <div key={field}>{this.renderDetailBadge(field)}</div>
                 ))}
                 <div className="pt-2">{this.renderDetailBadge(TOTAL_FIELD)}</div>
