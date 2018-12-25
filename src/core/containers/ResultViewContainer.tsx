@@ -10,14 +10,14 @@ class _ResultViewContainer extends React.Component<any, any> {
     render() {
         return (
             <div className="row">
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-md-4">
                     <div className="m-4">
                         <EmissionChartContainer />
                     </div>
                     <hr />
                     <EmissionAlertBadge />
                 </div>
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-md-8">
                     <SectionVisualisationContainer />
                 </div>
             </div>
