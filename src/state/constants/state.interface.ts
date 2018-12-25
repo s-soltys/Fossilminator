@@ -1,4 +1,4 @@
-import { FossilUsageParams, FossilUsageResult } from "../../fossil-usage";
+import { FossilUsageParams, FossilUsageResult } from "../../emission-calculator";
 
 export enum Section {
     None = 'NONE',

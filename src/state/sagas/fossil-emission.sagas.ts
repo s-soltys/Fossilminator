@@ -1,7 +1,7 @@
 import { takeEvery, put, select } from 'redux-saga/effects';
 import { FossilEmissionActions, FossilUsageActions } from '../actions';
 import { AppState } from '../constants';
-import { calculateFossilEmissions } from '../../fossil-usage';
+import { calculateFossilEmissions } from '../../emission-calculator';
 
 export const computeFossilEmissionSaga = function* () {
     const usage = yield select<AppState>(state => state.fossilUsage);

@@ -1,5 +1,5 @@
 import { createAction } from '../util';
-import { FossilUsageTransport, FossilUsageFood } from '../../fossil-usage';
+import { FossilUsageTransport, FossilUsageFood } from '../../emission-calculator';
 
 export type ActionsTypes = PatchTransportUsageAction | PatchFoodUsageAction;
 

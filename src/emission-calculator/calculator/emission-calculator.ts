@@ -1,5 +1,5 @@
-import { FossilUsageParams } from "./types/fossil-usage-input.interface";
-import { FossilUsageResult } from "./types/fossil-usage-result.interface";
+import { FossilUsageParams } from "../input/emission-input.interface";
+import { FossilUsageResult } from "../result/emission-result.interface";
 
 const WEEKS_PER_YEAR = 52;
 
