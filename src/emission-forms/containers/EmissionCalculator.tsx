@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { Card, CardBody, CardFooter, CardHeader } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { EmissionAlertBadge } from '../../shared/components/EmissionAlertBadge';
-import { EmissionsChart } from '../../shared/components/EmissionsChart';
 import { AppState, EmissionInputActions } from '../../state';
 import { LabelledInput } from '../components';
 import { LabelledDropdown } from '../components/LabelledDropdown';
+import { EmissionChartContainer } from '../../emission-chart';
 
 class _EmissionCalculator extends React.Component<any, any> {
     renderWeeklyMeatConsumptionDropdown() {
@@ -73,11 +73,8 @@ class _EmissionCalculator extends React.Component<any, any> {
             </React.Fragment>
         )
     }
-    render() {
-        const { emissionResult } = this.props;
-        const refEmissions = { food: 6, transport: 19, result: 25 };
-        const maxEmission = 1.2 * Math.max(refEmissions.result, emissionResult.result);
 
+    render() {
         return (
             <React.Fragment>
                 <Card>
@@ -91,11 +88,8 @@ class _EmissionCalculator extends React.Component<any, any> {
                             <div className="col-12 col-md-6">
                                 {this.renderInputs()}
                             </div>
-                            <div className="col-6 col-md-3 d-flex flex-column align-items-center">
-                                <EmissionsChart emission={emissionResult} limit={maxEmission} label='Twoja emisja' />
-                            </div>
-                            <div className="col-6 col-md-3 d-flex flex-column align-items-center">
-                                <EmissionsChart emission={refEmissions} limit={maxEmission} label='Średnia' />
+                            <div className="col-12 col-md-6">
+                                <EmissionChartContainer />
                             </div>
                         </div>
                     </CardBody>
