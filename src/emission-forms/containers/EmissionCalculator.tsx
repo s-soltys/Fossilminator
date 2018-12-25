@@ -67,7 +67,7 @@ class _EmissionCalculator extends React.Component<any> {
 
     render() {
         return (
-            <React.Fragment>
+            <>
                 <Card>
                     <CardHeader>
                         <h4 className="font-weight-light">
@@ -91,7 +91,7 @@ class _EmissionCalculator extends React.Component<any> {
                         </div>
                     </CardFooter>
                 </Card>
-            </React.Fragment>
+            </>
         );
     }
 }
