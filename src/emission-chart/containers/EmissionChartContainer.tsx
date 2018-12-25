@@ -14,7 +14,7 @@ class _EmissionChartContainer extends React.Component<any, any> {
 
         return (
             <div className="d-flex justify-content-around" style={{ height: 300 }}>
-                <EmissionDetails />
+                <EmissionDetails emission={emissionResult} />
                 <EmissionsChart
                     emission={refEmissions}
                     limit={maxEmission}

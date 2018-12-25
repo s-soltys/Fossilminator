@@ -11,6 +11,22 @@
         "consumption": "Konsumpcja",
         "emissionResults": "Twoje wyniki"
     },
+    "emissionChart": {
+        "housingConstruction": "Budowa",
+        "housingHeating": "Ogrzewanie",
+        "warmWater": "Ciepła woda",
+        "airConditioning": "Klimatyzacja",
+        "fuelForTransport": "Spalanie paliwa",
+        "carConstuction": "Produkcja aut",
+        "publicTransport": "Trans. publiczny",
+        "airTravel": "Przeloty",
+        "foodProduction": "Żywność",
+        "consumption": "Konsumpcja",
+        "electricity": "Elektryczność",
+        "deforestation": "Wylesianie",
+        "commonServices": "Ogólnospołeczne",
+        "totalAnnualEmission": "SUMA"
+    },
     "actions": {
         "calculateUsage": "Oblicz"
     },
