@@ -12,21 +12,17 @@ class _EmissionChartContainer extends React.Component<any, any> {
             1.2 * Math.max(refEmissions.result, emissionResult.result);
 
         return (
-            <div className="d-flex">
-                <div>
-                    <EmissionsChart
-                        emission={emissionResult}
-                        limit={maxEmission}
-                        label="Twoja emisja"
-                    />
-                </div>
-                <div>
-                    <EmissionsChart
-                        emission={refEmissions}
-                        limit={maxEmission}
-                        label="Średnia"
-                    />
-                </div>
+            <div className="d-flex justify-content-around">
+                <EmissionsChart
+                    emission={emissionResult}
+                    limit={maxEmission}
+                    label="Twoja emisja"
+                />
+                <EmissionsChart
+                    emission={refEmissions}
+                    limit={maxEmission}
+                    label="Średnia"
+                />
             </div>
         );
     }
