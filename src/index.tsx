@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { configureI18n } from './i18n';
+import { LocaleConfig } from './i18n';
 import { configureStore } from './state';
 import { Provider } from 'react-redux';
 
-configureI18n('pl');
+LocaleConfig.configure('pl');
 
 ReactDOM.render(<Provider store={configureStore()}><App /></Provider>, document.getElementById('root'));
 
