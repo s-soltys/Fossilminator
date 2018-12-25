@@ -11,7 +11,7 @@ export class EmissionsChart extends React.Component<any> {
 
         return (
             <div
-                className="chart-segment"
+                className="chart-segment w-50"
                 style={{ height: `${heightPercentage}%`, width: "100%" }}
                 {...attributes}
             />
@@ -26,7 +26,7 @@ export class EmissionsChart extends React.Component<any> {
         return (
             <div className="d-flex flex-column justify-content-end align-items-center">
                 <small className="text-center font-weight-light">{label}</small>
-                <small className="font-weight-bold">
+                <small className="font-weight-bold mb-2">
                     {totalResult.toFixed(2)} ton CO<sub>2</sub>
                 </small>
                 {CHART_FIELDS.map(field => (
