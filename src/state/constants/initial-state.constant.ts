@@ -6,8 +6,8 @@ export const InitialAppState: AppState = {
     },
     emissionInput: {
         transport: {
-            carKmPerWeek: 0,
-            annualHoursInAir: 0
+            carKmPerWeek: null,
+            annualHoursInAir: null
         },
         food: {
             meatPerWeek: 1

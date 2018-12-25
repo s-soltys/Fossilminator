@@ -1,11 +1,12 @@
 import React from 'react';
 import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardFooter, CardHeader, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { Card, CardBody, CardFooter, CardHeader } from 'reactstrap';
 import { bindActionCreators } from 'redux';
-import { AppState, EmissionInputActions } from '../../state';
 import { EmissionAlertBadge } from '../../shared/components/EmissionAlertBadge';
 import { EmissionsChart } from '../../shared/components/EmissionsChart';
+import { AppState, EmissionInputActions } from '../../state';
+import { LabelledInput } from '../components';
 import { LabelledDropdown } from '../components/LabelledDropdown';
 
 class _EmissionCalculator extends React.Component<any, any> {
@@ -36,21 +37,25 @@ class _EmissionCalculator extends React.Component<any, any> {
                 <h4 className="font-weight-light">Transport:</h4>
                 <div>
                     <Translate className="font-weight-light" value="transport.enterWeeklyCarUsage" />
-                    <InputGroup className="w-50">
-                        <InputGroupAddon addonType="prepend">km</InputGroupAddon>
-                        <Input placeholder="Ile km podróżujesz samochodem tygodniowo" type="number" step="1"
+                    <div className="w-50">
+                        <LabelledInput
+                            addon="km"
+                            placeholder="Ile km podróżujesz samochodem tygodniowo?"
                             value={transport.carKmPerWeek}
-                            onChange={event => UpdatePublicTransport({ carKmPerWeek: event.currentTarget.value })} />
-                    </InputGroup>
+                            valueChange={value => UpdatePublicTransport({ carKmPerWeek: value })}>
+                        </LabelledInput>
+                    </div>
                 </div>
                 <div className="pt-3">
                     <Translate className="font-weight-light" value="transport.enterAnnualPlaneHours" />
-                    <InputGroup className="w-50">
-                        <InputGroupAddon addonType="prepend">godziny</InputGroupAddon>
-                        <Input placeholder="Ile godzin spędzasz rocznie w podróży samolotem?" type="number" step="1"
+                    <div className="w-50">
+                        <LabelledInput
+                            addon="godziny"
+                            placeholder="Ile godzin spędzasz rocznie w podróży samolotem?"
                             value={transport.annualHoursInAir}
-                            onChange={event => UpdatePublicTransport({ annualHoursInAir: event.currentTarget.value })} />
-                    </InputGroup>
+                            valueChange={value => UpdatePublicTransport({ annualHoursInAir: value })}>
+                        </LabelledInput>
+                    </div>
                 </div>
                 <hr className="m-4" />
                 <h4 className="font-weight-light">Żywność:</h4>
