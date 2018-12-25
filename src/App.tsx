@@ -6,7 +6,6 @@ import './style/style.scss';
 
 import { NavigationHeader } from './core/components/NavigationHeader';
 import { Page } from './core/components/Page';
-import { WelcomePage } from './core/components/WelcomePage';
 
 class App extends Component {
     componentDidMount() {
@@ -17,9 +16,7 @@ class App extends Component {
         return (
             <React.Fragment>
                 <NavigationHeader />
-                <Page>
-                    <WelcomePage />
-                </Page>
+                <Page></Page>
             </React.Fragment>
         );
     }
