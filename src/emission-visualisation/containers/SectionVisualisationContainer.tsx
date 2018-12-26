@@ -27,9 +27,11 @@ export class _SectionVisualisationContainer extends React.Component<any> {
     }
 
     renderPrivateTransport() {
+        const { transport } = this.props.emissionInput;
+
         return (
             <SpritePanel file="367.jpg" alt="public transport">
-                <Sprite file="381.png" alt="car" size="35" right="10" bottom="5" />
+                <Sprite visible={transport.carKmPerWeek > 0} file="381.png" alt="car" size="35" right="10" bottom="5" />
             </SpritePanel>
         );
     }
@@ -66,9 +68,10 @@ export class _SectionVisualisationContainer extends React.Component<any> {
     }
 }
 
-function mapStateToProps({ navigation }: AppState) {
+function mapStateToProps({ navigation, emissionInput }: AppState) {
     return {
-        section: navigation.section
+        section: navigation.section,
+        emissionInput: emissionInput
     };
 }
 
