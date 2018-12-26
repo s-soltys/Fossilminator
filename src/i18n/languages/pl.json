@@ -2,6 +2,11 @@
     "application": {
         "title": "Kalkulator zużycia CO2"
     },
+    "locale": {
+        "selectLanguage": "Wybierz język",
+        "en": "English",
+        "pl": "Polski"
+    },
     "section": {
         "housing": "Mieszkanie",
         "waterAndAirConditioning": "Woda, klimatyzacja",

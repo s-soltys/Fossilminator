@@ -1,14 +1,18 @@
 import React from 'react';
+import { LocaleSwitch } from '../containers';
 
 export const NavigationFooter = () => (
     <footer className="footer mt-auto py-3">
         <div className="container d-flex justify-content-between">
-            <span className="text-muted">
+            <div className="text-muted">
                 Wersja demo zmodernizowanego kalkulatora CO2
-            </span>
-            <span className="text-muted">
+            </div>
+            <div className="text-muted">
+                <LocaleSwitch />
+            </div>
+            <div className="text-muted">
                 Więcej na <a href="https://ziemianarozdrozu.pl/">ziemianarozdrozu.pl</a>
-            </span>
+            </div>
         </div>
     </footer>
 );

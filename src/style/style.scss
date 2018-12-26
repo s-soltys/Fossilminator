@@ -9,6 +9,9 @@ main {
   transition: height 0.5s ease-in-out;
 }
 
+.pointer {
+  cursor: pointer;
+}
 
 [data-housingconstruction] { background-color: #69D2E7; }
 [data-housingheating] { background-color: #A7DBD8; }
