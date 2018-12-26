@@ -1,9 +1,13 @@
 import { EmissionInput } from "../types/input";
 import { EmissionResult, EmissionResultPartialFields } from "../types/result";
-import { PartialEmissionResult } from "./partial-emission-results";
+import { PartialResultCalculatorMap, PartialEmissionResult } from "./partial-emission-results";
 
 export function calculateEmissionResults(input: EmissionInput): EmissionResult {
-    const partialResults = getPartialResults(input);
+    return calculateEmissionResultsWithPartials(input, PartialEmissionResult);
+}
+
+function calculateEmissionResultsWithPartials(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap) {
+    const partialResults = getPartialResults(input, partialResultCalculatorMap);
 
     const totalAnnualEmission = getTotalResult(partialResults);
     
@@ -12,9 +16,9 @@ export function calculateEmissionResults(input: EmissionInput): EmissionResult {
     return resultWithTotal;
 }
 
-function getPartialResults(input: EmissionInput): EmissionResult {
+function getPartialResults(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap): EmissionResult {
     return EmissionResultPartialFields.reduce((result, key) => {
-        const fn = PartialEmissionResult[key];
+        const fn = partialResultCalculatorMap[key];
         const value = fn ? fn(input) : 0;
         return { ...result, [key]: value };
     }, {}) as EmissionResult;
