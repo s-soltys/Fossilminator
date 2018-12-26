@@ -11,7 +11,7 @@ export class _SectionVisualisationContainer extends React.Component<any> {
         switch (section) {
             case Section.Housing:
                 return (
-                    <VisualisationImage name="314.jpg" alt="housing" onResize={size => this.setState({ size })}>
+                    <VisualisationImage name="314.jpg" alt="housing">
                         <img style={{ position: 'absolute', left: '20%', bottom: '5%', width: '5%' }} src="images/ui/48.png" alt="person" />
                     </VisualisationImage>
                 );
