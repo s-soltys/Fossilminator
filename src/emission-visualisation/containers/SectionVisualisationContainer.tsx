@@ -11,7 +11,7 @@ export class _SectionVisualisationContainer extends React.Component<any> {
         switch (section) {
             case Section.Housing:
                 return (
-                    <SpritePanel name="314.jpg" alt="housing">
+                    <SpritePanel file="314.jpg" alt="housing">
                         <Sprite file="48.png" alt="person" size="5" left="20" bottom="5" />
                         <Sprite file="152.png" alt="person" size="11" right="10" bottom="5" />
                     </SpritePanel>
