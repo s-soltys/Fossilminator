@@ -1,7 +1,8 @@
 import { I18n } from 'react-i18nify';
+import { Subject } from './util/subject';
 
 class LocaleConfigClass {
-    private handlers: Function[] = [];
+    private localeSubject = new Subject<string>();
 
     configure(locale: string) {
         const en = require('./languages/en.json');
@@ -14,15 +15,11 @@ class LocaleConfigClass {
 
     changeLocale(locale: string) {
         I18n.setLocale(locale);
-        this.handlers.forEach(handler => handler(locale));
+        this.localeSubject.next(locale);
     }
 
-    subscribeToChangeLocale(handler: Function): Function {
-        this.handlers = [...this.handlers, handler];
-
-        return () => {
-            this.handlers = this.handlers.filter(h => h !== handler);
-        };
+    subscribeToChangeLocale(handler: (locale: string) => void): Function {
+        return this.localeSubject.subscribe(handler);
     }
 };
 
