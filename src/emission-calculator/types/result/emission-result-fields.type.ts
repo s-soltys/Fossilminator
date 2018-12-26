@@ -1,8 +1,6 @@
-import { EmissionResult } from '../../emission-calculator';
+import { EmissionResultField } from "./emission-result.interface";
 
-export type ChartField = keyof EmissionResult; 
-
-export const CHART_FIELDS: ChartField[] = [
+export const EmissionResultPartialFields: EmissionResultField[] = [
     'housingConstruction',
     'housingHeating',
     'warmWater',
@@ -18,4 +16,4 @@ export const CHART_FIELDS: ChartField[] = [
     'commonServices'
 ];
 
-export const TOTAL_FIELD = 'totalAnnualEmission';
+export const EmissionResultTotalField: EmissionResultField = 'totalAnnualEmission';

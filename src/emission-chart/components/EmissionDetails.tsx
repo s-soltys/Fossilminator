@@ -1,11 +1,10 @@
 import React from "react";
 import { Translate } from "react-i18nify";
-import { TOTAL_FIELD, CHART_FIELDS, chartFieldAttributes } from "../util";
+import { chartFieldAttributes } from "../util";
+import { EmissionResultPartialFields, EmissionResultTotalField } from "../../emission-calculator";
 
 export class EmissionDetails extends React.Component<any> {
     renderDetailBadge(field) {
-        const attributes = chartFieldAttributes(field);
-
         const value = this.props.emission[field] || 0;
 
         return (
@@ -20,7 +19,7 @@ export class EmissionDetails extends React.Component<any> {
                         minWidth: "2.5rem",
                         borderRadius: "0.1rem"
                     }}
-                    {...attributes}
+                    {...chartFieldAttributes(field)}
                 >
                     {value.toFixed(2)}
                 </small>
@@ -31,10 +30,12 @@ export class EmissionDetails extends React.Component<any> {
     render() {
         return (
             <div className="d-flex flex-column justify-content-start align-items-end">
-                {CHART_FIELDS.map(field => (
+                {EmissionResultPartialFields.map(field => (
                     <div key={field}>{this.renderDetailBadge(field)}</div>
                 ))}
-                <div className="pt-2">{this.renderDetailBadge(TOTAL_FIELD)}</div>
+                <div className="pt-2">
+                    {this.renderDetailBadge(EmissionResultTotalField)}
+                </div>
             </div>
         );
     }

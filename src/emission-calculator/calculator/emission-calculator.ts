@@ -1,30 +1,25 @@
 import { EmissionInput } from "../types/input";
-import { EmissionResult } from "../types/result";
-import { WeeksPerYear } from "../constants";
-import { FoodEmissionParams, TransportEmissionParams } from "../constants";
+import { EmissionResult, EmissionResultPartialFields } from "../types/result";
+import { PartialEmissionResult } from "./partial-emission-results";
 
 export function calculateEmissionResults(input: EmissionInput): EmissionResult {
-    const food = input.food.meatPerWeek * FoodEmissionParams.perMeatDailyMeatConsumption;
+    const partialResults = getPartialResults(input);
 
-    const transport = input.transport.carKmPerWeek * WeeksPerYear * TransportEmissionParams.perKmOfCarTravel
-        + input.transport.annualHoursInAir * TransportEmissionParams.perAnnualHourInAir;
+    const totalAnnualEmission = getTotalResult(partialResults);
+    
+    const resultWithTotal = { ...partialResults, totalAnnualEmission };
 
-    return {
-        housingConstruction: 0.5,
-        housingHeating: 2.0,
-        warmWater: 1.0,
-        airConditioning: 0.1,
-        fuelForTransport: 1.0,
-        carConstuction: 0.2,
-        publicTransport: transport,
-        airTravel: 6.0,
+    return resultWithTotal;
+}
 
-        foodProduction: food,
-        consumption: 1.0,
-        electricity: 0.6,
-        deforestation: 0.2,
-        commonServices: 3.1,
+function getPartialResults(input: EmissionInput): EmissionResult {
+    return EmissionResultPartialFields.reduce((result, key) => {
+        const fn = PartialEmissionResult[key];
+        const value = fn ? fn(input) : 0;
+        return { ...result, [key]: value };
+    }, {}) as EmissionResult;
+}
 
-        totalAnnualEmission: 10 + food + transport
-    };
-};
+function getTotalResult(result: EmissionResult): number {
+    return EmissionResultPartialFields.reduce((sum, key) => sum + result[key], 0);
+}
