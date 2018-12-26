@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class VisualisationImage extends React.Component<any> {
+export class SpritePanel extends React.Component<any> {
     imageRef = React.createRef<HTMLImageElement>();
 
     render() {

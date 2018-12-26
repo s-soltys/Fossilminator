@@ -2,22 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { AppState, Section } from "../../state";
-import { VisualisationImage } from "../components";
-
-const Sprite = ({ file, alt, size, left, right, top, bottom }: any) => (
-    <img
-        style={{
-            position: 'absolute',
-            left: left && left + '%',
-            right: right && right + '%',
-            top: top && top + '%',
-            bottom: bottom && bottom + '%',
-            width: size + '%'
-        }}
-        src={`images/ui/${file}`}
-        alt={alt}
-    />
-);
+import { SpritePanel, Sprite } from "../components";
 
 export class _SectionVisualisationContainer extends React.Component<any> {
     render() {
@@ -26,10 +11,10 @@ export class _SectionVisualisationContainer extends React.Component<any> {
         switch (section) {
             case Section.Housing:
                 return (
-                    <VisualisationImage name="314.jpg" alt="housing">
+                    <SpritePanel name="314.jpg" alt="housing">
                         <Sprite file="48.png" alt="person" size="5" left="20" bottom="5" />
                         <Sprite file="152.png" alt="person" size="11" right="10" bottom="5" />
-                    </VisualisationImage>
+                    </SpritePanel>
                 );
             case Section.WaterAndAirConditioning:
                 return (

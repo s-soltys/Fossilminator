@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { EmissionChartContainer } from "../../emission-chart";
 import { EmissionAlertBadge } from "../../shared/components/EmissionAlertBadge";
 import { AppState } from "../../state";
-import { SectionVisualisationContainer } from "./SectionVisualisationContainer";
+import { SectionVisualisationContainer } from "../../emission-visualisation";
 
 class _ResultViewContainer extends React.Component<any, any> {
     render() {
