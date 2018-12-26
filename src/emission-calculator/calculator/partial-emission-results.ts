@@ -19,8 +19,8 @@ export const PartialEmissionResult: PartialEmissionResult = {
     airConditioning: (input) => {
         return 0;
     },
-    fuelForTransport: (input) => {
-        return input.transport.carKmPerWeek * WeeksPerYear * TransportEmissionParams.perKmOfCarTravel;
+    fuelForTransport: ({ transport }) => {
+        return transport.carKmPerWeek * WeeksPerYear * TransportEmissionParams.perKmOfCarTravel;
     },
     carConstuction: (input) => {
         return 0;
@@ -28,12 +28,12 @@ export const PartialEmissionResult: PartialEmissionResult = {
     publicTransport: (input) => {
         return 0;
     },
-    airTravel: (input) => {
-        return input.transport.annualHoursInAir * TransportEmissionParams.perAnnualHourInAir;
+    airTravel: ({ transport }) => {
+        return transport.annualHoursInAir * TransportEmissionParams.perAnnualHourInAir;
     },
 
-    foodProduction: (input) => {
-        return input.food.meatPerWeek * FoodEmissionParams.perMeatDailyMeatConsumption;
+    foodProduction: ({ food }) => {
+        return food.meatPerWeek * FoodEmissionParams.perMeatDailyMeatConsumption;
     },
     consumption: (input) => {
         return 0;
