@@ -28,32 +28,20 @@ export class _SectionVisualisationContainer extends React.Component<any> {
                 return (
                     <VisualisationImage name="314.jpg" alt="housing">
                         <Sprite file="48.png" alt="person" size="5" left="20" bottom="5" />
-                        <Sprite file="152.png" alt="person" size="10" right="10" bottom="5" />
+                        <Sprite file="152.png" alt="person" size="11" right="10" bottom="5" />
                     </VisualisationImage>
                 );
             case Section.WaterAndAirConditioning:
                 return (
-                    <img
-                        className="w-100"
-                        src="images/ui/111.jpg"
-                        alt="water and air conditioning"
-                    />
+                    <img className="w-100" src="images/ui/111.jpg" alt="water and air conditioning" />
                 );
             case Section.PublicTransport:
                 return (
-                    <img
-                        className="w-100"
-                        src="images/ui/367.jpg"
-                        alt="public transport"
-                    />
+                    <img className="w-100" src="images/ui/367.jpg" alt="public transport" />
                 );
             case Section.PrivateTransport:
                 return (
-                    <img
-                        className="w-100"
-                        src="images/ui/96.jpg"
-                        alt="private transport"
-                    />
+                    <img className="w-100" src="images/ui/96.jpg" alt="private transport" />
                 );
             case Section.Food:
                 return (
@@ -61,11 +49,7 @@ export class _SectionVisualisationContainer extends React.Component<any> {
                 );
             case Section.Consumption:
                 return (
-                    <img
-                        className="w-100"
-                        src="images/ui/392.jpg"
-                        alt="consumption"
-                    />
+                    <img className="w-100" src="images/ui/392.jpg" alt="consumption" />
                 );
             default:
                 return null;
