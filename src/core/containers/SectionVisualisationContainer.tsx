@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { AppState, Section } from "../../state";
+import { VisualisationImage } from "../components";
 
 export class _SectionVisualisationContainer extends React.Component<any> {
     render() {
@@ -9,7 +10,7 @@ export class _SectionVisualisationContainer extends React.Component<any> {
 
         switch (section) {
             case Section.Housing:
-                return <img className="w-100" src="images/ui/314.jpg" alt="housing" />;
+                return <VisualisationImage name="314.jpg" alt="housing"></VisualisationImage>;
             case Section.WaterAndAirConditioning:
                 return <img className="w-100" src="images/ui/111.jpg" alt="water and air conditioning" />;
             case Section.PublicTransport:
