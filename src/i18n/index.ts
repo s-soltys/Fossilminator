@@ -1,2 +1,2 @@
-export { LocaleConfig } from './config';
-export * from './translate-hoc';
+export * from './config';
+export * from './util/translate.hoc';

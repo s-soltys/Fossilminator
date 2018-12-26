@@ -1,6 +1,6 @@
 import React from "react";
 import { I18n } from "react-i18nify";
-import { LocaleConfig } from "./config";
+import { LocaleConfig } from "../config";
 
 const tFn = I18n.t.bind(I18n);
 const lFn = I18n.l.bind(I18n);
