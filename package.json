@@ -31,13 +31,16 @@
     "redux-saga": "^0.16.2"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.6",
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.12",
     "@types/react": "^16.7.13",
     "@types/react-dom": "^16.0.11",
     "@types/redux": "^3.6.0",
     "@types/redux-saga": "^0.10.5",
-    "@types/classnames": "^2.2.6",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "react-test-renderer": "^16.7.0",
     "typescript": "^3.2.2"
   }
 }
