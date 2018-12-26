@@ -22,13 +22,15 @@ export class _SectionVisualisationContainer extends React.Component<any> {
 
     renderPublicTransport() {
         return (
-            <SpritePanel file="367.jpg" alt="public transport"></SpritePanel>
+            <SpritePanel file="96.jpg" alt="private transport"></SpritePanel>
         );
     }
 
     renderPrivateTransport() {
         return (
-            <SpritePanel file="96.jpg" alt="private transport"></SpritePanel>
+            <SpritePanel file="367.jpg" alt="public transport">
+                <Sprite file="381.png" alt="car" size="35" right="10" bottom="5" />
+            </SpritePanel>
         );
     }
 
