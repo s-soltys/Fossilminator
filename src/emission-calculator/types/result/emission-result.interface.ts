@@ -16,3 +16,5 @@ export interface EmissionResult {
 
     totalAnnualEmission: number;
 }
+
+export type EmissionResultField = keyof EmissionResult; 

@@ -1,11 +1,10 @@
 import React from "react";
-import { TOTAL_FIELD, CHART_FIELDS, chartFieldAttributes } from "../util";
+import { chartFieldAttributes } from "../util";
+import { EmissionResultTotalField, EmissionResultFields } from "../../emission-calculator";
 
 export class EmissionsChart extends React.Component<any> {
     renderChartSection(field) {
         const { emission, limit } = this.props;
-
-        const attributes = chartFieldAttributes(field);
 
         const heightPercentage = ((emission[field] || 0) / limit) * 100;
 
@@ -13,7 +12,7 @@ export class EmissionsChart extends React.Component<any> {
             <div
                 className="chart-segment w-50"
                 style={{ height: `${heightPercentage}%`, width: "100%" }}
-                {...attributes}
+                {...chartFieldAttributes(field)}
             />
         );
     }
@@ -21,7 +20,7 @@ export class EmissionsChart extends React.Component<any> {
     render() {
         const { emission, label } = this.props;
 
-        const totalResult = emission[TOTAL_FIELD] || 0;
+        const totalResult = emission[EmissionResultTotalField] || 0;
 
         return (
             <div className="d-flex flex-column justify-content-end align-items-center">
@@ -29,7 +28,7 @@ export class EmissionsChart extends React.Component<any> {
                 <small className="font-weight-bold mb-2">
                     {totalResult.toFixed(2)} ton CO<sub>2</sub>
                 </small>
-                {CHART_FIELDS.map(field => (
+                {EmissionResultFields.map(field => (
                     <React.Fragment key={field}>
                         {this.renderChartSection(field)}
                     </React.Fragment>
