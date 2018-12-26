@@ -1,7 +1,7 @@
 {
   "main.css": "/Fossilminator/static/css/main.42d51018.chunk.css",
-  "main.js": "/Fossilminator/static/js/main.dd8ec814.chunk.js",
-  "main.js.map": "/Fossilminator/static/js/main.dd8ec814.chunk.js.map",
+  "main.js": "/Fossilminator/static/js/main.377dc3ac.chunk.js",
+  "main.js.map": "/Fossilminator/static/js/main.377dc3ac.chunk.js.map",
   "static/js/1.fc218f22.chunk.js": "/Fossilminator/static/js/1.fc218f22.chunk.js",
   "static/js/1.fc218f22.chunk.js.map": "/Fossilminator/static/js/1.fc218f22.chunk.js.map",
   "runtime~main.js": "/Fossilminator/static/js/runtime~main.0ffb6c03.js",
@@ -9,6 +9,6 @@
   "static/media/logo.svg": "/Fossilminator/static/media/logo.5d5d9eef.svg",
   "static/css/main.42d51018.chunk.css.map": "/Fossilminator/static/css/main.42d51018.chunk.css.map",
   "index.html": "/Fossilminator/index.html",
-  "precache-manifest.adc2975586fd5c357b8e1a80776fd904.js": "/Fossilminator/precache-manifest.adc2975586fd5c357b8e1a80776fd904.js",
+  "precache-manifest.70f6bb8e961ba0b500cbe576b845b28c.js": "/Fossilminator/precache-manifest.70f6bb8e961ba0b500cbe576b845b28c.js",
   "service-worker.js": "/Fossilminator/service-worker.js"
 }
