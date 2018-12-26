@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Sprite = ({ visible, file, alt, size, left, right, top, bottom }: any) => {
-    if (visible === false) return null;
+    if (!visible && typeof visible !== 'undefined') return null;
 
     return (
         <img src={`images/ui/${file}`} alt={alt}
