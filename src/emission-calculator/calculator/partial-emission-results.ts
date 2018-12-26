@@ -2,11 +2,11 @@ import { EmissionInput } from "../types/input";
 import { EmissionResultField } from "../types/result";
 import { FoodEmissionParams, WeeksPerYear, TransportEmissionParams } from "../constants";
 
-type PartialEmissionResult = {
+export type PartialResultCalculatorMap = {
     [key in EmissionResultField]: (input: EmissionInput) => number;
 };
 
-export const PartialEmissionResult: PartialEmissionResult = {
+export const PartialEmissionResult: PartialResultCalculatorMap = {
     housingConstruction: (input) => {
         return 0.2;
     },
