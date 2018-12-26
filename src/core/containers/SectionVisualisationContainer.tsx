@@ -10,7 +10,11 @@ export class _SectionVisualisationContainer extends React.Component<any> {
 
         switch (section) {
             case Section.Housing:
-                return <VisualisationImage name="314.jpg" alt="housing"></VisualisationImage>;
+                return (
+                    <VisualisationImage name="314.jpg" alt="housing">
+                        <img style={{ position: 'absolute', left: '20%', bottom: '15%' }} src="images/ui/48.png" alt="person" />;
+                    </VisualisationImage>
+                );
             case Section.WaterAndAirConditioning:
                 return <img className="w-100" src="images/ui/111.jpg" alt="water and air conditioning" />;
             case Section.PublicTransport:
