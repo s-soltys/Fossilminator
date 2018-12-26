@@ -28,6 +28,7 @@ export class _SectionVisualisationContainer extends React.Component<any> {
                 return (
                     <VisualisationImage name="314.jpg" alt="housing">
                         <Sprite file="48.png" alt="person" size="5" left="20" bottom="5" />
+                        <Sprite file="152.png" alt="person" size="10" right="10" bottom="5" />
                     </VisualisationImage>
                 );
             case Section.WaterAndAirConditioning:
