@@ -18,23 +18,23 @@ export class _SectionVisualisationContainer extends React.Component<any> {
                 );
             case Section.WaterAndAirConditioning:
                 return (
-                    <img className="w-100" src="images/ui/111.jpg" alt="water and air conditioning" />
+                    <SpritePanel file="111.jpg" alt="water and air conditioning"></SpritePanel>
                 );
             case Section.PublicTransport:
                 return (
-                    <img className="w-100" src="images/ui/367.jpg" alt="public transport" />
+                    <SpritePanel file="367.jpg" alt="public transport"></SpritePanel>
                 );
             case Section.PrivateTransport:
                 return (
-                    <img className="w-100" src="images/ui/96.jpg" alt="private transport" />
+                    <SpritePanel file="96.jpg" alt="private transport"></SpritePanel>
                 );
             case Section.Food:
                 return (
-                    <img className="w-100" src="images/ui/292.jpg" alt="food" />
+                    <SpritePanel file="292.jpg" alt="food"></SpritePanel>
                 );
             case Section.Consumption:
                 return (
-                    <img className="w-100" src="images/ui/392.jpg" alt="consumption" />
+                    <SpritePanel file="392.jpg" alt="consumption"></SpritePanel>
                 );
             default:
                 return null;
