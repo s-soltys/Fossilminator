@@ -2,6 +2,11 @@
     "application": {
         "title": "CO2 Calculator"
     },
+    "locale": {
+        "selectLanguage": "Choose language",
+        "en": "English",
+        "pl": "Polski"
+    },
     "actions": {
         "calculateUsage": "Calculate"
     },
