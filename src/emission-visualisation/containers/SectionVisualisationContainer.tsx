@@ -5,37 +5,59 @@ import { AppState, Section } from "../../state";
 import { SpritePanel, Sprite } from "../components";
 
 export class _SectionVisualisationContainer extends React.Component<any> {
-    render() {
-        const { section } = this.props;
+    renderHousing() {
+        return (
+            <SpritePanel file="314.jpg" alt="housing">
+                <Sprite file="48.png" alt="person" size="5" left="20" bottom="5" />
+                <Sprite file="152.png" alt="person" size="11" right="10" bottom="5" />
+            </SpritePanel>
+        );
+    }
 
-        switch (section) {
+    renderWaterAndAirConditioning() {
+        return (
+            <SpritePanel file="111.jpg" alt="water and air conditioning"></SpritePanel>
+        );
+    }
+
+    renderPublicTransport() {
+        return (
+            <SpritePanel file="367.jpg" alt="public transport"></SpritePanel>
+        );
+    }
+
+    renderPrivateTransport() {
+        return (
+            <SpritePanel file="96.jpg" alt="private transport"></SpritePanel>
+        );
+    }
+
+    renderFood() {
+        return (
+            <SpritePanel file="292.jpg" alt="food"></SpritePanel>
+        );
+    }
+
+    renderConsumption() {
+        return (
+            <SpritePanel file="392.jpg" alt="consumption"></SpritePanel>
+        );
+    }
+
+    render() {
+        switch (this.props.section) {
             case Section.Housing:
-                return (
-                    <SpritePanel file="314.jpg" alt="housing">
-                        <Sprite file="48.png" alt="person" size="5" left="20" bottom="5" />
-                        <Sprite file="152.png" alt="person" size="11" right="10" bottom="5" />
-                    </SpritePanel>
-                );
+                return this.renderHousing();
             case Section.WaterAndAirConditioning:
-                return (
-                    <SpritePanel file="111.jpg" alt="water and air conditioning"></SpritePanel>
-                );
+                return this.renderWaterAndAirConditioning();
             case Section.PublicTransport:
-                return (
-                    <SpritePanel file="367.jpg" alt="public transport"></SpritePanel>
-                );
+                return this.renderPublicTransport();
             case Section.PrivateTransport:
-                return (
-                    <SpritePanel file="96.jpg" alt="private transport"></SpritePanel>
-                );
+                return this.renderPrivateTransport();
             case Section.Food:
-                return (
-                    <SpritePanel file="292.jpg" alt="food"></SpritePanel>
-                );
+                return this.renderFood();
             case Section.Consumption:
-                return (
-                    <SpritePanel file="392.jpg" alt="consumption"></SpritePanel>
-                );
+                return this.renderConsumption();
             default:
                 return null;
         }
