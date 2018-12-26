@@ -6,7 +6,7 @@ export function calculateEmissionResults(input: EmissionInput): EmissionResult {
     return calculateEmissionResultsWithPartials(input, PartialEmissionResult);
 }
 
-function calculateEmissionResultsWithPartials(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap) {
+export function calculateEmissionResultsWithPartials(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap) {
     const partialResults = getPartialResults(input, partialResultCalculatorMap);
 
     const totalAnnualEmission = getTotalResult(partialResults);
@@ -16,7 +16,7 @@ function calculateEmissionResultsWithPartials(input: EmissionInput, partialResul
     return resultWithTotal;
 }
 
-function getPartialResults(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap): EmissionResult {
+export function getPartialResults(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap): EmissionResult {
     return EmissionResultPartialFields.reduce((result, key) => {
         const fn = partialResultCalculatorMap[key];
         const value = fn ? fn(input) : 0;
@@ -24,6 +24,6 @@ function getPartialResults(input: EmissionInput, partialResultCalculatorMap: Par
     }, {}) as EmissionResult;
 }
 
-function getTotalResult(result: EmissionResult): number {
+export function getTotalResult(result: EmissionResult): number {
     return EmissionResultPartialFields.reduce((sum, key) => sum + result[key], 0);
 }
