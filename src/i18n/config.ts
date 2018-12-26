@@ -15,7 +15,7 @@ class LocaleConfigClass {
     changeLocale(locale: string) {
         I18n.setLocale(locale);
         this.handlers.forEach(handler => handler(locale));
-    };
+    }
 
     subscribeToChangeLocale(handler: Function): Function {
         this.handlers = [...this.handlers, handler];
