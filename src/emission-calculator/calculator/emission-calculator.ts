@@ -25,5 +25,5 @@ export function getPartialResults(input: EmissionInput, partialResultCalculatorM
 }
 
 export function getTotalResult(result: EmissionResult): number {
-    return EmissionResultPartialFields.reduce((sum, key) => sum + result[key], 0);
+    return EmissionResultPartialFields.reduce((sum, key) => sum + (result[key] || 0), 0);
 }
