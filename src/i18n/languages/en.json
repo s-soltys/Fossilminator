@@ -2,6 +2,36 @@
     "application": {
         "title": "CO2 Calculator"
     },
+    "locale": {
+        "selectLanguage": "Choose language",
+        "en": "English",
+        "pl": "Polski"
+    },
+    "section": {
+        "housing": "Housing",
+        "waterAndAirConditioning": "Water, air conditioning",
+        "privateTransport": "Private transport",
+        "publicTransport": "Public transport",
+        "food": "Food",
+        "consumption": "Consumption",
+        "emissionResults": "Your result"
+    },
+    "emissionChart": {
+        "housingConstruction": "Construction",
+        "housingHeating": "Heating",
+        "warmWater": "Warm water",
+        "airConditioning": "Air conditioning",
+        "fuelForTransport": "Burning fuel",
+        "carConstuction": "Car construction",
+        "publicTransport": "Public transport",
+        "airTravel": "Air travel",
+        "foodProduction": "Food",
+        "consumption": "Consumption",
+        "electricity": "Electricity",
+        "deforestation": "Deforestation",
+        "commonServices": "General",
+        "totalAnnualEmission": "TOTAL"
+    },
     "actions": {
         "calculateUsage": "Calculate"
     },
