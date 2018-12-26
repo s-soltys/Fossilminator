@@ -1,7 +1,7 @@
 import React from "react";
 import { Translate } from "react-i18nify";
 import { chartFieldAttributes } from "../util";
-import { EmissionResultFields, EmissionResultTotalField } from "../../emission-calculator";
+import { EmissionResultPartialFields, EmissionResultTotalField } from "../../emission-calculator";
 
 export class EmissionDetails extends React.Component<any> {
     renderDetailBadge(field) {
@@ -30,7 +30,7 @@ export class EmissionDetails extends React.Component<any> {
     render() {
         return (
             <div className="d-flex flex-column justify-content-start align-items-end">
-                {EmissionResultFields.map(field => (
+                {EmissionResultPartialFields.map(field => (
                     <div key={field}>{this.renderDetailBadge(field)}</div>
                 ))}
                 <div className="pt-2">

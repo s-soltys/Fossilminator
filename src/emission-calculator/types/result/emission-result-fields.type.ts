@@ -1,6 +1,6 @@
 import { EmissionResultField } from "./emission-result.interface";
 
-export const EmissionResultFields: EmissionResultField[] = [
+export const EmissionResultPartialFields: EmissionResultField[] = [
     'housingConstruction',
     'housingHeating',
     'warmWater',

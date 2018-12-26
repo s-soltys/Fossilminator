@@ -1,6 +1,6 @@
 import React from "react";
 import { chartFieldAttributes } from "../util";
-import { EmissionResultTotalField, EmissionResultFields } from "../../emission-calculator";
+import { EmissionResultTotalField, EmissionResultPartialFields } from "../../emission-calculator";
 
 export class EmissionsChart extends React.Component<any> {
     renderChartSection(field) {
@@ -28,7 +28,7 @@ export class EmissionsChart extends React.Component<any> {
                 <small className="font-weight-bold mb-2">
                     {totalResult.toFixed(2)} ton CO<sub>2</sub>
                 </small>
-                {EmissionResultFields.map(field => (
+                {EmissionResultPartialFields.map(field => (
                     <React.Fragment key={field}>
                         {this.renderChartSection(field)}
                     </React.Fragment>
