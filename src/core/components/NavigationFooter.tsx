@@ -7,7 +7,7 @@ export const NavigationFooter = () => (
             <div className="text-muted">
                 Wersja demo zmodernizowanego kalkulatora CO2
             </div>
-            <div>
+            <div className="text-muted">
                 <LocaleSwitch />
             </div>
             <div className="text-muted">

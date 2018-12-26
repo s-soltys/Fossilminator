@@ -17,7 +17,7 @@ class _LocaleSwitch extends React.Component<any> {
                     <span
                         key={locale}
                         onClick={() => setLocale(locale)}
-                        className="pl-2"
+                        className="pl-2 pointer"
                     >
                         {t(`locale.${locale}`)}
                     </span>
