@@ -37,6 +37,9 @@
     "actions": {
         "calculateUsage": "Oblicz"
     },
+    "country": {
+        "selectCountry": "W jakim państwie mieszkasz?"
+    },
     "food": {
         "howOftenDoYouConsumeFood": "Jak często spożywasz mięso?"
     },
