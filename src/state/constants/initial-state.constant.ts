@@ -5,6 +5,9 @@ export const InitialAppState: AppState = {
         section: Section.Housing
     },
     emissionInput: {
+        country: {
+            countryCode: 'pl'
+        },
         transport: {
             carKmPerWeek: null,
             annualHoursInAir: null

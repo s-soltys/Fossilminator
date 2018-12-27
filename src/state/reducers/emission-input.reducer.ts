@@ -7,6 +7,8 @@ export const emissionInputReducer = (state: EmissionInputState = InitialAppState
             return { ...state, transport: { ...state.transport, ...action.payload } };
         case EmissionInputActions.UpdateFoodType:
             return { ...state, food: { ...state.food, ...action.payload } };
+        case EmissionInputActions.SetCountryCodeType:
+            return { ...state, country: { ...state.country, countryCode: action.payload } };
         default:
             return state;
     }

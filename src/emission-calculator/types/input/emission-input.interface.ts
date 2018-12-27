@@ -1,3 +1,7 @@
+export interface EmissionInputCountry {
+    countryCode: string;
+}
+
 export interface EmissionInputHousing {}
 
 export interface EmissionInputPublicTransport {}
@@ -18,6 +22,7 @@ export interface EmissionInputFood {
 }
 
 export interface EmissionInput {
+    country: EmissionInputCountry;
     transport: EmissionInputTransport;
     food: EmissionInputFood;
 }

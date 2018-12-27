@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
 import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
+import { CountrySelector } from './CountrySelector';
 
 class _EmissionCalculator extends React.Component<any> {
     renderSectionA() {
@@ -59,6 +60,9 @@ class _EmissionCalculator extends React.Component<any> {
                         valueChange={value => UpdateFood({ meatPerWeek: value })}
                         options={options}>
                     </LabelledDropdown>
+                </div>
+                <div className="pt-3">
+                    <CountrySelector />
                 </div>
             </>
         );
