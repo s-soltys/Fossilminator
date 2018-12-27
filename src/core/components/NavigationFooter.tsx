@@ -1,4 +1,5 @@
 import React from 'react';
+import { Translate } from 'react-i18nify';
 import { LocaleSwitch } from '../containers';
 
 export const NavigationFooter = () => (
@@ -7,7 +8,7 @@ export const NavigationFooter = () => (
             <div className="row">
                 <div className="col-12 col-md-4">
                     <div className="text-muted">
-                        Wersja demo kalkulatora CO2
+                        <Translate value="application.footerName" />
                     </div>
                 </div>
                 <div className="col-12 col-md-4">
@@ -17,7 +18,7 @@ export const NavigationFooter = () => (
                 </div>
                 <div className="col-12 col-md-4 text-md-right">
                     <div className="text-muted">
-                        Więcej na <a href="https://ziemianarozdrozu.pl/">ziemianarozdrozu.pl</a>
+                        <Translate dangerousHTML value="application.footerLink" />
                     </div>
                 </div>
             </div>
