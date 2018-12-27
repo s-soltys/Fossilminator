@@ -1,6 +1,8 @@
 {
     "application": {
-        "title": "Kalkulator zużycia CO2"
+        "title": "Kalkulator zużycia CO2",
+        "footerName": "Wersja testowa kalkulatora CO2",
+        "footerLink": "Więcej na <a href=\"https://ziemianarozdrozu.pl/\">ziemianarozdrozu.pl</a>"
     },
     "locale": {
         "selectLanguage": "Wybierz język",

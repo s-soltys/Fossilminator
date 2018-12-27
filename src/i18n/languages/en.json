@@ -1,6 +1,8 @@
 {
     "application": {
-        "title": "CO2 Calculator"
+        "title": "CO2 Calculator",
+        "footerName": "Test version of CO2 Calculator",
+        "footerLink": "Read more at <a href=\"https://ziemianarozdrozu.pl/\">ziemianarozdrozu.pl</a>"
     },
     "locale": {
         "selectLanguage": "Choose language",
