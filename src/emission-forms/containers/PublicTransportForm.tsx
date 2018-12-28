@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
 import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
 
-class _EmissionCalculator extends React.Component<any> {
+class _PublicTransportForm extends React.Component<any> {
     renderSectionA() {
         const { transport, UpdatePublicTransport } = this.props;
 
@@ -96,7 +96,7 @@ function mapDispatchToProps(dispatch: any) {
     );
 }
 
-export const EmissionCalculator = connect(
+export const PublicTransportForm = connect(
     mapStateToProps,
     mapDispatchToProps
-)(_EmissionCalculator);
+)(_PublicTransportForm);

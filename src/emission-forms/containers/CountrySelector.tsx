@@ -1,5 +1,4 @@
 import React from 'react';
-import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
@@ -14,24 +13,30 @@ const OPTIONS = [
 
 class _CountrySelector extends React.Component<any> {
     render() {
-        const { countryCode, SetCountryCode } = this.props;
+        const { energeticMix, countryCode, SetCountryCode } = this.props;
 
         return (
-            <div>
-                <Translate className="font-weight-light" value="country.selectCountry" />
-                <LabelledDropdown 
+            <>
+                <LabelledDropdown
+                    label="country.selectCountry"
                     value={countryCode}
                     valueChange={value => SetCountryCode(value)}
                     options={OPTIONS}>
                 </LabelledDropdown>
-            </div>
+                <div>
+                    <small>
+                        Miks energetyczny: węgiel {Math.round(energeticMix.coal * 100)}%, wiatrowe {Math.round(energeticMix.wind * 100)}%, etc.
+                    </small>
+                </div>
+            </>
         );
     }
 }
 
 function mapStateToProps({ emissionInput }: AppState) {
     return {
-        countryCode: emissionInput.country.countryCode
+        countryCode: emissionInput.country.countryCode,
+        energeticMix: emissionInput.country.energeticMix
     };
 };
 

@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { EmissionChartContainer } from "../../emission-chart";
-import { EmissionAlertBadge } from "../../shared/components/EmissionAlertBadge";
 import { AppState } from "../../state";
 import { SectionVisualisationContainer } from "../../emission-visualisation";
+import { CountrySelector } from "../../emission-forms";
 
 class _ResultViewContainer extends React.Component<any, any> {
     render() {
@@ -14,10 +14,13 @@ class _ResultViewContainer extends React.Component<any, any> {
                     <div className="m-4">
                         <EmissionChartContainer />
                     </div>
-                    <hr />
-                    <EmissionAlertBadge />
+                    {/* <hr />
+                    <EmissionAlertBadge /> */}
                 </div>
                 <div className="col-12 col-md-6">
+                    <div className="mb-3">
+                        <CountrySelector />
+                    </div>
                     <SectionVisualisationContainer />
                 </div>
             </div>

@@ -1,7 +1,11 @@
 import { createAction } from '../util';
 import { Section } from '../constants';
 
-export type ActionsTypes = SetNavigationSectionAction | DetermineNavigationSectionAction;
+export type ActionsTypes = InitAppAction | SetNavigationSectionAction | DetermineNavigationSectionAction;
+
+export const InitAppType = '[NAVIGATION] InitApp';
+export type InitAppAction = ReturnType<typeof InitApp>;
+export const InitApp = () => createAction(InitAppType);
 
 export const SetNavigationSectionType = '[NAVIGATION] SetNavigationSection';
 export type SetNavigationSectionAction = ReturnType<typeof SetNavigationSection>;

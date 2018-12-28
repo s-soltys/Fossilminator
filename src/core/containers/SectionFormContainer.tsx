@@ -4,6 +4,7 @@ import { TabContent, TabPane } from "reactstrap";
 import { bindActionCreators } from "redux";
 import { AppState, Section } from "../../state";
 import { EmissionCalculator } from "../../emission-forms";
+import { PublicTransportForm } from "../../emission-forms/containers/PublicTransportForm";
 
 export class _SectionFormContainer extends React.Component<any> {
     render() {
@@ -12,7 +13,7 @@ export class _SectionFormContainer extends React.Component<any> {
         return (
             <TabContent activeTab={section}>
                 <TabPane tabId={Section.Housing}>
-                    { section === Section.Housing ? <EmissionCalculator /> : null }
+                    { section === Section.Housing ? <PublicTransportForm /> : null }
                 </TabPane>
                 <TabPane tabId={Section.WaterAndAirConditioning}>
                     { section === Section.WaterAndAirConditioning ? <EmissionCalculator /> : null }

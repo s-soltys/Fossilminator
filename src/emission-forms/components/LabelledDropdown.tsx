@@ -1,15 +1,18 @@
 import React from 'react';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
+import { Translate } from 'react-i18nify';
+import { withTranslate, InjectedTranslateProps } from '../../i18n';
 
 type Option = { value: any, label: string };
 
-interface Props {
+interface Props extends InjectedTranslateProps {
+    label?: string;
     value: any;
     valueChange: (value: any) => any;
     options: Option[];
 }
 
-export class LabelledDropdown extends React.Component<Props, any> {
+export class _LabelledDropdown extends React.Component<Props, any> {
     constructor(props: any) {
         super(props);
         this.state = { isOpen: false };
@@ -22,25 +25,30 @@ export class LabelledDropdown extends React.Component<Props, any> {
     }
 
     render() {
-        const { value, valueChange, options } = this.props;
+        const { t, label, value, valueChange, options } = this.props;
 
         const currentLabel = options.find(option => option.value === value);
 
         return (
-            <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
-                <DropdownToggle caret>
-                    { currentLabel ? currentLabel.label : value }
-                </DropdownToggle>
-                <DropdownMenu>
-                    {
-                        options.map(option => (
-                            <DropdownItem key={option.value} onClick={() => valueChange(option.value)}>
-                                { option.label }
-                            </DropdownItem>
-                        ))
-                    }
-                </DropdownMenu>
-            </Dropdown>
+            <div>
+                { !!label ? <Translate className="font-weight-light mb-2" tag="p" value={label} /> : null }
+                <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
+                    <DropdownToggle caret>
+                        { currentLabel ? currentLabel.label : value }
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        {
+                            options.map(option => (
+                                <DropdownItem key={option.value} onClick={() => valueChange(option.value)}>
+                                    {t(option.label)}
+                                </DropdownItem>
+                            ))
+                        }
+                    </DropdownMenu>
+                </Dropdown>
+            </div>
         );
     }
 }
+
+export const LabelledDropdown = withTranslate(_LabelledDropdown);
