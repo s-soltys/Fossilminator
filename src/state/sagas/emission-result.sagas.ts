@@ -14,6 +14,7 @@ export const calculateEmissionResultSaga = function* () {
 export const EmissionResultSagas = [
     takeEvery([
         EmissionResultActions.CalculateEmissionResultsType,
+        EmissionInputActions.SetEnergeticMixType,
         EmissionInputActions.UpdatePublicTransportType,
         EmissionInputActions.UpdateFoodType
     ], calculateEmissionResultSaga)

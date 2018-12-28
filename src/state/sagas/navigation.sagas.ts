@@ -1,10 +1,9 @@
 import { takeEvery, put } from 'redux-saga/effects';
-import { NavigationActions, EmissionInputActions, EmissionResultActions } from '../actions';
+import { NavigationActions, EmissionInputActions } from '../actions';
 import { LocaleConfig } from '../../i18n';
 
 export const initAppSaga = function* () {
     yield put(EmissionInputActions.SetCountryCode('pl'));
-    yield put(EmissionResultActions.CalculateEmissionResults());
 }
 
 export const logOnNavigateSaga = function* (action: NavigationActions.SetNavigationSectionAction) {
