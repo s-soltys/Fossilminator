@@ -1,5 +1,4 @@
 import React from 'react';
-import { Translate } from 'react-i18nify';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';

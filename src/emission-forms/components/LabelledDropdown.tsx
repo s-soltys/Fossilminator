@@ -1,17 +1,18 @@
 import React from 'react';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { Translate } from 'react-i18nify';
+import { withTranslate, InjectedTranslateProps } from '../../i18n';
 
 type Option = { value: any, label: string };
 
-interface Props {
+interface Props extends InjectedTranslateProps {
     label?: string;
     value: any;
     valueChange: (value: any) => any;
     options: Option[];
 }
 
-export class LabelledDropdown extends React.Component<Props, any> {
+export class _LabelledDropdown extends React.Component<Props, any> {
     constructor(props: any) {
         super(props);
         this.state = { isOpen: false };
@@ -24,7 +25,7 @@ export class LabelledDropdown extends React.Component<Props, any> {
     }
 
     render() {
-        const { label, value, valueChange, options } = this.props;
+        const { t, label, value, valueChange, options } = this.props;
 
         const currentLabel = options.find(option => option.value === value);
 
@@ -39,7 +40,7 @@ export class LabelledDropdown extends React.Component<Props, any> {
                         {
                             options.map(option => (
                                 <DropdownItem key={option.value} onClick={() => valueChange(option.value)}>
-                                    { option.label }
+                                    {t(option.label)}
                                 </DropdownItem>
                             ))
                         }
@@ -49,3 +50,5 @@ export class LabelledDropdown extends React.Component<Props, any> {
         );
     }
 }
+
+export const LabelledDropdown = withTranslate(_LabelledDropdown);

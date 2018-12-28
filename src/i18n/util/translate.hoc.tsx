@@ -6,8 +6,8 @@ const tFn = I18n.t.bind(I18n);
 const lFn = I18n.l.bind(I18n);
 
 export interface InjectedTranslateProps {
-    t: Function;
-    l: Function;
+    t?: Function;
+    l?: Function;
 }
 
 export function withTranslate<P>(
