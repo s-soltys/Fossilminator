@@ -15,7 +15,7 @@ export const InitialAppState: AppState = {
         food: {
             meatPerWeek: 1
         }
-    },
+    } as any,
     emissionResult: {
         housingConstruction: 0,
         housingHeating: 0,
