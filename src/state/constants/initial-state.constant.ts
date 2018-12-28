@@ -8,11 +8,11 @@ export const InitialAppState: AppState = {
         country: {
             countryCode: 'pl',
             energeticMix: {
-                coal: 0.8,
+                coal: 0,
                 nuclear: 0,
                 solar: 0,
                 water: 0,
-                wind: 0.1
+                wind: 0
             }
         },
         transport: {

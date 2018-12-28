@@ -10,9 +10,12 @@ import {
 } from "./core";
 
 import "./style/style.scss";
+import { NavigationActions, AppState } from "./state";
+import { bindActionCreators } from "redux";
 
-class App extends Component {
-    componentDidMount() {
+class App extends Component<any> {
+    componentWillMount() {
+        this.props.initApp();
         document.title = I18n.t("application.title");
     }
 
@@ -35,4 +38,20 @@ class App extends Component {
     }
 }
 
-export default connect()(App);
+function mapStateToProps(state: AppState) {
+    return {};
+}
+
+function mapDispatchToProps(dispatch: any) {
+    return bindActionCreators(
+        {
+            initApp: NavigationActions.InitApp
+        },
+        dispatch
+    );
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
