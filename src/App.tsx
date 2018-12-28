@@ -21,9 +21,13 @@ class App extends Component {
             <>
                 <NavigationHeader />
                 <main role="main" className="container">
-                    <ResultViewContainer />
-                    <SectionTabs />
-                    <SectionFormContainer />
+                    <section className="mb-5">
+                        <ResultViewContainer />
+                    </section>
+                    <section>
+                        <SectionTabs />
+                        <SectionFormContainer />
+                    </section>
                 </main>
                 <NavigationFooter />
             </>

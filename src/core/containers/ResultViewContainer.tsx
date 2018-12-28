@@ -14,8 +14,8 @@ class _ResultViewContainer extends React.Component<any, any> {
                     <div className="m-4">
                         <EmissionChartContainer />
                     </div>
-                    <hr />
-                    <EmissionAlertBadge />
+                    {/* <hr />
+                    <EmissionAlertBadge /> */}
                 </div>
                 <div className="col-12 col-md-6">
                     <SectionVisualisationContainer />
