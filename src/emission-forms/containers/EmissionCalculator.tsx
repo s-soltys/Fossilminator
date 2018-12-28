@@ -14,9 +14,9 @@ class _EmissionCalculator extends React.Component<any> {
             <>
                 <h4 className="font-weight-light">Transport:</h4>
                 <div>
-                    <Translate className="font-weight-light" value="transport.enterWeeklyCarUsage" />
-                    <div className="w-50">
+                    <div className="w-75">
                         <LabelledInput
+                            label="transport.enterWeeklyCarUsage"
                             addon="km"
                             placeholder="Ile km podróżujesz samochodem tygodniowo?"
                             value={transport.carKmPerWeek}
@@ -25,9 +25,9 @@ class _EmissionCalculator extends React.Component<any> {
                     </div>
                 </div>
                 <div className="pt-3">
-                    <Translate className="font-weight-light" value="transport.enterAnnualPlaneHours" />
-                    <div className="w-50">
+                    <div className="w-75">
                         <LabelledInput
+                            label="transport.enterAnnualPlaneHours"
                             addon="godziny"
                             placeholder="Ile godzin spędzasz rocznie w podróży samolotem?"
                             value={transport.annualHoursInAir}
@@ -54,8 +54,8 @@ class _EmissionCalculator extends React.Component<any> {
             <>
                 <h4 className="font-weight-light">Żywność:</h4>
                 <div>
-                    <Translate className="font-weight-light" value="food.howOftenDoYouConsumeFood" />
-                    <LabelledDropdown 
+                    <LabelledDropdown
+                        label="food.howOftenDoYouConsumeFood"
                         value={food.meatPerWeek}
                         valueChange={value => UpdateFood({ meatPerWeek: value })}
                         options={options}>

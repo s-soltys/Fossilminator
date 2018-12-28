@@ -17,14 +17,12 @@ class _CountrySelector extends React.Component<any> {
         const { countryCode, SetCountryCode } = this.props;
 
         return (
-            <div>
-                <Translate className="font-weight-light" value="country.selectCountry" />
-                <LabelledDropdown 
-                    value={countryCode}
-                    valueChange={value => SetCountryCode(value)}
-                    options={OPTIONS}>
-                </LabelledDropdown>
-            </div>
+            <LabelledDropdown
+                label="country.selectCountry"
+                value={countryCode}
+                valueChange={value => SetCountryCode(value)}
+                options={OPTIONS}>
+            </LabelledDropdown>
         );
     }
 }
