@@ -50,7 +50,7 @@ export enum VehicleFuel {
 export interface EmissionInputHousing {
     buildingType: BuildingType;
     buildingMaterial: BuildingMaterial;
-    energeticEfficiency: number;
+    energeticEfficiency: number; // Bardzo słaba, ..., Przeciętna, Doskonała, Dom pasywny
     area: number;
     numberOfPeople: number;
 }
@@ -58,17 +58,17 @@ export interface EmissionInputHousing {
 export interface EmissionInputWater {
     bathsWeekly: number;
     showersWeekly: number;
-    litresPerBath: number;
+    litresPerBath: number; // 50 small bath - 550 big jacuzzi
     waterHeatingType: HeatingType;
 }
 
 export interface EmissionInputPrivateVehicle {
-    type: VehicleType;
+    type: VehicleType; // Big = Terain, Very Large = Hummer
     age: number;
     fuelType: VehicleFuel;
     fuelUsage: number;
     travelWeeklyKm: number;
-    freqOfTravelWithPassengers: number;
+    freqOfTravelWithPassengers: number; // 0% - 100%
     airConditioning: boolean;
 }
 
@@ -91,13 +91,13 @@ export interface EmissionInputPublicTransport {
 
 
 export interface EmissionInputConsumption {
-    incomeLevel: number;
-    recyclingRate: number;
-    clothing: number;
-    packagingType: number;
-    houseEquipment: number;
-    entertainmentConsumption: number;
-    electricityUsage: number;
+    incomeLevel: number; // Śr. krajowa + %-ty
+    recyclingRate: number; // Brak recyklingu, Część śmieci trafia do recyklingu, Duzo, Wiekszosc
+    clothing: number; // Uzywane, Nowe gdy stare sa zniszczone, Regularnie nowe, modne
+    packagingType: number; // Nie zwracam uwagi, Minimalnie opakowane, Lubie ladne opakowania
+    houseEquipment: number; // Uzywane, Nowe ale uzywam dlugo, Kupuje czesto nowe i modne rzeczy
+    entertainmentConsumption: number; // Spacery i rower, Kina i lokale, Techniczne - quady i spadochroniarstwo
+    electricityUsage: number; // Bardzo oszczednie, Staram sie nie marnowac, Nie przejmuje sie - stać mnie na to
 }
 
 export interface EmissionInputTransport {
@@ -106,12 +106,12 @@ export interface EmissionInputTransport {
 }
 
 export interface EmissionInputFood {
-    averageAmountOfFood: number;
-    foodSourceLocality: number;
-    meatPerWeek: number;
-    frozenFoodWeekly: number;
-    refridgeratorEfficiency: number;
-    ovenEfficiency: number;
+    averageAmountOfFood: number; // Mało, Średnio itd.
+    foodSourceLocality: number; // Jem lokalną bez marketów, mały sklep z zyw. lokalna, Towary lokalne i sezonowe, Nie zwracam uwagi na sezonowosc, Egzotyczne
+    meatPerWeek: number; // Brak produktów zw. (weganin), Bez mięsa (wegetarianin), 1-2 razy, 3-6 razy, codziennie
+    frozenFoodWeekly: number; // wcale, rzadko, 1x tydzień, 2-3 tygodniowo, codziennie
+    refridgeratorEfficiency: number; // Brak, Niskoelektywa G-D, Średioefektywna C-B, Energooszczędna A, Bardzo A+
+    ovenEfficiency: number; // Elektryczna zwykła, indukcyjna, gazowa, węglowa, Drewno
     additionalFreezer: boolean;
     dishwasher: boolean;
 }
