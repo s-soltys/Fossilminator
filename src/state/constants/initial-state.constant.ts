@@ -6,7 +6,14 @@ export const InitialAppState: AppState = {
     },
     emissionInput: {
         country: {
-            countryCode: 'pl'
+            countryCode: 'pl',
+            energeticMix: {
+                coal: 0,
+                nuclear: 0,
+                solar: 0,
+                water: 0,
+                wind: 0
+            }
         },
         transport: {
             carKmPerWeek: null,
