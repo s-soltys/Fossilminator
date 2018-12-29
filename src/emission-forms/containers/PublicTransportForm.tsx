@@ -80,6 +80,7 @@ class _PublicTransportForm extends React.Component<Props> {
                         </div>
                     </div>
                 </div>
+                <hr/>
                 <div className="row">
                     <div className="col-12 col-md-6">
                     </div>
