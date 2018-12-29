@@ -1,10 +1,18 @@
 import { EmissionInput } from "../types/input";
 import { EmissionResultField } from "../types/result";
-import { FoodEmissionParams, WeeksPerYear, TransportEmissionParams } from "../constants";
 import { getHousingConstructionEmission } from "./partials/partial-housing-construction";
 import { getHousingHeatingEmission } from "./partials/partial-housing-heating";
 import { getWarmWaterEmission } from "./partials/partial-warm-water";
 import { getAirConditioningEmission } from "./partials/partial-air-conditioning";
+import { getFuelForTransportEmission } from "./partials/partial-fuel-for-transport";
+import { getCarConstructionEmission } from "./partials/partial-car-construction";
+import { getPublicTransportEmission } from "./partials/partial-public-transport";
+import { getConsumptionEmission } from "./partials/partial-consumption";
+import { getElectricityEmission } from "./partials/partial-electricity";
+import { getDeforestationEmission } from "./partials/partial-deforestation";
+import { getCommonServicesEmission } from "./partials/partial-common-services";
+import { getAirTravelEmission } from "./partials/partial-air-travel";
+import { getFoodProductionEmission } from "./partials/partial-food-production";
 
 export type PartialResultCalculatorMap = {
     [key in EmissionResultField]: (input: EmissionInput) => number;
@@ -15,34 +23,14 @@ export const PartialEmissionResult: PartialResultCalculatorMap = {
     housingHeating: getHousingHeatingEmission,
     warmWater: getWarmWaterEmission,
     airConditioning: getAirConditioningEmission,
-    fuelForTransport: ({ transport }) => {
-        return transport.carKmPerWeek * WeeksPerYear * TransportEmissionParams.perKmOfCarTravel;
-    },
-    carConstuction: (input) => {
-        return 0.9;
-    },
-    publicTransport: (input) => {
-        return 1.2;
-    },
-    airTravel: ({ transport }) => {
-        return transport.annualHoursInAir * TransportEmissionParams.perAnnualHourInAir;
-    },
-
-    foodProduction: ({ food }) => {
-        return food.meatPerWeek * FoodEmissionParams.perMeatDailyMeatConsumption;
-    },
-    consumption: (input) => {
-        return 2.6;
-    },
-    electricity: (input) => {
-        return 1.1;
-    },
-    deforestation: (input) => {
-        return 0.5;
-    },
-    commonServices: (input) => {
-        return 3.5;
-    },
-
+    fuelForTransport: getFuelForTransportEmission,
+    carConstuction: getCarConstructionEmission,
+    publicTransport: getPublicTransportEmission,
+    airTravel: getAirTravelEmission,
+    foodProduction: getFoodProductionEmission,
+    consumption: getConsumptionEmission,
+    electricity: getElectricityEmission,
+    deforestation: getDeforestationEmission,
+    commonServices: getCommonServicesEmission,
     totalAnnualEmission: undefined
 };
