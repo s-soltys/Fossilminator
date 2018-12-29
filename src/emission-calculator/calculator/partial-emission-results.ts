@@ -1,18 +1,18 @@
 import { EmissionInput } from "../types/input";
 import { EmissionResultField } from "../types/result";
-import { getHousingConstructionEmission } from "./partials/partial-housing-construction";
-import { getHousingHeatingEmission } from "./partials/partial-housing-heating";
-import { getWarmWaterEmission } from "./partials/partial-warm-water";
-import { getAirConditioningEmission } from "./partials/partial-air-conditioning";
-import { getFuelForTransportEmission } from "./partials/partial-fuel-for-transport";
-import { getCarConstructionEmission } from "./partials/partial-car-construction";
-import { getPublicTransportEmission } from "./partials/partial-public-transport";
-import { getConsumptionEmission } from "./partials/partial-consumption";
-import { getElectricityEmission } from "./partials/partial-electricity";
-import { getDeforestationEmission } from "./partials/partial-deforestation";
-import { getCommonServicesEmission } from "./partials/partial-common-services";
-import { getAirTravelEmission } from "./partials/partial-air-travel";
-import { getFoodProductionEmission } from "./partials/partial-food-production";
+import { getHousingConstructionEmission } from "./partial-emissions/emission-housing-construction";
+import { getHousingHeatingEmission } from "./partial-emissions/emission-housing-heating";
+import { getWarmWaterEmission } from "./partial-emissions/emission-warm-water";
+import { getAirConditioningEmission } from "./partial-emissions/emission-air-conditioning";
+import { getFuelForTransportEmission } from "./partial-emissions/emission-fuel-for-transport";
+import { getCarConstructionEmission } from "./partial-emissions/emission-car-construction";
+import { getPublicTransportEmission } from "./partial-emissions/emission-public-transport";
+import { getConsumptionEmission } from "./partial-emissions/emission-consumption";
+import { getElectricityEmission } from "./partial-emissions/emission-electricity";
+import { getDeforestationEmission } from "./partial-emissions/emission-deforestation";
+import { getCommonServicesEmission } from "./partial-emissions/emission-common-services";
+import { getAirTravelEmission } from "./partial-emissions/emission-air-travel";
+import { getFoodProductionEmission } from "./partial-emissions/emission-food-production";
 
 export type PartialResultCalculatorMap = {
     [key in EmissionResultField]: (input: EmissionInput) => number;
