@@ -1,33 +1,11 @@
 import { AppState, Section } from "./state.interface";
+import { EmptyEmissionInput } from "../../emission-calculator/constants";
 
 export const InitialAppState: AppState = {
     navigation: {
         section: Section.Housing
     },
-    emissionInput: {
-        country: {
-            countryCode: 'pl',
-            energeticMix: {
-                coal: 0,
-                nuclear: 0,
-                solar: 0,
-                water: 0,
-                wind: 0
-            }
-        },
-        transport: {
-            carKmPerWeek: null,
-            annualHoursInAir: null
-        },
-        publicTransport: {} as any,
-        privateTransport: {} as any,
-        housing: {} as any,
-        water: {} as any,
-        consumption: {} as any,
-        food: {
-            meatPerWeek: 1
-        } as any
-    },
+    emissionInput: EmptyEmissionInput,
     emissionResult: {
         housingConstruction: 0,
         housingHeating: 0,
