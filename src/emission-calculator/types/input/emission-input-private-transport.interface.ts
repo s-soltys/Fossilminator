@@ -1,5 +1,3 @@
-import { VehicleType, VehicleFuel } from "./emission-input-types.enum";
-
 export interface EmissionInputPrivateVehicle {
     type: VehicleType; // Big = Terain, Very Large = Hummer
     age: number;
@@ -14,3 +12,20 @@ export interface EmissionInputPrivateTransport {
     vehicles: EmissionInputPrivateVehicle[];
 }
 
+
+export enum VehicleType {
+    Bicycle,
+    Motorbike,
+    CarSmall,
+    CarMedium,
+    CarLarge,
+    CarVeryLarge
+}
+
+export enum VehicleFuel {
+    Gasoline,
+    Diesel,
+    Gas,
+    Hybrid,
+    Electric
+}

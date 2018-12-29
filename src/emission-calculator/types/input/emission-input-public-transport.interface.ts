@@ -1,4 +1,8 @@
-import { PlaneClass } from "./emission-input-types.enum";
+export enum PlaneClass {
+    Economy,
+    Business,
+    First
+}
 
 export interface EmissionInputPublicTransport {
     cityBusTravelWeekly: number;
