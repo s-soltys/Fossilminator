@@ -92,6 +92,10 @@ export interface EmissionInputPublicTransport {
     metroTramTravelWeeklyKm: number;
     taxiTravelWeeklyKm: number;
     suburbanTrainTravelWeeklyKm: number;
+
+    /**
+     * Weekly travel distance in KM for long distance trains
+     */
     longDistanceTrainTravelWeeklyKm: number;
     airClass: PlaneClass;
     shortDistanceAirTravelAnnualHours: number;
