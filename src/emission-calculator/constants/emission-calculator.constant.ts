@@ -5,6 +5,5 @@ export const FoodEmissionParams = {
 };
 
 export const TransportEmissionParams = {
-    perKmOfCarTravel: 0.001,
-    perAnnualHourInAir: 0.3
+    perKmOfCarTravel: 0.001
 };
