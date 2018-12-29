@@ -20,69 +20,69 @@ class _PublicTransportForm extends React.Component<Props> {
                     <div className="col-12 col-md-6 col-lg-4">
                         <div>
                             <LabelledInput
-                                label="transport.cityBusTravelWeeklyKmTitle"
+                                label="transport.cityBusTravelWeeklyTitle"
                                 addon="units.km"
-                                placeholder="transport.cityBusTravelWeeklyKmPlaceholder"
-                                value={data.cityBusTravelWeeklyKm}
-                                valueChange={value => update({ cityBusTravelWeeklyKm: value })}>
+                                placeholder="transport.cityBusTravelWeeklyPlaceholder"
+                                value={data.cityBusTravelWeekly}
+                                valueChange={value => update({ cityBusTravelWeekly: value })}>
                             </LabelledInput>
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="transport.longDistanceBusTravelWeeklyKmTitle"
+                                label="transport.longDistanceBusTravelWeeklyTitle"
                                 addon="units.km"
-                                placeholder="transport.longDistanceBusTravelWeeklyKmPlaceholder"
-                                value={data.longDistanceBusTravelWeeklyKm}
-                                valueChange={value => update({ longDistanceBusTravelWeeklyKm: value })}>
+                                placeholder="transport.longDistanceBusTravelWeeklyPlaceholder"
+                                value={data.longDistanceBusTravelWeekly}
+                                valueChange={value => update({ longDistanceBusTravelWeekly: value })}>
                             </LabelledInput>
                         </div>
                     </div>
                     <div className="col-12 col-md-6 col-lg-4">
                         <div>
                             <LabelledInput
-                                label="transport.microBusTravelWeeklyKmTitle"
+                                label="transport.microBusTravelWeeklyTitle"
                                 addon="units.km"
-                                placeholder="transport.microBusTravelWeeklyKmPlaceholder"
-                                value={data.microBusTravelWeeklyKm}
-                                valueChange={value => update({ microBusTravelWeeklyKm: value })}>
+                                placeholder="transport.microBusTravelWeeklyPlaceholder"
+                                value={data.microBusTravelWeekly}
+                                valueChange={value => update({ microBusTravelWeekly: value })}>
                             </LabelledInput>
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="transport.metroTramTravelWeeklyKmTitle"
+                                label="transport.metroTramTravelWeeklyTitle"
                                 addon="units.km"
-                                placeholder="transport.metroTramTravelWeeklyKmPlaceholder"
-                                value={data.metroTramTravelWeeklyKm}
-                                valueChange={value => update({ metroTramTravelWeeklyKm: value })}>
+                                placeholder="transport.metroTramTravelWeeklyPlaceholder"
+                                value={data.metroTramTravelWeekly}
+                                valueChange={value => update({ metroTramTravelWeekly: value })}>
                             </LabelledInput>
                         </div>
                     </div>
                     <div className="col-12 col-md-6 col-lg-4">
                         <div>
                             <LabelledInput
-                                label="transport.taxiTravelWeeklyKmTitle"
+                                label="transport.taxiTravelWeeklyTitle"
                                 addon="units.km"
-                                placeholder="transport.taxiTravelWeeklyKmPlaceholder"
-                                value={data.taxiTravelWeeklyKm}
-                                valueChange={value => update({ taxiTravelWeeklyKm: value })}>
+                                placeholder="transport.taxiTravelWeeklyPlaceholder"
+                                value={data.taxiTravelWeekly}
+                                valueChange={value => update({ taxiTravelWeekly: value })}>
                             </LabelledInput>
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="transport.suburbanTrainTravelWeeklyKmTitle"
+                                label="transport.suburbanTrainTravelWeeklyTitle"
                                 addon="units.km"
-                                placeholder="transport.suburbanTrainTravelWeeklyKmPlaceholder"
-                                value={data.suburbanTrainTravelWeeklyKm}
-                                valueChange={value => update({ suburbanTrainTravelWeeklyKm: value })}>
+                                placeholder="transport.suburbanTrainTravelWeeklyPlaceholder"
+                                value={data.suburbanTrainTravelWeekly}
+                                valueChange={value => update({ suburbanTrainTravelWeekly: value })}>
                             </LabelledInput>
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="transport.longDistanceTrainTravelWeeklyKmTitle"
+                                label="transport.longDistanceTrainTravelWeeklyTitle"
                                 addon="units.km"
-                                placeholder="transport.longDistanceTrainTravelWeeklyKmPlaceholder"
-                                value={data.longDistanceTrainTravelWeeklyKm}
-                                valueChange={value => update({ longDistanceTrainTravelWeeklyKm: value })}>
+                                placeholder="transport.longDistanceTrainTravelWeeklyPlaceholder"
+                                value={data.longDistanceTrainTravelWeekly}
+                                valueChange={value => update({ longDistanceTrainTravelWeekly: value })}>
                             </LabelledInput>
                         </div>
                     </div>

@@ -76,7 +76,7 @@ export interface EmissionInputPrivateVehicle {
     age: number;
     fuelType: VehicleFuel;
     fuelUsage: number;
-    travelWeeklyKm: number;
+    TravelWeekly: number;
     freqOfTravelWithPassengers: number; // 0% - 100%
     airConditioning: boolean;
 }
@@ -86,17 +86,17 @@ export interface EmissionInputPrivateTransport {
 }
 
 export interface EmissionInputPublicTransport {
-    cityBusTravelWeeklyKm: number;
-    longDistanceBusTravelWeeklyKm: number;
-    microBusTravelWeeklyKm: number;
-    metroTramTravelWeeklyKm: number;
-    taxiTravelWeeklyKm: number;
-    suburbanTrainTravelWeeklyKm: number;
+    cityBusTravelWeekly: number;
+    longDistanceBusTravelWeekly: number;
+    microBusTravelWeekly: number;
+    metroTramTravelWeekly: number;
+    taxiTravelWeekly: number;
+    suburbanTrainTravelWeekly: number;
 
     /**
      * Weekly travel distance in KM for long distance trains
      */
-    longDistanceTrainTravelWeeklyKm: number;
+    longDistanceTrainTravelWeekly: number;
     airClass: PlaneClass;
     shortDistanceAirTravelAnnualHours: number;
     longDistanceAirTravelAnnualHours: number;
