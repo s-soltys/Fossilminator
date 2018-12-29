@@ -37,6 +37,9 @@
     "actions": {
         "calculateUsage": "Oblicz"
     },
+    "units": {
+        "kmWeekly": "km/tydzień"
+    },
     "country": {
         "selectCountry": "W jakim państwie mieszkasz?"
     },
@@ -46,6 +49,19 @@
     "transport": {
         "enterWeeklyCarUsage": "Wprowadź swój tygodniowy przebieg samochodem",
         "enterAnnualPlaneHours": "Wprowadź liczbę godzin które spędzasz rocznie na podróży samolotem"
+    },
+    "publicTransport": {
+        "sectionTitle": "Transport publiczny",
+        "cityBusTravelWeeklyTitle": "Autobus miejski",
+        "longDistanceBusTravelWeeklyTitle": "Autobus dalekobieżny",
+        "microBusTravelWeeklyTitle": "Mikrobus",
+        "metroTramTravelWeeklyTitle": "Tramwaj/metro",
+        "taxiTravelWeeklyTitle": "Taxi",
+        "suburbanTrainTravelWeeklyTitle": "Pociąg podmiejski",
+        "longDistanceTrainTravelWeeklyTitle": "Pociąg dalekobieżny",
+        "airClassTitle": "Klasa",
+        "shortDistanceAirTravelAnnualHoursTitle": "Loty krótkodystansowe (do 2000km)",
+        "longDistanceAirTravelAnnualHoursTitle": "Loty długodystansowe (ponad 2000km)"
     },
     "emissions": {
         "yourAnnualEmissionsAre": "Twoje roczne zużycie paliw kopalnych to %{emissions} ton CO2",
