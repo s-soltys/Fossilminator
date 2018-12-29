@@ -1,7 +1,8 @@
 import { getPublicTransportEmission } from "../emission-public-transport";
+import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for PublicTransport should', () => {
     it('handle empty inputs', () => {
-        expect(getPublicTransportEmission({} as any)).toBe(0);
+        expect(getPublicTransportEmission(EmptyEmissionInput)).toBe(0);
     });
 });

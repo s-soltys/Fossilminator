@@ -1,7 +1,8 @@
 import { getFoodProductionEmission } from "../emission-food-production";
+import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for FoodProduction should', () => {
     it('handle empty inputs', () => {
-        expect(getFoodProductionEmission({} as any)).toBe(0);
+        expect(getFoodProductionEmission(EmptyEmissionInput)).toBe(NaN);
     });
 });

@@ -1,7 +1,8 @@
 import { getCarConstructionEmission } from "../emission-car-construction";
+import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for CarConstruction should', () => {
     it('handle empty inputs', () => {
-        expect(getCarConstructionEmission({} as any)).toBe(0);
+        expect(getCarConstructionEmission(EmptyEmissionInput)).toBe(0);
     });
 });

@@ -1,7 +1,8 @@
 import { getAirTravelEmission } from "../emission-air-travel";
+import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for AirTravel should', () => {
     it('handle empty inputs', () => {
-        expect(getAirTravelEmission({ transport: {} } as any)).toBe(NaN);
+        expect(getAirTravelEmission(EmptyEmissionInput)).toBe(NaN);
     });
 });

@@ -1,7 +1,8 @@
 import { getHousingHeatingEmission } from "../emission-housing-heating";
+import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for HousingHeating should', () => {
     it('handle empty inputs', () => {
-        expect(getHousingHeatingEmission({} as any)).toBe(0);
+        expect(getHousingHeatingEmission(EmptyEmissionInput)).toBe(0);
     });
 });

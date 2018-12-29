@@ -1,7 +1,8 @@
 import { getFuelForTransportEmission } from "../emission-fuel-for-transport";
+import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for FuelForTransport should', () => {
     it('handle empty inputs', () => {
-        expect(getFuelForTransportEmission({} as any)).toBe(0);
+        expect(getFuelForTransportEmission(EmptyEmissionInput)).toBe(NaN);
     });
 });
