@@ -19,10 +19,15 @@ export const InitialAppState: AppState = {
             carKmPerWeek: null,
             annualHoursInAir: null
         },
+        publicTransport: {} as any,
+        privateTransport: {} as any,
+        housing: {} as any,
+        water: {} as any,
+        consumption: {} as any,
         food: {
             meatPerWeek: 1
-        }
-    } as any,
+        } as any
+    },
     emissionResult: {
         housingConstruction: 0,
         housingHeating: 0,
