@@ -40,14 +40,14 @@ describe('Partial emissions for air travel should', () => {
         expect(economyEmission).toBeLessThan(businessEmission);
         expect(businessEmission).toBeLessThan(firstClassEmission);
     });
-
-    function getEmissionForPublicTranspot(input: Partial<EmissionInputPublicTransport>) {
-        return getAirTravelEmission({
-            ...EmptyEmissionInput,
-            publicTransport: {
-                ...EmptyEmissionInput.publicTransport,
-                ...input
-            }
-        });
-    }
 });
+
+function getEmissionForPublicTranspot(input: Partial<EmissionInputPublicTransport>) {
+    return getAirTravelEmission({
+        ...EmptyEmissionInput,
+        publicTransport: {
+            ...EmptyEmissionInput.publicTransport,
+            ...input
+        }
+    });
+}
