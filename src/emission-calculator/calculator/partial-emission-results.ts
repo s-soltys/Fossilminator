@@ -1,24 +1,20 @@
 import { EmissionInput } from "../types/input";
 import { EmissionResultField } from "../types/result";
 import { FoodEmissionParams, WeeksPerYear, TransportEmissionParams } from "../constants";
+import { getHousingConstructionEmission } from "./partial-results/partial-housing-construction";
+import { getHousingHeatingEmission } from "./partial-results/partial-housing-heating";
+import { getWarmWaterEmission } from "./partial-results/partial-warm-water";
+import { getAirConditioningEmission } from "./partial-results/partial-air-conditioning";
 
 export type PartialResultCalculatorMap = {
     [key in EmissionResultField]: (input: EmissionInput) => number;
 };
 
 export const PartialEmissionResult: PartialResultCalculatorMap = {
-    housingConstruction: (input) => {
-        return 0.2;
-    },
-    housingHeating: (input) => {
-        return 0.5;
-    },
-    warmWater: (input) => {
-        return 1.25;
-    },
-    airConditioning: (input) => {
-        return 0.12;
-    },
+    housingConstruction: getHousingConstructionEmission,
+    housingHeating: getHousingHeatingEmission,
+    warmWater: getWarmWaterEmission,
+    airConditioning: getAirConditioningEmission,
     fuelForTransport: ({ transport }) => {
         return transport.carKmPerWeek * WeeksPerYear * TransportEmissionParams.perKmOfCarTravel;
     },
