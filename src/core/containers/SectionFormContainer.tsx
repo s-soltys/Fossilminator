@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { TabContent, TabPane } from "reactstrap";
 import { bindActionCreators } from "redux";
 import { AppState, Section } from "../../state";
-import { EmissionCalculator } from "../../emission-forms";
 import { PublicTransportForm } from "../../emission-forms/containers/PublicTransportForm";
 
 export class _SectionFormContainer extends React.Component<any> {
@@ -16,10 +15,13 @@ export class _SectionFormContainer extends React.Component<any> {
                     { section === Section.Housing ? <PublicTransportForm /> : null }
                 </TabPane>
                 <TabPane tabId={Section.WaterAndAirConditioning}>
-                    { section === Section.WaterAndAirConditioning ? <EmissionCalculator /> : null }
+                    { section === Section.WaterAndAirConditioning ? <PublicTransportForm /> : null }
                 </TabPane>
                 <TabPane tabId={Section.PrivateTransport}>
-                    { section === Section.PrivateTransport ? <EmissionCalculator /> : null }
+                    { section === Section.PrivateTransport ? <PublicTransportForm /> : null }
+                </TabPane>
+                <TabPane tabId={Section.PublicTransport}>
+                    { section === Section.PublicTransport ? <PublicTransportForm /> : null }
                 </TabPane>
             </TabContent>
         );

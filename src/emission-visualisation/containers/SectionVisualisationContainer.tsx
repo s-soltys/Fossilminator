@@ -3,8 +3,14 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { AppState, Section } from "../../state";
 import { SpritePanel, Sprite } from "../components";
+import { EmissionInput } from "../../emission-calculator";
 
-export class _SectionVisualisationContainer extends React.Component<any> {
+interface Props {
+    section: Section;
+    emissionInput: EmissionInput;
+}
+
+export class _SectionVisualisationContainer extends React.Component<Props> {
     renderHousing() {
         return (
             <SpritePanel file="314.jpg" alt="housing">
@@ -27,11 +33,9 @@ export class _SectionVisualisationContainer extends React.Component<any> {
     }
 
     renderPrivateTransport() {
-        const { transport } = this.props.emissionInput;
-
         return (
             <SpritePanel file="367.jpg" alt="public transport">
-                <Sprite visible={transport.carKmPerWeek > 0} file="381.png" alt="car" size="35" right="10" bottom="5" />
+                <Sprite visible={true} file="381.png" alt="car" size="35" right="10" bottom="5" />
             </SpritePanel>
         );
     }

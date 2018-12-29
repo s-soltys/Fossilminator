@@ -11,7 +11,6 @@ export const EmptyEmissionInput: EmissionInput = {
             wind: 0
         }
     },
-    transport: {} as any,
     housing: {} as any,
     water: {} as any,
     privateTransport: {} as any,
