@@ -6,23 +6,33 @@ import { AppState, Section } from "../../state";
 import { PublicTransportForm } from "../../emission-forms/containers/PublicTransportForm";
 
 export class _SectionFormContainer extends React.Component<any> {
+    renderTab(section, Component?) {
+        if (!Component) {
+            return (
+                <TabPane tabId={section}>
+                    <h1>Sekcja w budowie...</h1>
+                </TabPane>
+            )
+        };
+
+        return (
+            <TabPane tabId={section}>
+                { this.props.section === section ? <Component /> : null }
+            </TabPane>
+        );
+    }
+
     render() {
         const { section } = this.props;
 
         return (
             <TabContent activeTab={section}>
-                <TabPane tabId={Section.Housing}>
-                    { section === Section.Housing ? <PublicTransportForm /> : null }
-                </TabPane>
-                <TabPane tabId={Section.WaterAndAirConditioning}>
-                    { section === Section.WaterAndAirConditioning ? <PublicTransportForm /> : null }
-                </TabPane>
-                <TabPane tabId={Section.PrivateTransport}>
-                    { section === Section.PrivateTransport ? <PublicTransportForm /> : null }
-                </TabPane>
-                <TabPane tabId={Section.PublicTransport}>
-                    { section === Section.PublicTransport ? <PublicTransportForm /> : null }
-                </TabPane>
+                {this.renderTab(Section.Housing)}
+                {this.renderTab(Section.WaterAndAirConditioning)}
+                {this.renderTab(Section.PrivateTransport)}
+                {this.renderTab(Section.PublicTransport, PublicTransportForm)}
+                {this.renderTab(Section.Food)}
+                {this.renderTab(Section.Consumption)}
             </TabContent>
         );
     }
