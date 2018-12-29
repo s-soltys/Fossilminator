@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
 import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
-import { EmissionInputPublicTransport } from '../../emission-calculator';
+import { EmissionInputPublicTransport, PlaneClass } from '../../emission-calculator';
+
+const AirClassOptions = [
+    { value: PlaneClass.Economy, label: 'publicTransport.airClassEconomy' },
+    { value: PlaneClass.Business, label: 'publicTransport.airClassBusiness' },
+    { value: PlaneClass.First, label: 'publicTransport.airClassFirst' },
+];
 
 interface Props {
     data: EmissionInputPublicTransport;
@@ -82,9 +88,33 @@ class _PublicTransportForm extends React.Component<Props> {
                 </div>
                 <hr/>
                 <div className="row">
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-md-4">
+                        <div>
+                            <LabelledDropdown
+                                label="publicTransport.airClassTitle"
+                                value={data.airClass}
+                                valueChange={value => update({ airClass: value })}
+                                options={AirClassOptions}>
+                            </LabelledDropdown>
+                        </div>
                     </div>
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-md-4">
+                        <div>
+                            <LabelledInput
+                                label="publicTransport.shortDistanceAirTravelAnnualHoursTitle"
+                                addon="units.hAnnually"
+                                value={data.shortDistanceAirTravelAnnualHours}
+                                valueChange={value => update({ shortDistanceAirTravelAnnualHours: value })}>
+                            </LabelledInput>
+                        </div>
+                        <div className="pt-3">
+                            <LabelledInput
+                                label="publicTransport.longDistanceAirTravelAnnualHoursTitle"
+                                addon="units.hAnnually"
+                                value={data.longDistanceAirTravelAnnualHours}
+                                valueChange={value => update({ longDistanceAirTravelAnnualHours: value })}>
+                            </LabelledInput>
+                        </div>
                     </div>
                 </div>
             </EmissionFormWrapper>

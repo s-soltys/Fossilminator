@@ -38,7 +38,8 @@
         "calculateUsage": "Oblicz"
     },
     "units": {
-        "kmWeekly": "km/tydzień"
+        "kmWeekly": "km/tydzień",
+        "hAnnually": "godzin rocznie"
     },
     "country": {
         "selectCountry": "W jakim państwie mieszkasz?"
@@ -60,6 +61,9 @@
         "suburbanTrainTravelWeeklyTitle": "Pociąg podmiejski",
         "longDistanceTrainTravelWeeklyTitle": "Pociąg dalekobieżny",
         "airClassTitle": "Klasa",
+        "airClassEconomy": "Ekonomiczna",
+        "airClassBusiness": "Business",
+        "airClassFirst": "Pierwsza klasa",
         "shortDistanceAirTravelAnnualHoursTitle": "Loty krótkodystansowe (do 2000km)",
         "longDistanceAirTravelAnnualHoursTitle": "Loty długodystansowe (ponad 2000km)"
     },
