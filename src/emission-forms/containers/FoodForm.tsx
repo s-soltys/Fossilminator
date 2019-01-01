@@ -27,7 +27,7 @@ const meatPerWeekOptions = [
     { value: 3, label: 'food.meatPerWeek.rarely' },
     { value: 4, label: 'food.meatPerWeek.oncePerWeek' },
     { value: 5, label: 'food.meatPerWeek.fewTimesPerWeek' },
-    { value: 5, label: 'food.meatPerWeek.daily' } 
+    { value: 6, label: 'food.meatPerWeek.daily' } 
 ];
 
 const frozenFoodWeeklyOptions = [
