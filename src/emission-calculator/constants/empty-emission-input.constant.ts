@@ -26,6 +26,15 @@ export const EmptyEmissionInput: EmissionInput = {
         shortDistanceAirTravelAnnualHours: null,
         longDistanceAirTravelAnnualHours: null
     },
-    food: {} as any,
+    food: {
+        averageAmountOfFood: 1,
+        foodSourceLocality: 1,
+        meatPerWeek: 1,
+        frozenFoodWeekly: 1,
+        refridgeratorEfficiency: 1,
+        ovenEfficiency: 1,
+        additionalFreezer: null,
+        dishwasher: null
+    },
     consumption: {} as any,
 };
