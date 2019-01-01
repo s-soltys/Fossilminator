@@ -77,19 +77,39 @@
     },
     "publicTransport": {
         "sectionTitle": "Transport publiczny",
-        "cityBusTravelWeeklyTitle": "Autobus miejski",
-        "longDistanceBusTravelWeeklyTitle": "Autobus dalekobieżny",
-        "microBusTravelWeeklyTitle": "Mikrobus",
-        "metroTramTravelWeeklyTitle": "Tramwaj/metro",
-        "taxiTravelWeeklyTitle": "Taxi",
-        "suburbanTrainTravelWeeklyTitle": "Pociąg podmiejski",
-        "longDistanceTrainTravelWeeklyTitle": "Pociąg dalekobieżny",
-        "airClassTitle": "Klasa",
-        "airClassEconomy": "Ekonomiczna",
-        "airClassBusiness": "Business",
-        "airClassFirst": "Pierwsza klasa",
-        "shortDistanceAirTravelAnnualHoursTitle": "Loty krótkodystansowe (do 2000km)",
-        "longDistanceAirTravelAnnualHoursTitle": "Loty długodystansowe (ponad 2000km)"
+        "cityBusTravelWeekly": {
+            "title": "Autobus miejski"
+        },
+        "longDistanceBusTravelWeekly": {
+            "title": "Autobus dalekobieżny"
+        },
+        "microBusTravelWeekly": {
+            "title": "Mikrobus"
+        },
+        "metroTramTravelWeekly": {
+            "title": "Tramwaj/metro"
+        },
+        "taxiTravelWeekly": {
+            "title": "Taxi"
+        },
+        "suburbanTrainTravelWeekly": {
+            "title": "Pociąg podmiejski"
+        },
+        "longDistanceTrainTravelWeekly": {
+            "title": "Pociąg dalekobieżny"
+        },
+        "airClass": {
+            "title": "Klasa",
+            "economy": "Ekonomiczna",
+            "business": "Business",
+            "firstClass": "Pierwsza klasa"
+        },
+        "shortDistanceAirTravelAnnualHours": {
+            "title": "Loty krótkodystansowe (do 2000km)"
+        },
+        "longDistanceAirTravelAnnualHours": {
+            "title": "Loty długodystansowe (ponad 2000km)"
+        }
     },
     "emissions": {
         "yourAnnualEmissionsAre": "Twoje roczne zużycie paliw kopalnych to %{emissions} ton CO2",

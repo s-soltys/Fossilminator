@@ -6,9 +6,9 @@ import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../compone
 import { EmissionInputPublicTransport, PlaneClass } from '../../emission-calculator';
 
 const AirClassOptions = [
-    { value: PlaneClass.Economy, label: 'publicTransport.airClassEconomy' },
-    { value: PlaneClass.Business, label: 'publicTransport.airClassBusiness' },
-    { value: PlaneClass.First, label: 'publicTransport.airClassFirst' },
+    { value: PlaneClass.Economy, label: 'publicTransport.airClass.economy' },
+    { value: PlaneClass.Business, label: 'publicTransport.airClass.business' },
+    { value: PlaneClass.First, label: 'publicTransport.airClass.firstClass' },
 ];
 
 interface Props {
@@ -26,7 +26,7 @@ class _PublicTransportForm extends React.Component<Props> {
                     <div className="col-12 col-md-6 col-lg-4">
                         <div>
                             <LabelledInput
-                                label="publicTransport.cityBusTravelWeeklyTitle"
+                                label="publicTransport.cityBusTravelWeekly.title"
                                 addon="units.kmWeekly"
                                 value={data.cityBusTravelWeekly}
                                 valueChange={value => update({ cityBusTravelWeekly: value })}>
@@ -34,7 +34,7 @@ class _PublicTransportForm extends React.Component<Props> {
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="publicTransport.longDistanceBusTravelWeeklyTitle"
+                                label="publicTransport.longDistanceBusTravelWeekly.title"
                                 addon="units.kmWeekly"
                                 value={data.longDistanceBusTravelWeekly}
                                 valueChange={value => update({ longDistanceBusTravelWeekly: value })}>
@@ -44,7 +44,7 @@ class _PublicTransportForm extends React.Component<Props> {
                     <div className="col-12 col-md-6 col-lg-4">
                         <div>
                             <LabelledInput
-                                label="publicTransport.microBusTravelWeeklyTitle"
+                                label="publicTransport.microBusTravelWeekly.title"
                                 addon="units.kmWeekly"
                                 value={data.microBusTravelWeekly}
                                 valueChange={value => update({ microBusTravelWeekly: value })}>
@@ -52,7 +52,7 @@ class _PublicTransportForm extends React.Component<Props> {
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="publicTransport.metroTramTravelWeeklyTitle"
+                                label="publicTransport.metroTramTravelWeekly.title"
                                 addon="units.kmWeekly"
                                 value={data.metroTramTravelWeekly}
                                 valueChange={value => update({ metroTramTravelWeekly: value })}>
@@ -62,7 +62,7 @@ class _PublicTransportForm extends React.Component<Props> {
                     <div className="col-12 col-md-6 col-lg-4">
                         <div>
                             <LabelledInput
-                                label="publicTransport.taxiTravelWeeklyTitle"
+                                label="publicTransport.taxiTravelWeekly.title"
                                 addon="units.kmWeekly"
                                 value={data.taxiTravelWeekly}
                                 valueChange={value => update({ taxiTravelWeekly: value })}>
@@ -70,7 +70,7 @@ class _PublicTransportForm extends React.Component<Props> {
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="publicTransport.suburbanTrainTravelWeeklyTitle"
+                                label="publicTransport.suburbanTrainTravelWeekly.title"
                                 addon="units.kmWeekly"
                                 value={data.suburbanTrainTravelWeekly}
                                 valueChange={value => update({ suburbanTrainTravelWeekly: value })}>
@@ -78,7 +78,7 @@ class _PublicTransportForm extends React.Component<Props> {
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="publicTransport.longDistanceTrainTravelWeeklyTitle"
+                                label="publicTransport.longDistanceTrainTravelWeekly.title"
                                 addon="units.kmWeekly"
                                 value={data.longDistanceTrainTravelWeekly}
                                 valueChange={value => update({ longDistanceTrainTravelWeekly: value })}>
@@ -91,7 +91,7 @@ class _PublicTransportForm extends React.Component<Props> {
                     <div className="col-12 col-md-4">
                         <div>
                             <LabelledDropdown
-                                label="publicTransport.airClassTitle"
+                                label="publicTransport.airClass.title"
                                 value={data.airClass}
                                 valueChange={value => update({ airClass: value })}
                                 options={AirClassOptions}>
@@ -101,7 +101,7 @@ class _PublicTransportForm extends React.Component<Props> {
                     <div className="col-12 col-md-4">
                         <div>
                             <LabelledInput
-                                label="publicTransport.shortDistanceAirTravelAnnualHoursTitle"
+                                label="publicTransport.shortDistanceAirTravelAnnualHours.title"
                                 addon="units.hAnnually"
                                 value={data.shortDistanceAirTravelAnnualHours}
                                 valueChange={value => update({ shortDistanceAirTravelAnnualHours: value })}>
@@ -109,7 +109,7 @@ class _PublicTransportForm extends React.Component<Props> {
                         </div>
                         <div className="pt-3">
                             <LabelledInput
-                                label="publicTransport.longDistanceAirTravelAnnualHoursTitle"
+                                label="publicTransport.longDistanceAirTravelAnnualHours.title"
                                 addon="units.hAnnually"
                                 value={data.longDistanceAirTravelAnnualHours}
                                 valueChange={value => update({ longDistanceAirTravelAnnualHours: value })}>
