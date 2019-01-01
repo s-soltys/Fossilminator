@@ -41,8 +41,13 @@ export class _SectionVisualisationContainer extends React.Component<Props> {
     }
 
     renderFood() {
+        const { averageAmountOfFood } = this.props.emissionInput.food;
+
         return (
-            <SpritePanel file="292.jpg" alt="food"></SpritePanel>
+            <SpritePanel file="292.jpg" alt="food">
+                <Sprite visible={averageAmountOfFood < 3} file="419.png" alt="food" size="15" left="45" bottom="10" />
+                <Sprite visible={averageAmountOfFood >= 3} file="129.png" alt="food" size="15" left="45" bottom="10" />
+            </SpritePanel>
         );
     }
 
