@@ -45,7 +45,31 @@
         "selectCountry": "W jakim państwie mieszkasz?"
     },
     "food": {
-        "howOftenDoYouConsumeFood": "Jak często spożywasz mięso?"
+        "sectionTitle": "Żywność",
+        "averageAmountOfFood": {
+            "title": "Ilość jedzenia"
+        },
+        "foodSourceLocality": {
+            "title": "Pochodzenie produktów"
+        },
+        "meatPerWeek": {
+            "title": "Częstotliwość jedzenia mięsa"
+        },
+        "frozenFoodWeekly": {
+            "title": "Żywność mrozona"
+        },
+        "refridgeratorEfficiency": {
+            "title": "Lodówka"
+        },
+        "ovenEfficiency": {
+            "title": "Kuchenka"
+        },
+        "additionalFreezer": {
+            "title": "Zamrazarka osobno"
+        },
+        "dishwasher": {
+            "title": "Zmywarka"
+        }
     },
     "transport": {
         "enterWeeklyCarUsage": "Wprowadź swój tygodniowy przebieg samochodem",

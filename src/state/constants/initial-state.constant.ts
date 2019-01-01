@@ -3,7 +3,7 @@ import { EmptyEmissionInput } from "../../emission-calculator/constants";
 
 export const InitialAppState: AppState = {
     navigation: {
-        section: Section.PublicTransport
+        section: Section.Food
     },
     emissionInput: EmptyEmissionInput,
     emissionResult: {

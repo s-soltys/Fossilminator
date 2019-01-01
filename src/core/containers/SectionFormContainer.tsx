@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { TabContent, TabPane } from "reactstrap";
 import { bindActionCreators } from "redux";
 import { AppState, Section } from "../../state";
-import { PublicTransportForm } from "../../emission-forms/containers/PublicTransportForm";
+import { PublicTransportForm, FoodForm } from "../../emission-forms";
 
 export class _SectionFormContainer extends React.Component<any> {
     renderTab(section, Component?) {
@@ -31,7 +31,7 @@ export class _SectionFormContainer extends React.Component<any> {
                 {this.renderTab(Section.WaterAndAirConditioning)}
                 {this.renderTab(Section.PrivateTransport)}
                 {this.renderTab(Section.PublicTransport, PublicTransportForm)}
-                {this.renderTab(Section.Food)}
+                {this.renderTab(Section.Food, FoodForm)}
                 {this.renderTab(Section.Consumption)}
             </TabContent>
         );
