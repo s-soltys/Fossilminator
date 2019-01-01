@@ -4,12 +4,7 @@ import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
 import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
 import { EmissionInputPublicTransport, PlaneClass } from '../../emission-calculator';
-
-const AirClassOptions = [
-    { value: PlaneClass.Economy, label: 'publicTransport.airClass.economy' },
-    { value: PlaneClass.Business, label: 'publicTransport.airClass.business' },
-    { value: PlaneClass.First, label: 'publicTransport.airClass.firstClass' },
-];
+import { PublicTransportOptions } from '../constants';
 
 interface Props {
     data: EmissionInputPublicTransport;
@@ -94,7 +89,7 @@ class _PublicTransportForm extends React.Component<Props> {
                                 label="publicTransport.airClass.title"
                                 value={data.airClass}
                                 valueChange={value => update({ airClass: value })}
-                                options={AirClassOptions}>
+                                options={PublicTransportOptions.airClassOptions}>
                             </LabelledDropdown>
                         </div>
                     </div>
