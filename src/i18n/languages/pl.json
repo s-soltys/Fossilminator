@@ -47,22 +47,53 @@
     "food": {
         "sectionTitle": "Żywność",
         "averageAmountOfFood": {
-            "title": "Ilość jedzenia"
+            "title": "Ilość jedzenia",
+            "veryLow": "Bardzo mało",
+            "low": "Mało",
+            "medium": "Średnio",
+            "high": "Duzo",
+            "veryHigh": "Bardzo duzo"
         },
         "foodSourceLocality": {
-            "title": "Pochodzenie produktów"
+            "title": "Pochodzenie produktów",
+            "localDireclyFromSource": "Jem lokalną, bez marketów",
+            "localSmallStores": "Mały sklep z lokalną zywnością",
+            "localAndSeasonal": "Jem towary lokalne i sezonowe",
+            "dontCare": "Nie zwracam uwagi na sezonowość i lokalność",
+            "exotic": "Preferuję produkty egzotyczne"
         },
         "meatPerWeek": {
-            "title": "Częstotliwość jedzenia mięsa"
+            "title": "Częstotliwość jedzenia mięsa",
+            "vegan": "Brak produktów zwierzęcych (weganin/-ka)",
+            "vegetarian": "Brak mięsa (wegetarianin/-ka)",
+            "rarely": "Staram się nie jeść, okazyjnie (raz w miesiącu)",
+            "oncePerWeek": "1-2 razy w tygodniu",
+            "fewTimesPerWeek": "3-6 razy tygodniowo",
+            "daily": "Jem mięso codziennie!"
         },
         "frozenFoodWeekly": {
-            "title": "Żywność mrozona"
+            "title": "Żywność mrozona",
+            "never": "Wcale",
+            "rarely": "Rzadko",
+            "weekly": "1 raz tygodniowo",
+            "fewTimesPerWeek": "Kilka razy tygodniowo",
+            "daily": "Codzieniie"
         },
         "refridgeratorEfficiency": {
-            "title": "Lodówka"
+            "title": "Lodówka",
+            "none": "Brak",
+            "low": "Niskoefektywna, klasa G-D",
+            "medium": "Średnioefektywna, klasa C-B",
+            "high": "Energooszczędna, klasa A",
+            "veryHigh": "Bardzo energooszczędna, klasa A+"
         },
         "ovenEfficiency": {
-            "title": "Kuchenka"
+            "title": "Kuchenka",
+            "normalElectric": "Elektryczna zwykła",
+            "induction": "Indukcyjna",
+            "gas": "Gazowa",
+            "coal": "Węglowa",
+            "wood": "Drewno"
         },
         "additionalFreezer": {
             "title": "Zamrazarka osobno"
