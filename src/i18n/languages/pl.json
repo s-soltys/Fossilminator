@@ -37,15 +37,110 @@
     "actions": {
         "calculateUsage": "Oblicz"
     },
+    "units": {
+        "kmWeekly": "km/tydzień",
+        "hAnnually": "godzin rocznie"
+    },
     "country": {
         "selectCountry": "W jakim państwie mieszkasz?"
     },
     "food": {
-        "howOftenDoYouConsumeFood": "Jak często spożywasz mięso?"
+        "sectionTitle": "Żywność",
+        "averageAmountOfFood": {
+            "title": "Ilość jedzenia",
+            "veryLow": "Bardzo mało",
+            "low": "Mało",
+            "medium": "Średnio",
+            "high": "Duzo",
+            "veryHigh": "Bardzo duzo"
+        },
+        "foodSourceLocality": {
+            "title": "Pochodzenie produktów",
+            "localDireclyFromSource": "Jem lokalną, bez marketów",
+            "localSmallStores": "Mały sklep z lokalną zywnością",
+            "localAndSeasonal": "Jem towary lokalne i sezonowe",
+            "dontCare": "Nie zwracam uwagi na sezonowość i lokalność",
+            "exotic": "Preferuję produkty egzotyczne"
+        },
+        "meatPerWeek": {
+            "title": "Częstotliwość jedzenia mięsa",
+            "vegan": "Brak produktów zwierzęcych (weganin/-ka)",
+            "vegetarian": "Brak mięsa (wegetarianin/-ka)",
+            "rarely": "Staram się nie jeść, okazyjnie (raz w miesiącu)",
+            "oncePerWeek": "1-2 razy w tygodniu",
+            "fewTimesPerWeek": "3-6 razy tygodniowo",
+            "daily": "Jem mięso codziennie!"
+        },
+        "frozenFoodWeekly": {
+            "title": "Żywność mrozona",
+            "never": "Wcale",
+            "rarely": "Rzadko",
+            "weekly": "1 raz tygodniowo",
+            "fewTimesPerWeek": "Kilka razy tygodniowo",
+            "daily": "Codzieniie"
+        },
+        "refridgeratorEfficiency": {
+            "title": "Lodówka",
+            "none": "Brak",
+            "low": "Niskoefektywna, klasa G-D",
+            "medium": "Średnioefektywna, klasa C-B",
+            "high": "Energooszczędna, klasa A",
+            "veryHigh": "Bardzo energooszczędna, klasa A+"
+        },
+        "ovenEfficiency": {
+            "title": "Kuchenka",
+            "normalElectric": "Elektryczna zwykła",
+            "induction": "Indukcyjna",
+            "gas": "Gazowa",
+            "coal": "Węglowa",
+            "wood": "Drewno"
+        },
+        "additionalFreezer": {
+            "title": "Zamrazarka osobno"
+        },
+        "dishwasher": {
+            "title": "Zmywarka"
+        }
     },
     "transport": {
         "enterWeeklyCarUsage": "Wprowadź swój tygodniowy przebieg samochodem",
         "enterAnnualPlaneHours": "Wprowadź liczbę godzin które spędzasz rocznie na podróży samolotem"
+    },
+    "publicTransport": {
+        "sectionTitle": "Transport publiczny",
+        "cityBusTravelWeekly": {
+            "title": "Autobus miejski"
+        },
+        "longDistanceBusTravelWeekly": {
+            "title": "Autobus dalekobieżny"
+        },
+        "microBusTravelWeekly": {
+            "title": "Mikrobus"
+        },
+        "metroTramTravelWeekly": {
+            "title": "Tramwaj/metro"
+        },
+        "taxiTravelWeekly": {
+            "title": "Taxi"
+        },
+        "suburbanTrainTravelWeekly": {
+            "title": "Pociąg podmiejski"
+        },
+        "longDistanceTrainTravelWeekly": {
+            "title": "Pociąg dalekobieżny"
+        },
+        "airClass": {
+            "title": "Klasa",
+            "economy": "Ekonomiczna",
+            "business": "Business",
+            "firstClass": "Pierwsza klasa"
+        },
+        "shortDistanceAirTravelAnnualHours": {
+            "title": "Loty krótkodystansowe (do 2000km)"
+        },
+        "longDistanceAirTravelAnnualHours": {
+            "title": "Loty długodystansowe (ponad 2000km)"
+        }
     },
     "emissions": {
         "yourAnnualEmissionsAre": "Twoje roczne zużycie paliw kopalnych to %{emissions} ton CO2",

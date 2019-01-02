@@ -1,10 +1,6 @@
 import { EmissionInput } from "../types/input";
 import { EmissionResult, EmissionResultPartialFields } from "../types/result";
-import { PartialResultCalculatorMap, PartialEmissionResult } from "./partial-emission-results";
-
-export function calculateEmissionResults(input: EmissionInput): EmissionResult {
-    return calculateEmissionResultsWithPartials(input, PartialEmissionResult);
-}
+import { PartialResultCalculatorMap } from "./partial-emission-results";
 
 export function calculateEmissionResultsWithPartials(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap) {
     const partialResults = getPartialResults(input, partialResultCalculatorMap);

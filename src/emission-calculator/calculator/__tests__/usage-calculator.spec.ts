@@ -1,4 +1,4 @@
-import { calculateEmissionResultsWithPartials } from "../emission-calculator";
+import { calculateEmissionResultsWithPartials } from "../total-emission-calculator";
 import { PartialResultCalculatorMap } from "../partial-emission-results";
 
 describe('Usage calculator should', () => {

@@ -21,11 +21,11 @@ export class _LabelledInput extends React.Component<Props> {
                 <InputGroup>
                     {addon ? (
                         <InputGroupAddon addonType="prepend">
-                            {addon}
+                            {t(addon)}
                         </InputGroupAddon>
                     ) : null}
                     <Input
-                        placeholder={t(placeholder)}
+                        placeholder={placeholder && t(placeholder)}
                         type="number"
                         value={value || ''}
                         onChange={event => valueChange(event.currentTarget.value)}

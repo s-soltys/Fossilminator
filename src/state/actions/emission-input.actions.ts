@@ -1,5 +1,5 @@
 import { createAction } from '../util';
-import { EmissionInputTransport, EmissionInputFood, EnergeticMix } from '../../emission-calculator';
+import { EmissionInputFood, EnergeticMix, EmissionInputPublicTransport } from '../../emission-calculator';
 
 export type ActionsTypes = SetCountryCodeAction | SetEnergeticMixAction | UpdatePublicTransportAction | UpdateFoodAction;
 
@@ -13,8 +13,8 @@ export const SetEnergeticMix = (energeticMix: EnergeticMix) => createAction(SetE
 
 export const UpdatePublicTransportType = '[FOSSIL_USAGE] UpdatePublicTransport';
 export type UpdatePublicTransportAction = ReturnType<typeof UpdatePublicTransport>;
-export const UpdatePublicTransport = (transport: EmissionInputTransport) => createAction(UpdatePublicTransportType, transport);
+export const UpdatePublicTransport = (transport: Partial<EmissionInputPublicTransport>) => createAction(UpdatePublicTransportType, transport);
 
 export const UpdateFoodType = '[FOSSIL_USAGE] UpdateFood';
 export type UpdateFoodAction = ReturnType<typeof UpdateFood>;
-export const UpdateFood = (food: EmissionInputFood) => createAction(UpdateFoodType, food);
+export const UpdateFood = (food: Partial<EmissionInputFood>) => createAction(UpdateFoodType, food);

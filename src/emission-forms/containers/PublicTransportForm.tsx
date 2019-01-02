@@ -3,75 +3,113 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AppState, EmissionInputActions } from '../../state';
 import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
+import { EmissionInputPublicTransport, PlaneClass } from '../../emission-calculator';
+import { PublicTransportOptions } from '../constants';
 
-class _PublicTransportForm extends React.Component<any> {
-    renderSectionA() {
-        const { transport, UpdatePublicTransport } = this.props;
+interface Props {
+    data: EmissionInputPublicTransport;
+    update: typeof EmissionInputActions.UpdatePublicTransport
+}
 
-        return (
-            <>
-                <h4 className="font-weight-light">Transport:</h4>
-                <div>
-                    <div className="w-75">
-                        <LabelledInput
-                            label="transport.enterWeeklyCarUsage"
-                            addon="km"
-                            placeholder="Ile km podróżujesz samochodem tygodniowo?"
-                            value={transport.carKmPerWeek}
-                            valueChange={value => UpdatePublicTransport({ carKmPerWeek: value })}>
-                        </LabelledInput>
-                    </div>
-                </div>
-                <div className="pt-3">
-                    <div className="w-75">
-                        <LabelledInput
-                            label="transport.enterAnnualPlaneHours"
-                            addon="godziny"
-                            placeholder="Ile godzin spędzasz rocznie w podróży samolotem?"
-                            value={transport.annualHoursInAir}
-                            valueChange={value => UpdatePublicTransport({ annualHoursInAir: value })}>
-                        </LabelledInput>
-                    </div>
-                </div>
-            </>
-        );
-    }
-
-
-    renderSectionB() {
-        const { food, UpdateFood } = this.props;
-
-        const options = [
-            { value: 0, label: 'Jestem wegetarianinem/-ką' },
-            { value: 1, label: 'Raz w tygodniu' },
-            { value: 2, label: 'Dość rzadko' },
-            { value: 7, label: 'Codziennie' }
-        ];
-
-        return (
-            <>
-                <h4 className="font-weight-light">Żywność:</h4>
-                <div>
-                    <LabelledDropdown
-                        label="food.howOftenDoYouConsumeFood"
-                        value={food.meatPerWeek}
-                        valueChange={value => UpdateFood({ meatPerWeek: value })}
-                        options={options}>
-                    </LabelledDropdown>
-                </div>
-            </>
-        );
-    }
-
+class _PublicTransportForm extends React.Component<Props> {
     render() {
+        const { data, update } = this.props;
+
         return (
-            <EmissionFormWrapper title="Housing">
+            <EmissionFormWrapper title="publicTransport.sectionTitle">
                 <div className="row">
-                    <div className="col-12 col-md-6">
-                        {this.renderSectionA()}
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div>
+                            <LabelledInput
+                                label="publicTransport.cityBusTravelWeekly.title"
+                                addon="units.kmWeekly"
+                                value={data.cityBusTravelWeekly}
+                                valueChange={value => update({ cityBusTravelWeekly: value })}>
+                            </LabelledInput>
+                        </div>
+                        <div className="pt-3">
+                            <LabelledInput
+                                label="publicTransport.longDistanceBusTravelWeekly.title"
+                                addon="units.kmWeekly"
+                                value={data.longDistanceBusTravelWeekly}
+                                valueChange={value => update({ longDistanceBusTravelWeekly: value })}>
+                            </LabelledInput>
+                        </div>
                     </div>
-                    <div className="col-12 col-md-6">
-                        {this.renderSectionB()}
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div>
+                            <LabelledInput
+                                label="publicTransport.microBusTravelWeekly.title"
+                                addon="units.kmWeekly"
+                                value={data.microBusTravelWeekly}
+                                valueChange={value => update({ microBusTravelWeekly: value })}>
+                            </LabelledInput>
+                        </div>
+                        <div className="pt-3">
+                            <LabelledInput
+                                label="publicTransport.metroTramTravelWeekly.title"
+                                addon="units.kmWeekly"
+                                value={data.metroTramTravelWeekly}
+                                valueChange={value => update({ metroTramTravelWeekly: value })}>
+                            </LabelledInput>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div>
+                            <LabelledInput
+                                label="publicTransport.taxiTravelWeekly.title"
+                                addon="units.kmWeekly"
+                                value={data.taxiTravelWeekly}
+                                valueChange={value => update({ taxiTravelWeekly: value })}>
+                            </LabelledInput>
+                        </div>
+                        <div className="pt-3">
+                            <LabelledInput
+                                label="publicTransport.suburbanTrainTravelWeekly.title"
+                                addon="units.kmWeekly"
+                                value={data.suburbanTrainTravelWeekly}
+                                valueChange={value => update({ suburbanTrainTravelWeekly: value })}>
+                            </LabelledInput>
+                        </div>
+                        <div className="pt-3">
+                            <LabelledInput
+                                label="publicTransport.longDistanceTrainTravelWeekly.title"
+                                addon="units.kmWeekly"
+                                value={data.longDistanceTrainTravelWeekly}
+                                valueChange={value => update({ longDistanceTrainTravelWeekly: value })}>
+                            </LabelledInput>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div className="row">
+                    <div className="col-12 col-md-4">
+                        <div>
+                            <LabelledDropdown
+                                label="publicTransport.airClass.title"
+                                value={data.airClass}
+                                valueChange={value => update({ airClass: value })}
+                                options={PublicTransportOptions.airClassOptions}>
+                            </LabelledDropdown>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-4">
+                        <div>
+                            <LabelledInput
+                                label="publicTransport.shortDistanceAirTravelAnnualHours.title"
+                                addon="units.hAnnually"
+                                value={data.shortDistanceAirTravelAnnualHours}
+                                valueChange={value => update({ shortDistanceAirTravelAnnualHours: value })}>
+                            </LabelledInput>
+                        </div>
+                        <div className="pt-3">
+                            <LabelledInput
+                                label="publicTransport.longDistanceAirTravelAnnualHours.title"
+                                addon="units.hAnnually"
+                                value={data.longDistanceAirTravelAnnualHours}
+                                valueChange={value => update({ longDistanceAirTravelAnnualHours: value })}>
+                            </LabelledInput>
+                        </div>
                     </div>
                 </div>
             </EmissionFormWrapper>
@@ -81,16 +119,14 @@ class _PublicTransportForm extends React.Component<any> {
 
 function mapStateToProps({ emissionInput }: AppState) {
     return {
-        transport: emissionInput.transport,
-        food: emissionInput.food
+        data: emissionInput.publicTransport
     };
 };
 
 function mapDispatchToProps(dispatch: any) {
     return bindActionCreators(
         {
-            UpdatePublicTransport: EmissionInputActions.UpdatePublicTransport,
-            UpdateFood: EmissionInputActions.UpdateFood
+            update: EmissionInputActions.UpdatePublicTransport
         },
         dispatch
     );

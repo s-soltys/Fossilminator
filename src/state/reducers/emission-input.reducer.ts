@@ -8,7 +8,7 @@ export const emissionInputReducer = (state: EmissionInputState = InitialAppState
         case EmissionInputActions.SetEnergeticMixType:
             return { ...state, country: { ...state.country, energeticMix: action.payload } };
         case EmissionInputActions.UpdatePublicTransportType:
-            return { ...state, transport: { ...state.transport, ...action.payload } };
+            return { ...state, publicTransport: { ...state.publicTransport, ...action.payload } };
         case EmissionInputActions.UpdateFoodType:
             return { ...state, food: { ...state.food, ...action.payload } };
         default:

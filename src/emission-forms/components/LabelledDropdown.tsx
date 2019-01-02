@@ -34,7 +34,7 @@ export class _LabelledDropdown extends React.Component<Props, any> {
                 { !!label ? <Translate className="font-weight-light mb-2" tag="p" value={label} /> : null }
                 <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
                     <DropdownToggle caret>
-                        { currentLabel ? currentLabel.label : value }
+                        { currentLabel ? t(currentLabel.label) : value }
                     </DropdownToggle>
                     <DropdownMenu>
                         {
