@@ -4,7 +4,7 @@ const emissionPerAnnualHourInAir = 0.3;
 const longDistanceEmissionModifier = 1.2;
 
 export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>) {
-    const classMultiplier = getPlanceClassMultiplier(publicTransport.airClass);
+    const classMultiplier = getPlaneClassMultiplier(publicTransport.airClass);
 
     const shortDistEmissions =
         publicTransport.shortDistanceAirTravelAnnualHours * emissionPerAnnualHourInAir;
@@ -17,7 +17,7 @@ export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>
     return result;
 }
 
-function getPlanceClassMultiplier(planeClass: PlaneClass) {
+function getPlaneClassMultiplier(planeClass: PlaneClass) {
     switch (planeClass) {
         case PlaneClass.First:
             return 1.5;
