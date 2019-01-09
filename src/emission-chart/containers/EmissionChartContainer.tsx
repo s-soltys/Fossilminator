@@ -51,7 +51,7 @@ class _EmissionChartContainer extends React.Component<any, any> {
                     />
                 </div>
                 <div className="mt-5">
-                    <EmissionAlertBadge />
+                    <EmissionAlertBadge emission={emissionResult.totalAnnualEmission} />
                 </div>
             </div>
         );
