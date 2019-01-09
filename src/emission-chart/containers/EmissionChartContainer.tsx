@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { EmissionsChart } from "../../emission-chart/components/EmissionsChart";
 import { AppState } from "../../state";
 import { EmissionDetails } from "../components";
+import { EmissionAlertBadge } from "../../shared";
 
 const REF_EMISSION = {
     housingConstruction: 0.5,
@@ -33,20 +34,25 @@ class _EmissionChartContainer extends React.Component<any, any> {
             1.2 * Math.max(refEmissions.totalAnnualEmission, emissionResult.totalAnnualEmission);
 
         return (
-            <div className="d-flex justify-content-around" style={{ height: 300 }}>
-                <div className="pr-3">
-                    <EmissionDetails emission={emissionResult} />
+            <div>
+                <div className="d-flex justify-content-around" style={{ height: 300 }}>
+                    <div className="pr-3">
+                        <EmissionDetails emission={emissionResult} />
+                    </div>
+                    <EmissionsChart
+                        emission={refEmissions}
+                        limit={maxEmission}
+                        label="Średnia"
+                    />
+                    <EmissionsChart
+                        emission={emissionResult}
+                        limit={maxEmission}
+                        label="Twoja emisja"
+                    />
                 </div>
-                <EmissionsChart
-                    emission={refEmissions}
-                    limit={maxEmission}
-                    label="Średnia"
-                />
-                <EmissionsChart
-                    emission={emissionResult}
-                    limit={maxEmission}
-                    label="Twoja emisja"
-                />
+                <div className="mt-5">
+                    <EmissionAlertBadge emission={emissionResult.totalAnnualEmission} />
+                </div>
             </div>
         );
     }
