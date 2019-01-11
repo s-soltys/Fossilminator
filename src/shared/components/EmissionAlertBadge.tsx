@@ -10,7 +10,7 @@ export const EmissionAlertBadge = ({ emission }: any) => {
              </Alert>
         )
     }
-    else if(emission >= 10 && emission <= 20){
+    else if(emission >= 10){
         return(
             <Alert color="warning">
                 <Translate value="emissions.yourEmissionsAreStandard" />
