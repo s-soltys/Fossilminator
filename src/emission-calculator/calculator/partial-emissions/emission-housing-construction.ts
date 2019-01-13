@@ -1,5 +1,8 @@
 import { EmissionInput } from "../../types/input";
+import { EmissionUnits } from "../../types/result";
 
-export function getHousingConstructionEmission(input: Partial<EmissionInput>) {
-    return 0.2;
+export function getHousingConstructionEmission(input: Partial<EmissionInput>): EmissionUnits {
+    return {
+        co2Emission: 0.2
+    };
 };

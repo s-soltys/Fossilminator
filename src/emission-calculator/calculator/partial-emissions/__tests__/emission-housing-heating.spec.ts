@@ -3,6 +3,6 @@ import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for HousingHeating should', () => {
     it('handle empty inputs', () => {
-        expect(getHousingHeatingEmission(EmptyEmissionInput)).toBe(0);
+        expect(getHousingHeatingEmission(EmptyEmissionInput)).toEqual(jasmine.objectContaining({ co2Emission: 0 }));
     });
 });

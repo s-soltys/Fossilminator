@@ -1,11 +1,11 @@
 import React from "react";
 import { Translate } from "react-i18nify";
 import { chartFieldAttributes } from "../util";
-import { EmissionResultPartialFields, EmissionResultTotalField } from "../../emission-calculator";
+import { EmissionResultPartialFields, EmissionResultTotalField, EmissionUnits } from "../../emission-calculator";
 
 export class EmissionDetails extends React.Component<any> {
     renderDetailBadge(field) {
-        const value = this.props.emission[field] || 0;
+        const value: EmissionUnits = this.props.emission[field] || 0;
 
         return (
             <>
@@ -21,7 +21,7 @@ export class EmissionDetails extends React.Component<any> {
                     }}
                     {...chartFieldAttributes(field)}
                 >
-                    {value.toFixed(2)}
+                    {value.co2Emission.toFixed(2)}
                 </small>
             </>
         );

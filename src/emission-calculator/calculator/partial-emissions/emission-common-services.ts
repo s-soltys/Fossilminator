@@ -1,5 +1,8 @@
 import { EmissionInput } from "../../types/input";
+import { EmissionUnits } from "../../types/result";
 
-export function getCommonServicesEmission(input: Partial<EmissionInput>) {
-    return 0;
+export function getCommonServicesEmission(input: Partial<EmissionInput>): EmissionUnits {
+    return {
+        co2Emission: 0
+    };
 };

@@ -1,20 +1,22 @@
+import { EmissionUnits } from "./emission-units.interface";
+
 export interface EmissionResult {
-    housingConstruction: number;
-    housingHeating: number;
-    warmWater: number;
-    airConditioning: number;
-    fuelForTransport: number;
-    carConstuction: number;
-    publicTransport: number;
-    airTravel: number;
+    housingConstruction: EmissionUnits;
+    housingHeating: EmissionUnits;
+    warmWater: EmissionUnits;
+    airConditioning: EmissionUnits;
+    fuelForTransport: EmissionUnits;
+    carConstuction: EmissionUnits;
+    publicTransport: EmissionUnits;
+    airTravel: EmissionUnits;
 
-    foodProduction: number;
-    consumption: number;
-    electricity: number;
-    deforestation: number;
-    commonServices: number;
+    foodProduction: EmissionUnits;
+    consumption: EmissionUnits;
+    electricity: EmissionUnits;
+    deforestation: EmissionUnits;
+    commonServices: EmissionUnits;
 
-    totalAnnualEmission: number;
+    totalAnnualEmission: EmissionUnits;
 }
 
 export type EmissionResultField = keyof EmissionResult; 
