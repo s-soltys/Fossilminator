@@ -5,24 +5,25 @@ import { EmissionsChart } from "../../emission-chart/components/EmissionsChart";
 import { AppState } from "../../state";
 import { EmissionDetails } from "../components";
 import { EmissionAlertBadge } from "../../shared";
+import { EmissionResult } from "../../emission-calculator";
 
-const REF_EMISSION = {
-    housingConstruction: 0.5,
-    housingHeating: 2.0,
-    warmWater: 1.0,
-    airConditioning: 0.1,
-    fuelForTransport: 1.0,
-    carConstuction: 0.2,
-    publicTransport: 1.0,
-    airTravel: 6.0,
+const REF_EMISSION: EmissionResult = {
+    housingConstruction: { co2Emission: 0.5 },
+    housingHeating: { co2Emission: 2.0 },
+    warmWater: { co2Emission: 1.0 },
+    airConditioning: { co2Emission: 0.1 },
+    fuelForTransport: { co2Emission: 1.0 },
+    carConstuction: { co2Emission: 0.2 },
+    publicTransport: { co2Emission: 1.0 },
+    airTravel: { co2Emission: 6.0 },
 
-    foodProduction: 3.0,
-    consumption: 1.0,
-    electricity: 0.6,
-    deforestation: 0.2,
-    commonServices: 3.1,
+    foodProduction: { co2Emission: 3.0 },
+    consumption: { co2Emission: 1.0 },
+    electricity: { co2Emission: 0.6 },
+    deforestation: { co2Emission: 0.2 },
+    commonServices: { co2Emission: 3.1 },
 
-    totalAnnualEmission: 18
+    totalAnnualEmission: { co2Emission: 10 },
 }
 
 class _EmissionChartContainer extends React.Component<any, any> {
@@ -31,7 +32,7 @@ class _EmissionChartContainer extends React.Component<any, any> {
         const refEmissions = REF_EMISSION;
 
         const maxEmission =
-            1.2 * Math.max(refEmissions.totalAnnualEmission, emissionResult.totalAnnualEmission);
+            1.2 * Math.max(refEmissions.totalAnnualEmission.co2Emission, emissionResult.totalAnnualEmission.co2Emission);
 
         return (
             <div>

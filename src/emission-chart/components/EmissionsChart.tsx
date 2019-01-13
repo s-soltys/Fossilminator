@@ -1,12 +1,20 @@
 import React from "react";
 import { chartFieldAttributes } from "../util";
-import { EmissionResultTotalField, EmissionResultPartialFields } from "../../emission-calculator";
+import { EmissionResultTotalField, EmissionResultPartialFields, EmissionUnits, EmissionResult } from "../../emission-calculator";
 
-export class EmissionsChart extends React.Component<any> {
+interface Props {
+    label: string;
+    limit: number;
+    emission: EmissionResult,
+}
+
+export class EmissionsChart extends React.Component<Props> {
     renderChartSection(field) {
         const { emission, limit } = this.props;
 
-        const heightPercentage = ((emission[field] || 0) / limit) * 100;
+        const units: EmissionUnits = emission[field];
+
+        const heightPercentage = ((units.co2Emission || 0) / limit) * 100;
 
         return (
             <div
@@ -20,7 +28,7 @@ export class EmissionsChart extends React.Component<any> {
     render() {
         const { emission, label } = this.props;
 
-        const totalResult = emission[EmissionResultTotalField] || 0;
+        const totalResult = emission[EmissionResultTotalField].co2Emission || 0;
 
         return (
             <div className="d-flex flex-column justify-content-end align-items-center">
