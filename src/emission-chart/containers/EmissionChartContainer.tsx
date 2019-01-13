@@ -27,12 +27,18 @@ const REF_EMISSION: EmissionResult = {
 }
 
 class _EmissionChartContainer extends React.Component<any, any> {
+    getMaxEmission(a: EmissionResult, b: EmissionResult) {
+        const maxEmission =
+            1.2 * Math.max(a.totalAnnualEmission.co2Emission, b.totalAnnualEmission.co2Emission);
+
+        return maxEmission;
+    }
+
     render() {
         const { emissionResult } = this.props;
         const refEmissions = REF_EMISSION;
 
-        const maxEmission =
-            1.2 * Math.max(refEmissions.totalAnnualEmission.co2Emission, emissionResult.totalAnnualEmission.co2Emission);
+        const maxEmission = this.getMaxEmission(emissionResult, refEmissions);
 
         return (
             <div>
