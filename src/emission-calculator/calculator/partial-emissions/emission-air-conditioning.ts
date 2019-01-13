@@ -1,5 +1,8 @@
 import { EmissionInput } from "../../types/input";
+import { EmissionResultDetails } from "../../types/result";
 
-export function getAirConditioningEmission(input: Partial<EmissionInput>) {
-    return 0;
+export function getAirConditioningEmission(input: Partial<EmissionInput>): EmissionResultDetails {
+    return {
+        co2Emission: 0
+    };
 };

@@ -1,12 +1,13 @@
 import { EmissionInput } from "../types/input";
-import { EmissionResult, EmissionResultPartialFields } from "../types/result";
+import { EmissionResult, EmissionResultPartialFields, EmissionResultDetails } from "../types/result";
 import { PartialResultCalculatorMap } from "./partial-emission-results";
+import { EmptyEmissionResultDetails } from "../constants/empty-emission-result-details.constant";
 
 export function calculateEmissionResultsWithPartials(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap) {
     const partialResults = getPartialResults(input, partialResultCalculatorMap);
 
     const totalAnnualEmission = getTotalResult(partialResults);
-    
+
     const resultWithTotal = { ...partialResults, totalAnnualEmission };
 
     return resultWithTotal;
@@ -15,11 +16,21 @@ export function calculateEmissionResultsWithPartials(input: EmissionInput, parti
 export function getPartialResults(input: EmissionInput, partialResultCalculatorMap: PartialResultCalculatorMap): EmissionResult {
     return EmissionResultPartialFields.reduce((result, key) => {
         const fn = partialResultCalculatorMap[key];
-        const value = fn ? fn(input) : 0;
+        const value = fn ? fn(input) : EmptyEmissionResultDetails;
         return { ...result, [key]: value };
     }, {}) as EmissionResult;
 }
 
-export function getTotalResult(result: EmissionResult): number {
-    return EmissionResultPartialFields.reduce((sum, key) => sum + (result[key] || 0), 0);
+export function getTotalResult(result: EmissionResult): EmissionResultDetails {
+    return EmissionResultPartialFields.reduce((sum, key) => {
+        return combineEmissionResult(sum, result[key]);
+    }, EmptyEmissionResultDetails);
+}
+
+export function combineEmissionResult(a: EmissionResultDetails, b: EmissionResultDetails): EmissionResultDetails {
+    const result: EmissionResultDetails = {
+        co2Emission: a.co2Emission + b.co2Emission
+    };
+
+    return result;
 }

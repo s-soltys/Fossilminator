@@ -1,5 +1,5 @@
 import { EmissionInput } from "../types/input";
-import { EmissionResultField } from "../types/result";
+import { EmissionResultField, EmissionResultDetails } from "../types/result";
 import { getHousingConstructionEmission } from "./partial-emissions/emission-housing-construction";
 import { getHousingHeatingEmission } from "./partial-emissions/emission-housing-heating";
 import { getWarmWaterEmission } from "./partial-emissions/emission-warm-water";
@@ -15,7 +15,7 @@ import { getAirTravelEmission } from "./partial-emissions/emission-air-travel";
 import { getFoodProductionEmission } from "./partial-emissions/emission-food-production";
 
 export type PartialResultCalculatorMap = {
-    [key in EmissionResultField]: (input: EmissionInput) => number;
+    [key in EmissionResultField]: (input: EmissionInput) => EmissionResultDetails;
 };
 
 export const PartialEmissionResult: PartialResultCalculatorMap = {

@@ -1,20 +1,24 @@
+export interface EmissionResultDetails {
+    co2Emission: number;
+}
+
 export interface EmissionResult {
-    housingConstruction: number;
-    housingHeating: number;
-    warmWater: number;
-    airConditioning: number;
-    fuelForTransport: number;
-    carConstuction: number;
-    publicTransport: number;
-    airTravel: number;
+    housingConstruction: EmissionResultDetails;
+    housingHeating: EmissionResultDetails;
+    warmWater: EmissionResultDetails;
+    airConditioning: EmissionResultDetails;
+    fuelForTransport: EmissionResultDetails;
+    carConstuction: EmissionResultDetails;
+    publicTransport: EmissionResultDetails;
+    airTravel: EmissionResultDetails;
 
-    foodProduction: number;
-    consumption: number;
-    electricity: number;
-    deforestation: number;
-    commonServices: number;
+    foodProduction: EmissionResultDetails;
+    consumption: EmissionResultDetails;
+    electricity: EmissionResultDetails;
+    deforestation: EmissionResultDetails;
+    commonServices: EmissionResultDetails;
 
-    totalAnnualEmission: number;
+    totalAnnualEmission: EmissionResultDetails;
 }
 
 export type EmissionResultField = keyof EmissionResult; 
