@@ -4,7 +4,7 @@ import { EmissionInputPublicTransport, PlaneClass } from "../../../types/input";
 
 describe('Partial emissions for air travel should', () => {
     it('handle empty inputs', () => {
-        expect(getAirTravelEmission(EmptyEmissionInput)).toEqual({ co2Emission: 0});
+        expect(getAirTravelEmission(EmptyEmissionInput)).toEqual(jasmine.objectContaining({ co2Emission: 0}));
     });
 
     it('return higher emissions for long distance flights', () => {
