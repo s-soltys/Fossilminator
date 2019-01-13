@@ -1,10 +1,10 @@
 import { EmissionInput, PlaneClass } from "../../types/input";
-import { EmissionResultDetails } from "../../types/result";
+import { EmissionUnits } from "../../types/result";
 
 const emissionPerAnnualHourInAir = 0.3;
 const longDistanceEmissionModifier = 1.2;
 
-export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>): EmissionResultDetails {
+export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>): EmissionUnits {
     const classMultiplier = getPlaneClassMultiplier(publicTransport.airClass);
 
     const shortDistEmissions =

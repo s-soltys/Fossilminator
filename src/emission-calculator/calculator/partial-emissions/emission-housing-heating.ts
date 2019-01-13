@@ -1,7 +1,7 @@
 import { EmissionInput } from "../../types/input";
-import { EmissionResultDetails } from "../../types/result";
+import { EmissionUnits } from "../../types/result";
 
-export function getHousingHeatingEmission(input: Partial<EmissionInput>): EmissionResultDetails {
+export function getHousingHeatingEmission(input: Partial<EmissionInput>): EmissionUnits {
     return {
         co2Emission: 0
     };
