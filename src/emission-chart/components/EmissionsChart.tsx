@@ -1,6 +1,6 @@
 import React from "react";
 import { chartFieldAttributes } from "../util";
-import { EmissionResultTotalField, EmissionResultPartialFields, EmissionUnits, EmissionResult } from "../../emission-calculator";
+import { EmissionResultTotalField, EmissionResultPartialFields, EmissionResult } from "../../emission-calculator";
 
 interface Props {
     label: string;
@@ -12,7 +12,7 @@ export class EmissionsChart extends React.Component<Props> {
     renderChartSection(field) {
         const { emission, limit } = this.props;
 
-        const units: EmissionUnits = emission[field];
+        const units = emission[field];
 
         const heightPercentage = ((units.co2Emission || 0) / limit) * 100;
 
