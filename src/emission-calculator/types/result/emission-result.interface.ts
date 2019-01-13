@@ -1,6 +1,4 @@
-export interface EmissionResultDetails {
-    co2Emission: number;
-}
+import { EmissionResultDetails } from "./emission-result-details.interface";
 
 export interface EmissionResult {
     housingConstruction: EmissionResultDetails;

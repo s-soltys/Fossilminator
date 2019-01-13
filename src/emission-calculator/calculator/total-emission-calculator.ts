@@ -23,7 +23,7 @@ export function getPartialResults(input: EmissionInput, partialResultCalculatorM
 
 export function getTotalResult(result: EmissionResult): EmissionResultDetails {
     return EmissionResultPartialFields.reduce((sum, key) => {
-        return combineEmissionResult(sum, result[key]);
+        return combineEmissionResult(sum, result[key] || EmptyEmissionResultDetails);
     }, EmptyEmissionResultDetails);
 }
 
