@@ -1,10 +1,10 @@
 import { getAirTravelEmission } from "../emission-air-travel";
 import { EmptyEmissionInput } from "../../../constants";
-import { EmissionInputPublicTransport, EmissionInput, PlaneClass } from "../../../types/input";
+import { EmissionInputPublicTransport, PlaneClass } from "../../../types/input";
 
 describe('Partial emissions for air travel should', () => {
     it('handle empty inputs', () => {
-        expect(getAirTravelEmission(EmptyEmissionInput)).toBe(0);
+        expect(getAirTravelEmission(EmptyEmissionInput)).toEqual({ co2Emission: 0});
     });
 
     it('return higher emissions for long distance flights', () => {
@@ -16,7 +16,7 @@ describe('Partial emissions for air travel should', () => {
             shortDistanceAirTravelAnnualHours: 100
         });
 
-        expect(longEmission).toBeGreaterThan(shortEmission);
+        expect(longEmission.co2Emission).toBeGreaterThan(shortEmission.co2Emission);
     });
 
     it('return higher emissions for higher plane class', () => {
@@ -37,8 +37,8 @@ describe('Partial emissions for air travel should', () => {
             airClass: PlaneClass.First, ...travelTimes
         });
 
-        expect(economyEmission).toBeLessThan(businessEmission);
-        expect(businessEmission).toBeLessThan(firstClassEmission);
+        expect(economyEmission.co2Emission).toBeLessThan(businessEmission.co2Emission);
+        expect(businessEmission.co2Emission).toBeLessThan(firstClassEmission.co2Emission);
     });
 });
 

@@ -3,6 +3,6 @@ import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for Electricity should', () => {
     it('handle empty inputs', () => {
-        expect(getElectricityEmission(EmptyEmissionInput)).toBe(0);
+        expect(getElectricityEmission(EmptyEmissionInput)).toEqual({ co2Emission: 0 });
     });
 });

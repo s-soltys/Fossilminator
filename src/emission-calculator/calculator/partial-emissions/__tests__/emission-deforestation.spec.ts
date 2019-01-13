@@ -3,6 +3,6 @@ import { EmptyEmissionInput } from "../../../constants";
 
 describe('Partial emissions for Deforestation should', () => {
     it('handle empty inputs', () => {
-        expect(getDeforestationEmission(EmptyEmissionInput)).toBe(0);
+        expect(getDeforestationEmission(EmptyEmissionInput)).toEqual({ co2Emission: 0 });
     });
 });
