@@ -29,7 +29,7 @@ export function getTotalResult(result: EmissionResult): EmissionResultDetails {
 
 export function combineEmissionResult(a: EmissionResultDetails, b: EmissionResultDetails): EmissionResultDetails {
     const result: EmissionResultDetails = {
-        co2Emission: a.co2Emission + b.co2Emission
+        co2Emission: (a.co2Emission || 0) + (b.co2Emission || 0)
     };
 
     return result;
