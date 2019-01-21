@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Fossilminator/precache-manifest.93cff3fdf180654ec8c841519745b74d.js"
+  "/Fossilminator/precache-manifest.6a62634589afdd94e4e006a7ea7e6914.js"
 );
 
 workbox.clientsClaim();
