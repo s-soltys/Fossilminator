@@ -22,12 +22,16 @@ const SECTION_ITEMS = [
 export class _SectionTabs extends React.Component<any> {
     renderLink({ section, label }) {
         const { activeSection, setSection } = this.props;
+        const style = {
+          cursor: "pointer"
+      };
 
         return (
             <NavLink
                 className={classnames({
                     active: section === activeSection
                 })}
+                style={style}
                 onClick={() => {
                     setSection(section);
                 }}
@@ -49,6 +53,7 @@ export class _SectionTabs extends React.Component<any> {
         );
     }
 }
+
 
 function mapStateToProps({ navigation }: AppState) {
     return {
