@@ -144,6 +144,8 @@
     },
     "emissions": {
         "yourAnnualEmissionsAre": "Twoje roczne zużycie paliw kopalnych to %{emissions} ton CO2",
-        "yourEmissionsAreTooHigh": "Twoje zużycie CO2 jest zbyt wysokie!"
-    }
+        "yourEmissionsAreTooHigh": "Twoje zużycie CO2 jest zbyt wysokie!",
+        "yourEmissionsAreStandard": "Twoje zużycie CO2 jest standardowe, ale dla dobra naszej planety nalezaloby je zredukowac!",
+        "yourEmissionsAreLow": "Twoje zużycie CO2 jest niskie, brawo!"
+     }
 }
