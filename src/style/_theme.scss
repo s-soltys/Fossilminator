@@ -36,6 +36,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-200 !default;
 $dark:          $gray-900 !default;
+//$cursor:        pointer !default;
 
 // Body
 
@@ -82,9 +83,10 @@ $dropdown-link-hover-bg:            $body-bg !default;
 
 $nav-tabs-border-color:             rgba($black, 0.6) !default;
 $nav-tabs-link-hover-border-color:  rgba($white, 0.6) !default;
+//$nav-tabs-li-nav-item-span-cursor:      pointer !default;
 $nav-tabs-link-active-color:        $white !default;
 $nav-tabs-link-active-border-color: rgba($white, 0.1) !default;
-$nav-tabs-link-active-bg: #515960 !default;
+$nav-tabs-link-active-bg:           #515960 !default;
 
 // Navbar
 
