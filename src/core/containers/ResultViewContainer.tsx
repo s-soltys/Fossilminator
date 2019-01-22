@@ -5,6 +5,7 @@ import { EmissionChartContainer } from "../../emission-chart";
 import { AppState } from "../../state";
 import { SectionVisualisationContainer } from "../../emission-visualisation";
 import { CountrySelector } from "../../emission-forms";
+//import { UnitSelector } from "../../emission-forms";
 
 class _ResultViewContainer extends React.Component<any, any> {
     render() {
