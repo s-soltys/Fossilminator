@@ -19,6 +19,6 @@ export function getFoodProductionEmission({ food }: Partial<EmissionInput>): Emi
     const result = amountModifier * localityModifier * results.reduce((sum, r) => sum + r, 0);
 
     return {
-        co2Emission: result
+        emission_gCO2e: result
     };
 };

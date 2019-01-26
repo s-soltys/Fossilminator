@@ -3,6 +3,6 @@ import { EmissionUnits } from "../../types/result";
 
 export function getHousingConstructionEmission(input: Partial<EmissionInput>): EmissionUnits {
     return {
-        co2Emission: 0.2
+        emission_gCO2e: 0.2
     };
 };

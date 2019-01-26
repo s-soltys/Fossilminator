@@ -14,7 +14,7 @@ export class EmissionsChart extends React.Component<Props> {
 
         const units = emission[field];
 
-        const heightPercentage = ((units.co2Emission || 0) / limit) * 100;
+        const heightPercentage = ((units.emission_gCO2e || 0) / limit) * 100;
 
         return (
             <div
@@ -28,7 +28,7 @@ export class EmissionsChart extends React.Component<Props> {
     render() {
         const { emission, label } = this.props;
 
-        const totalResult = emission[EmissionResultTotalField].co2Emission || 0;
+        const totalResult = emission[EmissionResultTotalField].emission_gCO2e || 0;
 
         return (
             <div className="d-flex flex-column justify-content-end align-items-center">

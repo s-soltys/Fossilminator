@@ -1,5 +1,5 @@
 export interface EmissionUnits {
-    co2Emission: number;
+    emission_gCO2e: number;
 }
 
 export type EmissionUnitsField = keyof EmissionUnits; 

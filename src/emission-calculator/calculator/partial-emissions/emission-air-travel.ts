@@ -35,7 +35,7 @@ export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>
     const longTravelEmission = getEmissionResultForAirTravelType(publicTransport.longDistanceAirTravelAnnualHours, longDistanceParams);
 
     return {
-        co2Emission: shortTravelEmission.totalEmission_gCO2e + longTravelEmission.totalEmission_gCO2e
+        emission_gCO2e: shortTravelEmission.totalEmission_gCO2e + longTravelEmission.totalEmission_gCO2e
     };
 }
 
