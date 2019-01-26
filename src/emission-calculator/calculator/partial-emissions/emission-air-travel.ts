@@ -2,8 +2,8 @@ import { EmissionInput } from "../../types/input";
 import { EmissionUnits } from "../../types/result";
 
 interface AirTravelParams {
-    flightEnergy_MJ_pkm: number;
-    infMaintenanceEnergy_MJ_pkm: number;
+    flightEnergy_MJ_km: number;
+    infMaintenanceEnergy_MJ_km: number;
     averageSpeed_km_h: number;
     highAltitudeEmissionMultiplier: number;
     airFuelEmission_gCO2e_MJ: number;
@@ -11,8 +11,8 @@ interface AirTravelParams {
 }
 
 const longDistanceParams: AirTravelParams = {
-    flightEnergy_MJ_pkm: 1.5,
-    infMaintenanceEnergy_MJ_pkm: 0.6,
+    flightEnergy_MJ_km: 1.5,
+    infMaintenanceEnergy_MJ_km: 0.6,
     averageSpeed_km_h: 800,
     highAltitudeEmissionMultiplier: 2.7,
     airFuelEmission_gCO2e_MJ: 77,
@@ -20,8 +20,8 @@ const longDistanceParams: AirTravelParams = {
 };
 
 const shortDistanceParams: AirTravelParams = {
-    flightEnergy_MJ_pkm: 2.0,
-    infMaintenanceEnergy_MJ_pkm: 1.7,
+    flightEnergy_MJ_km: 2.0,
+    infMaintenanceEnergy_MJ_km: 1.7,
     averageSpeed_km_h: 800,
     highAltitudeEmissionMultiplier: 2.7,
     airFuelEmission_gCO2e_MJ: 77,
@@ -42,10 +42,10 @@ export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>
 function getEmissionResultForAirTravelType(annualHoursInAir_h: number, params: AirTravelParams) {
     const distance_km = annualHoursInAir_h * params.averageSpeed_km_h;
 
-    const flightEnergy_MJ = distance_km * params.flightEnergy_MJ_pkm;
+    const flightEnergy_MJ = distance_km * params.flightEnergy_MJ_km;
     const flightEmission_gCO2e = params.airFuelEmission_gCO2e_MJ * flightEnergy_MJ * params.highAltitudeEmissionMultiplier;
 
-    const infMaintenanceEnergy_MJ = distance_km * params.infMaintenanceEnergy_MJ_pkm;
+    const infMaintenanceEnergy_MJ = distance_km * params.infMaintenanceEnergy_MJ_km;
     const infMaintenanceEmission_gCO2e = params.infMaintenanceEmission_gCO2e_MJ * infMaintenanceEnergy_MJ * params.highAltitudeEmissionMultiplier;
 
     const totalEnergy_MJ = flightEnergy_MJ + infMaintenanceEnergy_MJ;
