@@ -30,11 +30,12 @@ const shortDistanceParams: AirTravelParams = {
 
 
 export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>): EmissionUnits {
-    const shortTravelEmission = getEmissionResultForAirTravelType(publicTransport.shortDistanceAirTravelAnnualHours, shortDistanceParams);
-    const longTravelEmission = getEmissionResultForAirTravelType(publicTransport.longDistanceAirTravelAnnualHours, longDistanceParams);
+    const shortTravelRes = getEmissionResultForAirTravelType(publicTransport.shortDistanceAirTravelAnnualHours, shortDistanceParams);
+    const longTravelRes = getEmissionResultForAirTravelType(publicTransport.longDistanceAirTravelAnnualHours, longDistanceParams);
 
     return {
-        emission_gCO2e: shortTravelEmission.totalEmission_gCO2e + longTravelEmission.totalEmission_gCO2e
+        emission_gCO2e: shortTravelRes.totalEmission_gCO2e + longTravelRes.totalEmission_gCO2e,
+        energy_MJ: shortTravelRes.totalEnergy_MJ + longTravelRes.totalEnergy_MJ
     };
 }
 
