@@ -1,7 +1,6 @@
 import { EmissionInput } from "../../types/input";
 import { EmissionUnits } from "../../types/result";
 
-
 interface AirTravelParams {
     flightEnergy_MJ_pkm: number;
     infMaintenanceEnergy_MJ_pkm: number;
