@@ -1,4 +1,4 @@
-import { EmissionInput, PlaneClass } from "../../types/input";
+import { EmissionInput } from "../../types/input";
 import { EmissionUnits } from "../../types/result";
 
 
