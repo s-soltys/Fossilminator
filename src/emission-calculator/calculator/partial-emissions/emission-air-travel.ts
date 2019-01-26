@@ -15,7 +15,7 @@ const longDistanceParams: AirTravelParams = {
     flightEnergy_MJ_pkm: 1.5,
     infMaintenanceEnergy_MJ_pkm: 0.6,
     averageSpeed_km_h: 800,
-    highAltitudeEmissionMultiplier :2.7,
+    highAltitudeEmissionMultiplier: 2.7,
     airFuelEmission_g_MJ: 77,
     infMaintenanceEmission_g_MJ: 70
 };
@@ -24,7 +24,7 @@ const shortDistanceParams: AirTravelParams = {
     flightEnergy_MJ_pkm: 2.0,
     infMaintenanceEnergy_MJ_pkm: 1.7,
     averageSpeed_km_h: 800,
-    highAltitudeEmissionMultiplier :2.7,
+    highAltitudeEmissionMultiplier: 2.7,
     airFuelEmission_g_MJ: 77,
     infMaintenanceEmission_g_MJ: 70
 };
@@ -33,7 +33,7 @@ const shortDistanceParams: AirTravelParams = {
 export function getAirTravelEmission({ publicTransport }: Partial<EmissionInput>): EmissionUnits {
     const shortTravelEmission = getEmissionResultForAirTravelType(publicTransport.shortDistanceAirTravelAnnualHours, shortDistanceParams);
     const longTravelEmission = getEmissionResultForAirTravelType(publicTransport.longDistanceAirTravelAnnualHours, longDistanceParams);
-    
+
     return {
         co2Emission: shortTravelEmission.totalEmission_gCO2e + longTravelEmission.totalEmission_gCO2e
     };
