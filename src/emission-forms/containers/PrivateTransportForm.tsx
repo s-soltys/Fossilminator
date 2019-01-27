@@ -35,64 +35,52 @@ class _PrivateTransportForm extends React.Component<Props> {
         return (
             <div className="row">
                 <div className="col-12 col-md-6 col-lg-2">
-                    <div>
-                        <LabelledDropdown
-                            label="privateTransport.vehicleType.title"
-                            value={data.type}
-                            valueChange={value => update(i, { type: value })}
-                            options={vehicleTypeOptions}>
-                        </LabelledDropdown>
-                    </div>
+                    <LabelledDropdown
+                        label="privateTransport.vehicleType.title"
+                        value={data.type}
+                        valueChange={value => update(i, { type: value })}
+                        options={vehicleTypeOptions}>
+                    </LabelledDropdown>
                 </div>
                 <div className="col-12 col-md-6 col-lg-2">
-                    <div>
-                        <LabelledInput
-                            label="privateTransport.vehicleAge.title"
-                            addon="units.years"
-                            value={data.age}
-                            valueChange={value => update(i, { age: value })}>
-                        </LabelledInput>
-                    </div>
+                    <LabelledInput
+                        label="privateTransport.vehicleAge.title"
+                        addon="units.years"
+                        value={data.age}
+                        valueChange={value => update(i, { age: value })}>
+                    </LabelledInput>
                 </div>
                 <div className="col-12 col-md-6 col-lg-1">
-                    <div>
-                        <LabelledDropdown
-                            label="privateTransport.fuelType.title"
-                            value={data.fuelType}
-                            valueChange={value => update(i, { fuelType: value })}
-                            options={vehicleFuelTypeOptions}>
-                        </LabelledDropdown>
-                    </div>
+                    <LabelledDropdown
+                        label="privateTransport.fuelType.title"
+                        value={data.fuelType}
+                        valueChange={value => update(i, { fuelType: value })}
+                        options={vehicleFuelTypeOptions}>
+                    </LabelledDropdown>
                 </div>
                 <div className="col-12 col-md-6 col-lg-2">
-                    <div>
-                        <LabelledInput
-                            label="privateTransport.fuelUsage.title"
-                            addon="units.lper100km"
-                            value={data.fuelUsage}
-                            valueChange={value => update(i, { fuelUsage: value })}>
-                        </LabelledInput>
-                    </div>
+                    <LabelledInput
+                        label="privateTransport.fuelUsage.title"
+                        addon="units.lper100km"
+                        value={data.fuelUsage}
+                        valueChange={value => update(i, { fuelUsage: value })}>
+                    </LabelledInput>
                 </div>
                 <div className="col-12 col-md-6 col-lg-2">
-                    <div>
-                        <LabelledInput
-                            label="privateTransport.travelWeekly.title"
-                            addon="units.kmWeekly"
-                            value={data.travelWeekly}
-                            valueChange={value => update(i, { travelWeekly: value })}>
-                        </LabelledInput>
-                    </div>
+                    <LabelledInput
+                        label="privateTransport.travelWeekly.title"
+                        addon="units.kmWeekly"
+                        value={data.travelWeekly}
+                        valueChange={value => update(i, { travelWeekly: value })}>
+                    </LabelledInput>
                 </div>
                 <div className="col-12 col-md-6 col-lg-2">
-                    <div>
-                        <LabelledDropdown
-                            label="privateTransport.freqOfTravelWithPassengers.title"
-                            value={data.freqOfTravelWithPassengers}
-                            valueChange={value => update(i, { freqOfTravelWithPassengers: value })}
-                            options={vehicleFrequencyOfTravelWithPassengersOptions}>
-                        </LabelledDropdown>
-                    </div>
+                    <LabelledDropdown
+                        label="privateTransport.freqOfTravelWithPassengers.title"
+                        value={data.freqOfTravelWithPassengers}
+                        valueChange={value => update(i, { freqOfTravelWithPassengers: value })}
+                        options={vehicleFrequencyOfTravelWithPassengersOptions}>
+                    </LabelledDropdown>
                 </div>
             </div>
         );
