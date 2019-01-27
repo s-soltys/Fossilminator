@@ -3,7 +3,7 @@ export interface EmissionInputPrivateVehicle {
     age: number;
     fuelType: VehicleFuel;
     fuelUsage: number;
-    TravelWeekly: number;
+    travelWeekly: number;
     freqOfTravelWithPassengers: number; // 0% - 100%
     airConditioning: boolean;
 }

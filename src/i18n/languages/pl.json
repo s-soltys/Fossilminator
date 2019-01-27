@@ -142,6 +142,12 @@
             "title": "Loty długodystansowe (ponad 2000km)"
         }
     },
+    "privateTransport": {
+        "sectionTitle": "Transport osobowy",
+        "cityBusTravelWeekly": {
+            "title": "Autobus miejski"
+        }
+    },
     "emissions": {
         "yourAnnualEmissionsAre": "Twoje roczne zużycie paliw kopalnych to %{emissions} ton CO2",
         "yourEmissionsAreTooHigh": "Twoje zużycie CO2 jest zbyt wysokie!",

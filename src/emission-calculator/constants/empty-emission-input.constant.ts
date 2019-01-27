@@ -1,5 +1,7 @@
 import { EmissionInput, PlaneClass } from '../types/input';
 
+const emptyVehicle = { type: null, age: null, fuelType: null, fuelUsage: null, travelWeekly: null, freqOfTravelWithPassengers: null, airConditioning: false };
+
 export const EmptyEmissionInput: EmissionInput = {
     country: {
         countryCode: null,
@@ -13,7 +15,13 @@ export const EmptyEmissionInput: EmissionInput = {
     },
     housing: {} as any,
     water: {} as any,
-    privateTransport: {} as any,
+    privateTransport: {
+        vehicles: [
+            { ...emptyVehicle },
+            { ...emptyVehicle },
+            { ...emptyVehicle }
+        ]
+    },
     publicTransport: {
         cityBusTravelWeekly: null,
         longDistanceBusTravelWeekly: null,

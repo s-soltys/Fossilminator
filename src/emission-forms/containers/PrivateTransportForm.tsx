@@ -16,7 +16,7 @@ class _PrivateTransportForm extends React.Component<Props> {
         const { data, update } = this.props;
 
         return (
-            <EmissionFormWrapper title="publicTransport.sectionTitle">
+            <EmissionFormWrapper title="privateTransport.sectionTitle">
                 <div className="row">
                     <div className="col-12 col-md-6 col-lg-4">
                         <div>
@@ -82,36 +82,6 @@ class _PrivateTransportForm extends React.Component<Props> {
                     </div>
                 </div>
                 <hr/>
-                <div className="row">
-                    <div className="col-12 col-md-4">
-                        <div>
-                            <LabelledDropdown
-                                label="publicTransport.airClass.title"
-                                value={data.airClass}
-                                valueChange={value => update({ airClass: value })}
-                                options={PublicTransportOptions.airClassOptions}>
-                            </LabelledDropdown>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-4">
-                        <div>
-                            <LabelledInput
-                                label="publicTransport.shortDistanceAirTravelAnnualHours.title"
-                                addon="units.hAnnually"
-                                value={data.shortDistanceAirTravelAnnualHours}
-                                valueChange={value => update({ shortDistanceAirTravelAnnualHours: value })}>
-                            </LabelledInput>
-                        </div>
-                        <div className="pt-3">
-                            <LabelledInput
-                                label="publicTransport.longDistanceAirTravelAnnualHours.title"
-                                addon="units.hAnnually"
-                                value={data.longDistanceAirTravelAnnualHours}
-                                valueChange={value => update({ longDistanceAirTravelAnnualHours: value })}>
-                            </LabelledInput>
-                        </div>
-                    </div>
-                </div>
             </EmissionFormWrapper>
         );
     }
