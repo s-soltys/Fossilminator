@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { EmissionInputPrivateTransport, EmissionInputPrivateVehicle } from '../../emission-calculator';
 import { AppState, EmissionInputActions } from '../../state';
 import { EmissionFormWrapper, LabelledDropdown } from '../components';
-import { vehicleTypeOptions } from '../constants/options-private-transport';
+import { vehicleTypeOptions, vehicleFuelTypeOptions } from '../constants/options-private-transport';
 
 interface Props {
     data: EmissionInputPrivateTransport;
@@ -44,13 +44,23 @@ class _PrivateTransportForm extends React.Component<Props> {
                         </LabelledDropdown>
                     </div>
                 </div>
-                <div className="col-12 col-md-6 col-lg-2">
+                <div className="col-12 col-md-6 col-lg-1">
                     <div>
                         <LabelledDropdown
                             label="privateTransport.vehicleAge.title"
                             value={data.age}
                             valueChange={value => update(i, { age: value })}
                             options={[]}>
+                        </LabelledDropdown>
+                    </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-1">
+                    <div>
+                        <LabelledDropdown
+                            label="privateTransport.fuelType.title"
+                            value={data.fuelType}
+                            valueChange={value => update(i, { fuelType: value })}
+                            options={vehicleFuelTypeOptions}>
                         </LabelledDropdown>
                     </div>
                 </div>

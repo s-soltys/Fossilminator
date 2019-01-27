@@ -150,13 +150,30 @@
             "motorbike": "Motor",
             "carSmall": "Mały samochód (np. Smart)",
             "carMedium": "Średni samochód",
-            "carLarge": "Duzy samochód",
-            "carVeryLarge": "Bardzo duzy",
-            "carHybrid": "Samochód hybrydowy",
-            "carElectric": "Samochód elektryczny"
+            "carLarge": "Duzy samochód"
+        },
+        "fuelType": {
+            "title": "Rodzaj paliwa",
+            "gasoline": "Benzyna",
+            "diesel": "Diesel",
+            "gas": "Gaz",
+            "hybrid": "Hybrydowy",
+            "electric": "Elektryczny"
         },
         "vehicleAge": {
             "title": "Wiek (lata)"
+        },
+        "fuelUsage": {
+            "title": "Zuzycie paliwa (l/100km)"
+        },
+        "travelWeekly": {
+            "title": "Odległość (km/tydzień)"
+        },
+        "freqOfTravelWithPassengers": {
+            "title": "Częstość jazdy z drugą osobą"
+        },
+        "airConditioning": {
+            "title": "Klimatyzacja"
         }
     },
     "emissions": {
