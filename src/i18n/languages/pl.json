@@ -146,6 +146,7 @@
     },
     "privateTransport": {
         "sectionTitle": "Transport osobowy",
+        "addVehicle": "Dodaj pojazd",
         "vehicleType": {
             "title": "Rodzaj pojazdu",
             "bicycle": "Rower",

@@ -1,5 +1,6 @@
 import { EmissionInputActions } from '../actions';
 import { InitialAppState, EmissionInputState } from '../constants';
+import { EmptyEmissionInputVehicle } from '../../emission-calculator/constants';
 
 export const emissionInputReducer = (state: EmissionInputState = InitialAppState.emissionInput, action: EmissionInputActions.ActionsTypes): EmissionInputState => {
     switch (action.type) {
@@ -23,12 +24,15 @@ export const emissionInputReducer = (state: EmissionInputState = InitialAppState
             const vehicles = [...state.privateTransport.vehicles];
             vehicles[index] = newVehicle;
 
-            return {
-                ...state,
-                privateTransport: {
-                    vehicles
-                }
-            };
+            return { ...state, privateTransport: { vehicles } };
+        }
+        case EmissionInputActions.AddPrivateTransportVehicleType: {
+            const vehicles = [...state.privateTransport.vehicles, { ...EmptyEmissionInputVehicle }];
+            return { ...state, privateTransport: { vehicles } };
+        }
+        case EmissionInputActions.RemovePrivateTransportVehicleType: {
+            const vehicles = state.privateTransport.vehicles.filter((_, index) => index !== action.payload.index);
+            return { ...state, privateTransport: { vehicles } };
         }
         default: {
             return state;

@@ -5,15 +5,18 @@ import { EmissionInputPrivateTransport, EmissionInputPrivateVehicle } from '../.
 import { AppState, EmissionInputActions } from '../../state';
 import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
 import { vehicleTypeOptions, vehicleFuelTypeOptions, vehicleFrequencyOfTravelWithPassengersOptions } from '../constants/options-private-transport';
+import { Translate } from 'react-i18nify';
 
 interface Props {
     data: EmissionInputPrivateTransport;
-    update: typeof EmissionInputActions.UpdatePrivateTransportVehicle
+    update: typeof EmissionInputActions.UpdatePrivateTransportVehicle,
+    addVehicle: typeof EmissionInputActions.AddPrivateTransportVehicle,
+    removeVehicle: typeof EmissionInputActions.RemovePrivateTransportVehicle
 }
 
 class _PrivateTransportForm extends React.Component<Props> {
     render() {
-        const { data } = this.props;
+        const { data, addVehicle } = this.props;
 
         return (
             <EmissionFormWrapper title="privateTransport.sectionTitle">
@@ -25,12 +28,19 @@ class _PrivateTransportForm extends React.Component<Props> {
                         </React.Fragment>
                     ))
                 }
+                <div className="row">
+                    <div className="col-12 d-flex justify-content-center">
+                        <button type="button" className="btn btn-primary px-3" onClick={addVehicle}>
+                            <Translate value="privateTransport.addVehicle" />
+                        </button>
+                    </div>
+                </div>
             </EmissionFormWrapper>
         );
     }
 
     renderVehicleForm(data: EmissionInputPrivateVehicle, i: number) {
-        const { update } = this.props;
+        const { update, removeVehicle } = this.props;
 
         return (
             <div className="row">
@@ -82,6 +92,9 @@ class _PrivateTransportForm extends React.Component<Props> {
                         options={vehicleFrequencyOfTravelWithPassengersOptions}>
                     </LabelledDropdown>
                 </div>
+                <div className="col-12 col-md-6 col-lg-1">
+                    <button type="button" className="btn btn-primary px-3" onClick={() => removeVehicle(i)}>X</button>
+                </div>
             </div>
         );
     }
@@ -96,7 +109,9 @@ function mapStateToProps({ emissionInput }: AppState) {
 function mapDispatchToProps(dispatch: any) {
     return bindActionCreators(
         {
-            update: EmissionInputActions.UpdatePrivateTransportVehicle
+            update: EmissionInputActions.UpdatePrivateTransportVehicle,
+            addVehicle: EmissionInputActions.AddPrivateTransportVehicle,
+            removeVehicle: EmissionInputActions.RemovePrivateTransportVehicle
         },
         dispatch
     );
