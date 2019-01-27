@@ -15,3 +15,11 @@ export const vehicleFuelTypeOptions = [
     { value: VehicleFuel.Hybrid, label: 'privateTransport.fuelType.hybrid' },
     { value: VehicleFuel.Electric, label: 'privateTransport.fuelType.electric' },
 ];
+
+export const vehicleFrequencyOfTravelWithPassengersOptions = [
+    { value: 0, label: 'privateTransport.freqOfTravelWithPassengers.never' },
+    { value: 1, label: 'privateTransport.freqOfTravelWithPassengers.rarely' },
+    { value: 2, label: 'privateTransport.freqOfTravelWithPassengers.oncePerWeek' },
+    { value: 3, label: 'privateTransport.freqOfTravelWithPassengers.fewTimesPerWeek' },
+    { value: 4, label: 'privateTransport.freqOfTravelWithPassengers.always' }
+];

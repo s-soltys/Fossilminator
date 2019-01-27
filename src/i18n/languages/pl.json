@@ -39,7 +39,9 @@
     },
     "units": {
         "kmWeekly": "km/tydzień",
-        "hAnnually": "godzin rocznie"
+        "hAnnually": "godzin rocznie",
+        "years": "lata",
+        "lper100km": "l/100km"
     },
     "country": {
         "selectCountry": "W jakim państwie mieszkasz?"
@@ -148,7 +150,7 @@
             "title": "Rodzaj pojazdu",
             "bicycle": "Rower",
             "motorbike": "Motor",
-            "carSmall": "Mały samochód (np. Smart)",
+            "carSmall": "Mały samochód",
             "carMedium": "Średni samochód",
             "carLarge": "Duzy samochód"
         },
@@ -170,7 +172,12 @@
             "title": "Odległość (km/tydzień)"
         },
         "freqOfTravelWithPassengers": {
-            "title": "Częstość jazdy z drugą osobą"
+            "title": "Częstość jazdy z drugą osobą",
+            "never": "Nigdy",
+            "rarely": "Sporadycznie",
+            "oncePerWeek": "1-2 razy w tygodniu",
+            "fewTimesPerWeek": "Kilka razy tygodniowo",
+            "always": "Zawsze"
         },
         "airConditioning": {
             "title": "Klimatyzacja"

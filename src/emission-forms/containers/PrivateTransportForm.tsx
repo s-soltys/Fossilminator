@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { EmissionInputPrivateTransport, EmissionInputPrivateVehicle } from '../../emission-calculator';
 import { AppState, EmissionInputActions } from '../../state';
-import { EmissionFormWrapper, LabelledDropdown } from '../components';
-import { vehicleTypeOptions, vehicleFuelTypeOptions } from '../constants/options-private-transport';
+import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../components';
+import { vehicleTypeOptions, vehicleFuelTypeOptions, vehicleFrequencyOfTravelWithPassengersOptions } from '../constants/options-private-transport';
 
 interface Props {
     data: EmissionInputPrivateTransport;
@@ -44,14 +44,14 @@ class _PrivateTransportForm extends React.Component<Props> {
                         </LabelledDropdown>
                     </div>
                 </div>
-                <div className="col-12 col-md-6 col-lg-1">
+                <div className="col-12 col-md-6 col-lg-2">
                     <div>
-                        <LabelledDropdown
+                        <LabelledInput
                             label="privateTransport.vehicleAge.title"
+                            addon="units.years"
                             value={data.age}
-                            valueChange={value => update(i, { age: value })}
-                            options={[]}>
-                        </LabelledDropdown>
+                            valueChange={value => update(i, { age: value })}>
+                        </LabelledInput>
                     </div>
                 </div>
                 <div className="col-12 col-md-6 col-lg-1">
@@ -61,6 +61,36 @@ class _PrivateTransportForm extends React.Component<Props> {
                             value={data.fuelType}
                             valueChange={value => update(i, { fuelType: value })}
                             options={vehicleFuelTypeOptions}>
+                        </LabelledDropdown>
+                    </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-2">
+                    <div>
+                        <LabelledInput
+                            label="privateTransport.fuelUsage.title"
+                            addon="units.lper100km"
+                            value={data.fuelUsage}
+                            valueChange={value => update(i, { fuelUsage: value })}>
+                        </LabelledInput>
+                    </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-2">
+                    <div>
+                        <LabelledInput
+                            label="privateTransport.travelWeekly.title"
+                            addon="units.kmWeekly"
+                            value={data.travelWeekly}
+                            valueChange={value => update(i, { travelWeekly: value })}>
+                        </LabelledInput>
+                    </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-2">
+                    <div>
+                        <LabelledDropdown
+                            label="privateTransport.freqOfTravelWithPassengers.title"
+                            value={data.freqOfTravelWithPassengers}
+                            valueChange={value => update(i, { freqOfTravelWithPassengers: value })}
+                            options={vehicleFrequencyOfTravelWithPassengersOptions}>
                         </LabelledDropdown>
                     </div>
                 </div>
