@@ -145,7 +145,18 @@
     "privateTransport": {
         "sectionTitle": "Transport osobowy",
         "vehicleType": {
-            "title": "Rodzaj pojazdu"
+            "title": "Rodzaj pojazdu",
+            "bicycle": "Rower",
+            "motorbike": "Motor",
+            "carSmall": "Mały samochód (np. Smart)",
+            "carMedium": "Średni samochód",
+            "carLarge": "Duzy samochód",
+            "carVeryLarge": "Bardzo duzy",
+            "carHybrid": "Samochód hybrydowy",
+            "carElectric": "Samochód elektryczny"
+        },
+        "vehicleAge": {
+            "title": "Wiek (lata)"
         }
     },
     "emissions": {

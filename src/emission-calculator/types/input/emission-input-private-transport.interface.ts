@@ -19,7 +19,9 @@ export enum VehicleType {
     CarSmall,
     CarMedium,
     CarLarge,
-    CarVeryLarge
+    CarVeryLarge,
+    CarElectric,
+    CarHybid
 }
 
 export enum VehicleFuel {

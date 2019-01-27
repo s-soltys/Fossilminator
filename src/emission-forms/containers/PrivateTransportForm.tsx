@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { EmissionInputPrivateTransport, EmissionInputPrivateVehicle } from '../../emission-calculator';
 import { AppState, EmissionInputActions } from '../../state';
-import { EmissionFormWrapper, LabelledInput } from '../components';
+import { EmissionFormWrapper, LabelledDropdown } from '../components';
+import { vehicleTypeOptions } from '../constants/options-private-transport';
 
 interface Props {
     data: EmissionInputPrivateTransport;
@@ -16,14 +17,14 @@ class _PrivateTransportForm extends React.Component<Props> {
 
         return (
             <EmissionFormWrapper title="privateTransport.sectionTitle">
-            {
-                data.vehicles.map((vehicle, index) => (
-                    <React.Fragment key={index}>
-                        {this.renderVehicleForm(vehicle, index)}
-                        <hr />
-                    </React.Fragment>
-                ))
-            }
+                {
+                    data.vehicles.map((vehicle, index) => (
+                        <React.Fragment key={index}>
+                            {this.renderVehicleForm(vehicle, index)}
+                            <hr />
+                        </React.Fragment>
+                    ))
+                }
             </EmissionFormWrapper>
         );
     }
@@ -33,14 +34,24 @@ class _PrivateTransportForm extends React.Component<Props> {
 
         return (
             <div className="row">
-                <div className="col-12 col-md-6 col-lg-4">
+                <div className="col-12 col-md-6 col-lg-2">
                     <div>
-                        <LabelledInput
+                        <LabelledDropdown
                             label="privateTransport.vehicleType.title"
-                            addon="units.kmWeekly"
                             value={data.type}
-                            valueChange={value => update(i, { type: value })}>
-                        </LabelledInput>
+                            valueChange={value => update(i, { type: value })}
+                            options={vehicleTypeOptions}>
+                        </LabelledDropdown>
+                    </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-2">
+                    <div>
+                        <LabelledDropdown
+                            label="privateTransport.vehicleAge.title"
+                            value={data.age}
+                            valueChange={value => update(i, { age: value })}
+                            options={[]}>
+                        </LabelledDropdown>
                     </div>
                 </div>
             </div>
