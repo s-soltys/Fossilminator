@@ -144,8 +144,8 @@
     },
     "privateTransport": {
         "sectionTitle": "Transport osobowy",
-        "cityBusTravelWeekly": {
-            "title": "Autobus miejski"
+        "vehicleType": {
+            "title": "Rodzaj pojazdu"
         }
     },
     "emissions": {
