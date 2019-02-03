@@ -3,6 +3,8 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap
 import { Translate } from 'react-i18nify';
 import { withTranslate, InjectedTranslateProps } from '../../i18n';
 
+const DEFAULT_PLACEHOLDER = '—';
+
 type Option = { value: any, label: string };
 
 interface Props extends InjectedTranslateProps {
@@ -24,18 +26,26 @@ export class _LabelledDropdown extends React.Component<Props, any> {
         this.setState(prevState => ({ isOpen: !prevState.isOpen }));
     }
 
-    render() {
+    getCurrentLabel() {
         const { t, label, value, valueChange, options } = this.props;
 
         const currentLabel = options.find(option => option.value === value);
+
+        if (currentLabel) {
+            return t(currentLabel.label);
+        }
+        
+        return value || DEFAULT_PLACEHOLDER;
+    }
+
+    render() {
+        const { t, label, valueChange, options } = this.props;
 
         return (
             <div>
                 { !!label ? <Translate className="font-weight-light mb-2" tag="p" value={label} /> : null }
                 <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
-                    <DropdownToggle caret>
-                        { currentLabel ? t(currentLabel.label) : value }
-                    </DropdownToggle>
+                    <DropdownToggle caret>{this.getCurrentLabel()} </DropdownToggle>
                     <DropdownMenu>
                         {
                             options.map(option => (
