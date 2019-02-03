@@ -60,7 +60,7 @@ class _PrivateTransportForm extends React.Component<Props> {
                         valueChange={value => update(i, { age: value })}>
                     </LabelledInput>
                 </div>
-                <div className="col-12 col-md-6 col-lg-2">
+                <div className="col-12 col-md-6 col-lg-1">
                     <LabelledDropdown
                         label="privateTransport.fuelType.title"
                         value={data.fuelType}
@@ -92,8 +92,8 @@ class _PrivateTransportForm extends React.Component<Props> {
                         options={vehicleFrequencyOfTravelWithPassengersOptions}>
                     </LabelledDropdown>
                 </div>
-                <div className="col-12 col-md-6 col-lg-2">
-                    <button type="button" className="btn btn-primary px-3" onClick={() => removeVehicle(i)}>X</button>
+                <div className="col-12 col-md-6 col-lg-1">
+                    <button type="button" className="btn btn-primary px-3" onClick={() => removeVehicle(i)}>╳</button>
                 </div>
             </div>
         );

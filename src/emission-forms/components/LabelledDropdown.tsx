@@ -41,8 +41,8 @@ export class _LabelledDropdown extends React.Component<Props, any> {
 
         return (
             <div>
-                { !!label ? <Translate className="font-weight-light mb-2" tag="p" value={label} /> : null }
-                <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
+                {this.renderLabel()}
+                <Dropdown size="sm" isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
                     <DropdownToggle caret>{this.getCurrentLabel()} </DropdownToggle>
                     <DropdownMenu>
                         {
@@ -56,6 +56,12 @@ export class _LabelledDropdown extends React.Component<Props, any> {
                 </Dropdown>
             </div>
         );
+    }
+
+    renderLabel() {
+        if (!this.props.label) return null;
+
+        return <Translate className="font-weight-light mb-2" tag="p" value={this.props.label} />;
     }
 }
 

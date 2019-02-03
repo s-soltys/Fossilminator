@@ -18,7 +18,7 @@ export class _LabelledInput extends React.Component<Props> {
         return (
             <div>
                 <Translate className="font-weight-light mb-2" tag="p" value={label} />
-                <InputGroup>
+                <InputGroup size="sm">
                     <Input
                         placeholder={placeholder && t(placeholder)}
                         type="number"
