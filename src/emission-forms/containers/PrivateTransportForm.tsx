@@ -7,6 +7,12 @@ import { EmissionFormWrapper, LabelledDropdown, LabelledInput } from '../compone
 import { vehicleTypeOptions, vehicleFuelTypeOptions, vehicleFrequencyOfTravelWithPassengersOptions } from '../constants/options-private-transport';
 import { Translate } from 'react-i18nify';
 
+const deleteBtnStyle: any = {
+    position: 'absolute',
+    top: '50%',
+    right: 0
+};
+
 interface Props {
     data: EmissionInputPrivateTransport;
     update: typeof EmissionInputActions.UpdatePrivateTransportVehicle,
@@ -43,7 +49,7 @@ class _PrivateTransportForm extends React.Component<Props> {
         const { update, removeVehicle } = this.props;
 
         return (
-            <div className="row">
+            <div className="row" style={{ position: 'relative' }}>
                 <div className="col-12 col-md-6 col-lg-2">
                     <LabelledDropdown
                         label="privateTransport.vehicleType.title"
@@ -92,9 +98,7 @@ class _PrivateTransportForm extends React.Component<Props> {
                         options={vehicleFrequencyOfTravelWithPassengersOptions}>
                     </LabelledDropdown>
                 </div>
-                <div className="col-12 col-md-6 col-lg-2">
-                    <button type="button" className="btn btn-primary px-3" onClick={() => removeVehicle(i)}>X</button>
-                </div>
+                <small style={deleteBtnStyle} className="px-3" onClick={() => removeVehicle(i)}>╳</small>
             </div>
         );
     }

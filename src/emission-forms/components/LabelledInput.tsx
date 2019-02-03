@@ -9,6 +9,7 @@ interface Props extends InjectedTranslateProps {
     placeholder?: string;
     value: any;
     valueChange: (value: any) => any;
+    className?: string;
 }
 
 export class _LabelledInput extends React.Component<Props> {
@@ -16,24 +17,31 @@ export class _LabelledInput extends React.Component<Props> {
         const { t, label, value, valueChange, addon, placeholder } = this.props;
 
         return (
-            <div>
+            <div className={this.props.className}>
                 <Translate className="font-weight-light mb-2" tag="p" value={label} />
-                <InputGroup>
-                    {addon ? (
-                        <InputGroupAddon addonType="prepend">
-                            {t(addon)}
-                        </InputGroupAddon>
-                    ) : null}
+                <InputGroup size="sm">
                     <Input
                         placeholder={placeholder && t(placeholder)}
                         type="number"
                         value={value || ''}
                         onChange={event => valueChange(event.currentTarget.value)}
-                    />
+                        />
+                    {this.renderAddon()}
                 </InputGroup>
             </div>
         );
     }
+
+    renderAddon() {
+        const { t, addon } = this.props;
+
+        return addon ? (
+            <InputGroupAddon addonType="append">
+                {t(addon)}
+            </InputGroupAddon>
+        ) : null
+    }
+
 }
 
 export const LabelledInput = withTranslate(_LabelledInput);

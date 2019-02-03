@@ -1,6 +1,6 @@
 import React from "react";
 import { Translate } from "react-i18nify";
-import { chartFieldAttributes } from "../util";
+import { chartFieldAttributes, emissionResultLabel } from "../util";
 import { EmissionResultPartialFields, EmissionResultTotalField, EmissionUnits } from "../../emission-calculator";
 
 export class EmissionDetails extends React.Component<any> {
@@ -21,7 +21,7 @@ export class EmissionDetails extends React.Component<any> {
                     }}
                     {...chartFieldAttributes(field)}
                 >
-                    {value.emission_gCO2e.toFixed(2)}
+                    {emissionResultLabel(value)}
                 </small>
             </>
         );

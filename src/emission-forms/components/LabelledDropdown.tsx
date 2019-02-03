@@ -3,6 +3,8 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap
 import { Translate } from 'react-i18nify';
 import { withTranslate, InjectedTranslateProps } from '../../i18n';
 
+const DEFAULT_PLACEHOLDER = '—';
+
 type Option = { value: any, label: string };
 
 interface Props extends InjectedTranslateProps {
@@ -10,6 +12,7 @@ interface Props extends InjectedTranslateProps {
     value: any;
     valueChange: (value: any) => any;
     options: Option[];
+    className?: string;
 }
 
 export class _LabelledDropdown extends React.Component<Props, any> {
@@ -24,18 +27,24 @@ export class _LabelledDropdown extends React.Component<Props, any> {
         this.setState(prevState => ({ isOpen: !prevState.isOpen }));
     }
 
-    render() {
-        const { t, label, value, valueChange, options } = this.props;
+    getCurrentLabel() {
+        const { t, value, options } = this.props;
 
-        const currentLabel = options.find(option => option.value === value);
+        const currentOption = options.find(option => option.value === value);
+
+        const currentLabel = currentOption && t(currentOption.label);
+
+        return currentLabel || value || DEFAULT_PLACEHOLDER;
+    }
+
+    render() {
+        const { t, label, valueChange, options } = this.props;
 
         return (
-            <div>
-                { !!label ? <Translate className="font-weight-light mb-2" tag="p" value={label} /> : null }
-                <Dropdown isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
-                    <DropdownToggle caret>
-                        { currentLabel ? t(currentLabel.label) : value }
-                    </DropdownToggle>
+            <div className={this.props.className}>
+                {this.renderLabel()}
+                <Dropdown size="sm" isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
+                    <DropdownToggle caret>{this.getCurrentLabel()} </DropdownToggle>
                     <DropdownMenu>
                         {
                             options.map(option => (
@@ -48,6 +57,12 @@ export class _LabelledDropdown extends React.Component<Props, any> {
                 </Dropdown>
             </div>
         );
+    }
+
+    renderLabel() {
+        if (!this.props.label) return null;
+
+        return <Translate className="font-weight-light mb-2" tag="p" value={this.props.label} />;
     }
 }
 

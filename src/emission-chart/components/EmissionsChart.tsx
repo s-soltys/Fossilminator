@@ -1,6 +1,7 @@
 import React from "react";
-import { chartFieldAttributes } from "../util";
+import { chartFieldAttributes, emissionResultValue } from "../util";
 import { EmissionResultTotalField, EmissionResultPartialFields, EmissionResult } from "../../emission-calculator";
+import { EmissionResultLabel } from "./EmissionResultLabel";
 
 interface Props {
     label: string;
@@ -14,7 +15,7 @@ export class EmissionsChart extends React.Component<Props> {
 
         const units = emission[field];
 
-        const heightPercentage = ((units.emission_gCO2e || 0) / limit) * 100;
+        const heightPercentage = (emissionResultValue(units) / limit) * 100;
 
         return (
             <div
@@ -28,13 +29,11 @@ export class EmissionsChart extends React.Component<Props> {
     render() {
         const { emission, label } = this.props;
 
-        const totalResult = emission[EmissionResultTotalField].emission_gCO2e || 0;
-
         return (
             <div className="d-flex flex-column justify-content-end align-items-center">
                 <small className="text-center font-weight-light">{label}</small>
                 <small className="font-weight-bold mb-2">
-                    {totalResult.toFixed(2)} ton CO<sub>2</sub>
+                    <EmissionResultLabel emission={emission[EmissionResultTotalField]} />
                 </small>
                 {EmissionResultPartialFields.map(field => (
                     <React.Fragment key={field}>
