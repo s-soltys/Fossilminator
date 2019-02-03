@@ -164,13 +164,13 @@
             "electric": "Elektryczny"
         },
         "vehicleAge": {
-            "title": "Wiek (lata)"
+            "title": "Wiek"
         },
         "fuelUsage": {
-            "title": "Zuzycie paliwa (l/100km)"
+            "title": "Zuzycie paliwa"
         },
         "travelWeekly": {
-            "title": "Odległość (km/tydzień)"
+            "title": "Odległość"
         },
         "freqOfTravelWithPassengers": {
             "title": "Częstość jazdy z drugą osobą",
