@@ -12,6 +12,7 @@ interface Props extends InjectedTranslateProps {
     value: any;
     valueChange: (value: any) => any;
     options: Option[];
+    className?: string;
 }
 
 export class _LabelledDropdown extends React.Component<Props, any> {
@@ -40,7 +41,7 @@ export class _LabelledDropdown extends React.Component<Props, any> {
         const { t, label, valueChange, options } = this.props;
 
         return (
-            <div>
+            <div className={this.props.className}>
                 {this.renderLabel()}
                 <Dropdown size="sm" isOpen={this.state.isOpen} toggle={this.toggleDropdown}>
                     <DropdownToggle caret>{this.getCurrentLabel()} </DropdownToggle>
