@@ -27,15 +27,13 @@ export class _LabelledDropdown extends React.Component<Props, any> {
     }
 
     getCurrentLabel() {
-        const { t, label, value, valueChange, options } = this.props;
+        const { t, value, options } = this.props;
 
-        const currentLabel = options.find(option => option.value === value);
+        const currentOption = options.find(option => option.value === value);
 
-        if (currentLabel) {
-            return t(currentLabel.label);
-        }
-        
-        return value || DEFAULT_PLACEHOLDER;
+        const currentLabel = currentOption && t(currentOption.label);
+
+        return currentLabel || value || DEFAULT_PLACEHOLDER;
     }
 
     render() {
