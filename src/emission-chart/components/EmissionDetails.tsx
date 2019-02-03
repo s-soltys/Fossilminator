@@ -21,7 +21,7 @@ export class EmissionDetails extends React.Component<any> {
                     }}
                     {...chartFieldAttributes(field)}
                 >
-                    {value.co2Emission.toFixed(2)}
+                    {value.emission_gCO2e.toFixed(2)}
                 </small>
             </>
         );

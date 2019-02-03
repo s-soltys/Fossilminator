@@ -8,28 +8,28 @@ import { EmissionAlertBadge } from "../../shared";
 import { EmissionResult } from "../../emission-calculator";
 
 const REF_EMISSION: EmissionResult = {
-    housingConstruction: { co2Emission: 0.5 },
-    housingHeating: { co2Emission: 2.0 },
-    warmWater: { co2Emission: 1.0 },
-    airConditioning: { co2Emission: 0.1 },
-    fuelForTransport: { co2Emission: 1.0 },
-    carConstuction: { co2Emission: 0.2 },
-    publicTransport: { co2Emission: 1.0 },
-    airTravel: { co2Emission: 6.0 },
+    housingConstruction: { emission_gCO2e: 0.5 },
+    housingHeating: { emission_gCO2e: 2.0 },
+    warmWater: { emission_gCO2e: 1.0 },
+    airConditioning: { emission_gCO2e: 0.1 },
+    fuelForTransport: { emission_gCO2e: 1.0 },
+    carConstuction: { emission_gCO2e: 0.2 },
+    publicTransport: { emission_gCO2e: 1.0 },
+    airTravel: { emission_gCO2e: 6.0 },
 
-    foodProduction: { co2Emission: 3.0 },
-    consumption: { co2Emission: 1.0 },
-    electricity: { co2Emission: 0.6 },
-    deforestation: { co2Emission: 0.2 },
-    commonServices: { co2Emission: 3.1 },
+    foodProduction: { emission_gCO2e: 3.0 },
+    consumption: { emission_gCO2e: 1.0 },
+    electricity: { emission_gCO2e: 0.6 },
+    deforestation: { emission_gCO2e: 0.2 },
+    commonServices: { emission_gCO2e: 3.1 },
 
-    totalAnnualEmission: { co2Emission: 10 },
+    totalAnnualEmission: { emission_gCO2e: 10 },
 }
 
 class _EmissionChartContainer extends React.Component<any, any> {
     getMaxEmission(a: EmissionResult, b: EmissionResult) {
         const maxEmission =
-            1.2 * Math.max(a.totalAnnualEmission.co2Emission, b.totalAnnualEmission.co2Emission);
+            1.2 * Math.max(a.totalAnnualEmission.emission_gCO2e, b.totalAnnualEmission.emission_gCO2e);
 
         return maxEmission;
     }

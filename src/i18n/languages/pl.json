@@ -39,7 +39,9 @@
     },
     "units": {
         "kmWeekly": "km/tydzień",
-        "hAnnually": "godzin rocznie"
+        "hAnnually": "godzin rocznie",
+        "years": "lata",
+        "lper100km": "l/100km"
     },
     "country": {
         "selectCountry": "W jakim państwie mieszkasz?"
@@ -140,6 +142,46 @@
         },
         "longDistanceAirTravelAnnualHours": {
             "title": "Loty długodystansowe (ponad 2000km)"
+        }
+    },
+    "privateTransport": {
+        "sectionTitle": "Transport osobowy",
+        "addVehicle": "Dodaj pojazd",
+        "vehicleType": {
+            "title": "Rodzaj pojazdu",
+            "bicycle": "Rower",
+            "motorbike": "Motor",
+            "carSmall": "Mały samochód",
+            "carMedium": "Średni samochód",
+            "carLarge": "Duzy samochód"
+        },
+        "fuelType": {
+            "title": "Rodzaj paliwa",
+            "gasoline": "Benzyna",
+            "diesel": "Diesel",
+            "gas": "Gaz",
+            "hybrid": "Hybrydowy",
+            "electric": "Elektryczny"
+        },
+        "vehicleAge": {
+            "title": "Wiek"
+        },
+        "fuelUsage": {
+            "title": "Zuzycie paliwa"
+        },
+        "travelWeekly": {
+            "title": "Odległość"
+        },
+        "freqOfTravelWithPassengers": {
+            "title": "Częstość jazdy z drugą osobą",
+            "never": "Nigdy",
+            "rarely": "Sporadycznie",
+            "oncePerWeek": "1-2 razy w tygodniu",
+            "fewTimesPerWeek": "Kilka razy tygodniowo",
+            "always": "Zawsze"
+        },
+        "airConditioning": {
+            "title": "Klimatyzacja"
         }
     },
     "emissions": {

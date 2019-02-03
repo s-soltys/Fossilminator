@@ -3,9 +3,9 @@ import { PartialResultCalculatorMap } from "../partial-emission-results";
 
 describe('Usage calculator should', () => {
     const partialMap: PartialResultCalculatorMap = {
-        airTravel: (input: any) => ({ co2Emission: input.someValue }),
-        airConditioning: (input: any) => ({ co2Emission: 20 }),
-        someRandomField: (input: any) => ({ co2Emission: 666 })
+        airTravel: (input: any) => ({ emission_gCO2e: input.someValue }),
+        airConditioning: (input: any) => ({ emission_gCO2e: 20 }),
+        someRandomField: (input: any) => ({ emission_gCO2e: 666 })
     } as any;
 
     it('calculate usage', () => {
@@ -15,9 +15,9 @@ describe('Usage calculator should', () => {
 
         expect(result).toEqual(
             jasmine.objectContaining({
-                airConditioning: { co2Emission: 20 },
-                airTravel: { co2Emission: 13.05 },
-                totalAnnualEmission: { co2Emission: 33.05 }
+                airConditioning: { emission_gCO2e: 20 },
+                airTravel: { emission_gCO2e: 13.05 },
+                totalAnnualEmission: { emission_gCO2e: 33.05 }
             })
         );
     });
@@ -29,14 +29,14 @@ describe('Usage calculator should', () => {
 
         expect((result as any).someRandomField).toBeUndefined();
         expect(result).toEqual(jasmine.objectContaining({
-            airConditioning: { co2Emission: 20 },
-            totalAnnualEmission: { co2Emission: 20 }
+            airConditioning: { emission_gCO2e: 20 },
+            totalAnnualEmission: { emission_gCO2e: 20 }
         }));
     });
 
     describe('should combine result details', () => {
         it('for unexpected values', () => {
-            expect(combineEmissionResult({} as any, { co2Emission: 13 })).toEqual({ co2Emission: 13 });
+            expect(combineEmissionResult({} as any, { emission_gCO2e: 13 })).toEqual({ emission_gCO2e: 13 });
         });
     });
 });

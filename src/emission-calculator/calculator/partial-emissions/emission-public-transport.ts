@@ -17,6 +17,6 @@ export function getPublicTransportEmission({ publicTransport }: Partial<Emission
     const result = partialResults.reduce((sum, partial) => sum + partial, 0);
 
     return {
-        co2Emission: result
+        emission_gCO2e: result
     };
 };

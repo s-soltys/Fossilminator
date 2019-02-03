@@ -1,7 +1,7 @@
 import { createAction } from '../util';
-import { EmissionInputFood, EnergeticMix, EmissionInputPublicTransport } from '../../emission-calculator';
+import { EmissionInputFood, EnergeticMix, EmissionInputPublicTransport, EmissionInputPrivateVehicle, VehicleType } from '../../emission-calculator';
 
-export type ActionsTypes = SetCountryCodeAction | SetEnergeticMixAction | UpdatePublicTransportAction | UpdateFoodAction;
+export type ActionsTypes = SetCountryCodeAction | SetEnergeticMixAction | UpdatePublicTransportAction | UpdateFoodAction | UpdatePrivateTransportVehicleAction | AddPrivateTransportVehicleAction | RemovePrivateTransportVehicleAction;
 
 export const SetCountryCodeType = '[FOSSIL_USAGE] SetCountryCode';
 export type SetCountryCodeAction = ReturnType<typeof SetCountryCode>;
@@ -18,3 +18,15 @@ export const UpdatePublicTransport = (transport: Partial<EmissionInputPublicTran
 export const UpdateFoodType = '[FOSSIL_USAGE] UpdateFood';
 export type UpdateFoodAction = ReturnType<typeof UpdateFood>;
 export const UpdateFood = (food: Partial<EmissionInputFood>) => createAction(UpdateFoodType, food);
+
+export const UpdatePrivateTransportVehicleType = '[FOSSIL_USAGE] UpdatePrivateTransportVehicle';
+export type UpdatePrivateTransportVehicleAction = ReturnType<typeof UpdatePrivateTransportVehicle>;
+export const UpdatePrivateTransportVehicle = (index: number, vehicle: Partial<EmissionInputPrivateVehicle>) => createAction(UpdatePrivateTransportVehicleType, { index, vehicle });
+
+export const AddPrivateTransportVehicleType = '[FOSSIL_USAGE] AddPrivateTransportVehicle';
+export type AddPrivateTransportVehicleAction = ReturnType<typeof AddPrivateTransportVehicle>;
+export const AddPrivateTransportVehicle = () => createAction(AddPrivateTransportVehicleType);
+
+export const RemovePrivateTransportVehicleType = '[FOSSIL_USAGE] RemovePrivateTransportVehicle';
+export type RemovePrivateTransportVehicleAction = ReturnType<typeof RemovePrivateTransportVehicle>;
+export const RemovePrivateTransportVehicle = (index: number) => createAction(RemovePrivateTransportVehicleType, { index });

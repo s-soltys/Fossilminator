@@ -3,7 +3,7 @@ import { EmptyEmissionInput, EmptyEmissionUnits } from "../../emission-calculato
 
 export const InitialAppState: AppState = {
     navigation: {
-        section: Section.PublicTransport
+        section: Section.PrivateTransport
     },
     emissionInput: EmptyEmissionInput,
     emissionResult: {

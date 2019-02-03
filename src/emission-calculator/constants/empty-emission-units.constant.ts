@@ -1,5 +1,5 @@
 import { EmissionUnits } from "../types/result";
 
 export const EmptyEmissionUnits: EmissionUnits = {
-    co2Emission: 0
+    emission_gCO2e: 0
 };
